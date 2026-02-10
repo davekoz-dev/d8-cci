@@ -128,7 +128,7 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection variant="whiteOnTurquoise" className="py-20">
+      <SupergraphicSection colorWay="whiteOnTurquoise" variant="geometric-1" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
             <Typography variant="display" className="mb-6">

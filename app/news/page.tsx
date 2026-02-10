@@ -80,7 +80,7 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection variant="whiteOnBlue" className="py-20">
+      <SupergraphicSection colorWay="whiteOnBlue" variant="geometric-1" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6">

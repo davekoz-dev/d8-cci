@@ -24,7 +24,8 @@ export default function MembersPage() {
     <>
       {/* Hero Section */}
       <SupergraphicSection
-        variant="whiteOnBlue"
+        colorWay="whiteOnBlue"
+        variant="geometric-1"
         className="py-20"
       >
         <Container size="lg">
@@ -53,7 +54,7 @@ export default function MembersPage() {
             </Typography>
           </div>
           <div className="bg-white rounded-lg shadow-lg p-8">
-            <D8Map highlightType="members" />
+            <D8Map />
           </div>
         </Container>
       </Section>
