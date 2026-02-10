@@ -13,7 +13,7 @@ export interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   padding?: 'sm' | 'md' | 'lg' | 'xl';
   /** Whether section should span full width without container */
   fullWidth?: boolean;
-  as?: keyof JSX.IntrinsicElements;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 const sectionVariants = {
