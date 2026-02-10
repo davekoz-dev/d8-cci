@@ -1,26 +1,123 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-fira-sans);
+
+  /* D-8 Brand Colors */
+  --color-primary-blue: #055090;
+  --color-primary-turquoise: #00B3AA;
+  --color-midnight-blue: #282561;
+  --color-blue-aqua: #00B9F0;
+  --color-blue-sky: #2BB5E9;
+  --color-dark-grey: #414042;
+  --color-soft-white: #F7F8F9;
+
+  /* Semantic Color Mappings */
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+
+  /* Border Radius */
+  --radius-sm: 0.125rem;
+  --radius-base: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+  --radius-3xl: 1.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  /* D-8 Brand Colors - Light Mode (Primary) */
+  --background: #FFFFFF;
+  --foreground: #414042; /* Dark Grey */
+
+  --card: #FFFFFF;
+  --card-foreground: #414042;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #414042;
+
+  --primary: #055090; /* Blue Azure */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #00B3AA; /* Turquoise */
+  --secondary-foreground: #FFFFFF;
+
+  --muted: #F7F8F9; /* Soft White */
+  --muted-foreground: #414042;
+
+  --accent: #2BB5E9; /* Blue Sky */
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #DC2626; /* Red for errors */
+
+  --border: #E5E7EB; /* Light grey border */
+  --input: #E5E7EB;
+  --ring: #055090; /* Primary blue for focus rings */
+
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+
+.mapboxgl-ctrl-top-right {
+  @apply right-2 top-20;
+}
+.mapboxgl-ctrl-bottom-left {
+  @apply hidden;
+}
+
+.mapboxgl-canvas {
+  @apply focus:outline-none focus-visible:outline-none;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+.mapboxgl-popup-tip {
+  border: 8px solid transparent;
+  @apply relative -top-[1px] z-10;
+}
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: hsl(var(--background));
+}
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: hsl(var(--background));
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: hsl(var(--background));
+}
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: hsl(var(--background));
+}
+.mapboxgl-popup-content {
+  @apply !rounded-lg border bg-background !p-0 text-foreground;
 }
