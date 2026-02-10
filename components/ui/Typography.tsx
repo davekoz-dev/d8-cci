@@ -21,7 +21,7 @@ const typographyVariants = cva('', {
       bodySmall: 'text-sm leading-normal',
       caption: 'text-xs leading-tight tracking-wide',
     },
-    color: {
+    textColor: {
       primary: 'text-[#414042]', // Dark Grey
       secondary: 'text-[#282561]', // Midnight Blue
       onDark: 'text-[#F7F8F9]', // Soft White
@@ -31,7 +31,7 @@ const typographyVariants = cva('', {
   },
   defaultVariants: {
     variant: 'body',
-    color: 'primary',
+    textColor: 'primary',
   },
 });
 
@@ -42,12 +42,12 @@ export interface TypographyProps
 }
 
 const Typography = React.forwardRef<HTMLElement, TypographyProps>(
-  ({ className, variant, color, as, ...props }, ref) => {
+  ({ className, variant, textColor, as, ...props }, ref) => {
     const Component = as || getDefaultElement(variant);
 
     return React.createElement(Component, {
       ref,
-      className: cn(typographyVariants({ variant, color }), className),
+      className: cn(typographyVariants({ variant, textColor }), className),
       ...props,
     });
   }
@@ -55,7 +55,7 @@ const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 
 function getDefaultElement(
   variant: TypographyProps['variant']
-): keyof JSX.IntrinsicElements {
+): 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' {
   switch (variant) {
     case 'display':
     case 'h1':
