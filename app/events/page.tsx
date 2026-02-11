@@ -26,16 +26,16 @@ export default function EventsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection colorWay="whiteOnBlue" variant="geometric-1" className="py-20">
+      <SupergraphicSection colorWay="whiteOnBlue" variant="solid" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
+            <div className="flex items-center justify-center gap-3 mb-6 text-white">
               <Calendar className="w-12 h-12 " />
-              <Typography variant="display" className="">
+              <Typography variant="display" className="text-white">
                 Events & Forums
               </Typography>
             </div>
-            <Typography variant="bodyLarge">
+            <Typography variant="bodyLarge" className='text-white'>
               Join us for upcoming D-8 CCI events, business forums, trade fairs, and
               exhibitions that facilitate cooperation among member countries.
             </Typography>

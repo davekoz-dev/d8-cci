@@ -25,15 +25,15 @@ export default function MembersPage() {
       {/* Hero Section */}
       <SupergraphicSection
         colorWay="whiteOnBlue"
-        variant="geometric-1"
+        variant="solid"
         className="py-20"
       >
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <Typography variant="display" className="mb-6">
+            <Typography variant="display" className="mb-6 text-white">
               D-8 CCI Member Chambers
             </Typography>
-            <Typography variant="bodyLarge">
+            <Typography variant="bodyLarge" className='text-white'>
               Eight national chambers of commerce and industry working together to promote
               private sector engagement, business cooperation, and trade among D-8 member countries.
             </Typography>

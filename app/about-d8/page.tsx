@@ -22,10 +22,10 @@ export default function AboutD8Page() {
             <Badge variant="secondary" className="text-sm px-4 py-1">
               Est. {organizationInfo.established}
             </Badge>
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               About D-8
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-3xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-3xl mx-auto">
               {organizationInfo.fullName}
             </Typography>
           </div>
@@ -106,7 +106,7 @@ export default function AboutD8Page() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center mb-12">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               Objectives
             </Typography>
           </div>
@@ -150,10 +150,10 @@ export default function AboutD8Page() {
                     </div>
                   </div>
                   <div>
-                    <Typography variant="h4" color="onDark" className="mb-2">
+                    <Typography variant="h4" textColor="onDark" className="mb-2">
                       {objective.title}
                     </Typography>
-                    <Typography variant="body" color="onDark">
+                    <Typography variant="body" textColor="onDark">
                       {objective.description}
                     </Typography>
                   </div>

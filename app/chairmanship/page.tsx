@@ -46,16 +46,16 @@ export default function ChairmanshipPage() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               Theme
             </Typography>
-            <Typography variant="display" color="onDark" className="text-3xl mb-4">
+            <Typography variant="display" textColor="onDark" className="text-3xl mb-4">
               {theme.title}
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-4xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-4xl mx-auto">
               {theme.subtitle}
             </Typography>
-            <Typography variant="bodyLarge" color="onDark" className="max-w-3xl mx-auto pt-6">
+            <Typography variant="bodyLarge" textColor="onDark" className="max-w-3xl mx-auto pt-6">
               {theme.shortDescription}
             </Typography>
           </div>
@@ -218,7 +218,7 @@ export default function ChairmanshipPage() {
       <Section variant="secondary" padding="lg">
         <Container size="lg">
           <div className="text-center mb-12">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               Expected Outcomes
             </Typography>
           </div>
@@ -234,7 +234,7 @@ export default function ChairmanshipPage() {
             ].map((outcome, index) => (
               <div key={index} className="flex items-start gap-3">
                 <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0 mt-1" />
-                <Typography variant="body" color="onDark">
+                <Typography variant="body" textColor="onDark">
                   {outcome}
                 </Typography>
               </div>

@@ -128,13 +128,13 @@ export default function ProgramsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection colorWay="whiteOnTurquoise" variant="geometric-1" className="py-20">
+      <SupergraphicSection colorWay="whiteOnTurquoise" variant="solid" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <Typography variant="display" className="mb-6">
+            <Typography variant="display" className="mb-6 text-white">
               Programs & Services
             </Typography>
-            <Typography variant="bodyLarge" className="">
+            <Typography variant="bodyLarge" className=" text-white">
               D-8 CCI provides comprehensive programs and services to facilitate business
               cooperation, trade, investment, and economic development among member countries.
             </Typography>
@@ -202,14 +202,14 @@ export default function ProgramsPage() {
               </ul>
             </div>
             <div className="bg-gradient-to-br from-[#055090] to-[#00B3AA] rounded-lg p-8 text-white">
-              <Typography variant="h3" className="mb-4">
+              <Typography variant="h3" className="mb-4 text-white">
                 Collective Self-Reliance
               </Typography>
-              <Typography variant="body" className="mb-6">
+              <Typography variant="body" className="mb-6 text-white">
                 Our programs promote collective self-reliance by harnessing complementarities
                 and establishing value and supply chains among member countries.
               </Typography>
-              <Typography variant="body">
+              <Typography variant="body" className='text-white'>
                 We propose mutually advantageous economic policies that benefit all D-8
                 member nations and their private sectors.
               </Typography>

@@ -94,7 +94,7 @@ export function OpportunityCard({ opportunity }: OpportunityCardProps) {
           variant="outline"
           className="w-full border-[#00B3AA] text-[#00B3AA] hover:bg-[#00B3AA] hover:text-white"
         >
-          <a href={opportunity.contactEmail ? `mailto:${opportunity.contactEmail}` : '#'}>
+          <a href={opportunity.contactEmail ? `mailto:${opportunity.contactEmail}` : '#'} className='flex items-center'>
             <Mail className="w-4 h-4 mr-2" />
             Express Interest
           </a>

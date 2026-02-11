@@ -29,10 +29,10 @@ export function SummitHighlight() {
             </Badge>
 
             <div className="space-y-4">
-              <Typography variant="h1" color="onDark" as="h2">
+              <Typography variant="h1" textColor="onDark" as="h2">
                 D-8 Summit 2026
               </Typography>
-              <Typography variant="bodyLarge" color="onDark">
+              <Typography variant="bodyLarge" textColor="onDark">
                 The 11th Summit of the Developing-8 Organization for Economic
                 Cooperation brings together leaders from member countries to
                 advance shared priorities and strengthen multilateral
@@ -44,19 +44,19 @@ export function SummitHighlight() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-white">
                 <Calendar className="h-5 w-5 text-[#00B3AA]" />
-                <Typography variant="body" color="onDark">
+                <Typography variant="body" textColor="onDark">
                   15 April 2026
                 </Typography>
               </div>
               <div className="flex items-center gap-3 text-white">
                 <MapPin className="h-5 w-5 text-[#00B3AA]" />
-                <Typography variant="body" color="onDark">
+                <Typography variant="body" textColor="onDark">
                   Jakarta International Convention Center, Indonesia
                 </Typography>
               </div>
               <div className="flex items-center gap-3 text-white">
                 <Users className="h-5 w-5 text-[#00B3AA]" />
-                <Typography variant="body" color="onDark">
+                <Typography variant="body" textColor="onDark">
                   Leaders from 8 Member Countries
                 </Typography>
               </div>
@@ -92,11 +92,11 @@ export function SummitHighlight() {
                 <Typography
                   variant="display"
                   color="onDark"
-                  className="text-4xl mb-2"
+                  className="text-4xl mb-2 text-white"
                 >
                   {stat.number}
                 </Typography>
-                <Typography variant="bodySmall" color="onDark">
+                <Typography variant="bodySmall" color="onDark" className='text-white'>
                   {stat.label}
                 </Typography>
               </div>

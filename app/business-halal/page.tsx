@@ -19,10 +19,10 @@ export default function BusinessHalalPage() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               Business & Halal Economy
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-4xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-4xl mx-auto">
               Unlocking Economic Opportunities Across D-8 Member Countries
             </Typography>
           </div>
@@ -212,7 +212,7 @@ export default function BusinessHalalPage() {
       <Section variant="secondary" padding="lg">
         <Container size="lg">
           <div className="text-center mb-12">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               Why Participate?
             </Typography>
           </div>
@@ -243,10 +243,10 @@ export default function BusinessHalalPage() {
               <div key={index} className="flex gap-4 p-6 rounded-lg bg-white/10">
                 <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0 mt-1" />
                 <div>
-                  <Typography variant="h4" color="onDark" className="mb-2">
+                  <Typography variant="h4" textColor="onDark" className="mb-2">
                     {benefit.title}
                   </Typography>
-                  <Typography variant="body" color="onDark">
+                  <Typography variant="body" textColor="onDark">
                     {benefit.description}
                   </Typography>
                 </div>

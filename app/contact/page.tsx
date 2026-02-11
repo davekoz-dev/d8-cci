@@ -37,10 +37,10 @@ export default function ContactPage() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               Contact Us
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-3xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-3xl mx-auto">
               Get in touch with the D-8 Indonesia Chairmanship team
             </Typography>
           </div>

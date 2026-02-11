@@ -66,31 +66,31 @@ export function D8Overview() {
 
             {/* Quick Stats */}
             <div className="mt-8 p-6 rounded-lg bg-gradient-to-br from-[#055090] to-[#00B3AA] text-white">
-              <Typography variant="h4" color="onDark" className="mb-4">
+              <Typography variant="h4" textColor="onDark" className="mb-4">
                 D-8 At a Glance
               </Typography>
               <div className="grid grid-cols-3 gap-4 text-center">
                 <div>
-                  <Typography variant="h3" color="onDark">
+                  <Typography variant="h3" textColor="onDark">
                     1.2B
                   </Typography>
-                  <Typography variant="caption" color="onDark">
+                  <Typography variant="caption" textColor="onDark">
                     Population
                   </Typography>
                 </div>
                 <div>
-                  <Typography variant="h3" color="onDark">
+                  <Typography variant="h3" textColor="onDark">
                     $4.7T
                   </Typography>
-                  <Typography variant="caption" color="onDark">
+                  <Typography variant="caption" textColor="onDark">
                     Combined GDP
                   </Typography>
                 </div>
                 <div>
-                  <Typography variant="h3" color="onDark">
+                  <Typography variant="h3" textColor="onDark">
                     27
                   </Typography>
-                  <Typography variant="caption" color="onDark">
+                  <Typography variant="caption" textColor="onDark">
                     Years
                   </Typography>
                 </div>

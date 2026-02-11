@@ -30,10 +30,10 @@ export default function BrandPage() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               Brand & Visual Identity
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-3xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-3xl mx-auto">
               Official brand guidelines and resources for D-8 Indonesia Chairmanship
             </Typography>
           </div>
@@ -219,10 +219,10 @@ export default function BrandPage() {
       <Section variant="secondary" padding="lg">
         <Container size="lg">
           <div className="text-center mb-12">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               Download Resources
             </Typography>
-            <Typography variant="bodyLarge" color="onDark" className="max-w-2xl mx-auto">
+            <Typography variant="bodyLarge" textColor="onDark" className="max-w-2xl mx-auto">
               Access official logos, templates, and brand assets
             </Typography>
           </div>
@@ -240,7 +240,7 @@ export default function BrandPage() {
                 <CardHeader>
                   <Download className="h-8 w-8 text-white mb-3" />
                   <CardTitle className="text-white text-lg">{resource.title}</CardTitle>
-                  <Typography variant="bodySmall" color="onDark">
+                  <Typography variant="bodySmall" textColor="onDark">
                     {resource.description}
                   </Typography>
                 </CardHeader>

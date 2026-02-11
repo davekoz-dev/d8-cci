@@ -80,16 +80,16 @@ export default function NewsPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection colorWay="whiteOnBlue" variant="geometric-1" className="py-20">
+      <SupergraphicSection colorWay="whiteOnBlue" variant="solid" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Newspaper className="w-12 h-12 text-black" />
-              <Typography variant="display" className="text-black">
+            <div className="flex items-center justify-center gap-3 mb-6 ">
+              <Newspaper className="w-12 h-12 text-white" />
+              <Typography variant="display" className="text-white">
                 News & Media
               </Typography>
             </div>
-            <Typography variant="bodyLarge" className="">
+            <Typography variant="bodyLarge" className="text-white">
               Stay updated with the latest news, announcements, and media coverage about
               D-8 CCI activities and events.
             </Typography>

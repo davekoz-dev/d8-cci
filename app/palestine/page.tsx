@@ -21,10 +21,10 @@ export default function PalestinePage() {
                 <Heart className="h-16 w-16 text-white" fill="white" />
               </div>
             </div>
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               Palestine & Solidarity
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-4xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-4xl mx-auto">
               Standing Together for Justice, Peace, and Humanitarian Support
             </Typography>
           </div>
@@ -104,7 +104,7 @@ export default function PalestinePage() {
       <Section variant="primary" padding="lg">
         <Container size="xl">
           <div className="text-center mb-12">
-            <Typography variant="h2" color="onDark" className="mb-4">
+            <Typography variant="h2" textColor="onDark" className="mb-4">
               D-8 Commitment
             </Typography>
           </div>
@@ -144,10 +144,10 @@ export default function PalestinePage() {
                       <Icon className="h-8 w-8 text-white" />
                     </div>
                   </div>
-                  <Typography variant="h4" color="onDark" className="mb-3">
+                  <Typography variant="h4" textColor="onDark" className="mb-3">
                     {commitment.title}
                   </Typography>
-                  <Typography variant="body" color="onDark" className="text-sm">
+                  <Typography variant="body" textColor="onDark" className="text-sm">
                     {commitment.description}
                   </Typography>
                 </div>
@@ -205,10 +205,10 @@ export default function PalestinePage() {
       <Section variant="secondary" padding="md">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="h2" color="onDark">
+            <Typography variant="h2" textColor="onDark">
               United for Justice
             </Typography>
-            <Typography variant="bodyLarge" color="onDark" className="max-w-3xl mx-auto">
+            <Typography variant="bodyLarge" textColor="onDark" className="max-w-3xl mx-auto">
               D-8 member countries remain committed to working together and with the
               international community to achieve a just, comprehensive, and lasting
               solution that guarantees the rights and dignity of the Palestinian people.

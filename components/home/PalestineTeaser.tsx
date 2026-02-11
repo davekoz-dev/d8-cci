@@ -27,15 +27,15 @@ export function PalestineTeaser() {
 
           {/* Content */}
           <div className="space-y-4 max-w-3xl">
-            <Typography variant="h2" color="onDark">
+            <Typography variant="h2" textColor="onDark">
               Palestine & Solidarity
             </Typography>
-            <Typography variant="bodyLarge" color="onDark">
+            <Typography variant="bodyLarge" textColor="onDark">
               The D-8 Summit 2026 will feature a special session dedicated to
               expressing solidarity with the Palestinian people and addressing
               the humanitarian situation in Palestine.
             </Typography>
-            <Typography variant="body" color="onDark">
+            <Typography variant="body" textColor="onDark">
               D-8 member countries reaffirm their commitment to supporting
               Palestine&apos;s right to self-determination and working towards a
               just and lasting peace in the region.

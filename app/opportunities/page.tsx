@@ -103,13 +103,13 @@ export default function OpportunitiesPage() {
   return (
     <>
       {/* Hero Section */}
-      <SupergraphicSection colorWay="whiteOnTurquoise" variant="geometric-1" className="py-20">
+      <SupergraphicSection colorWay="whiteOnTurquoise" variant="solid" className="py-20">
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
-            <Typography variant="display" className="mb-6">
+            <Typography variant="display" className="mb-6 text-white">
               Business Opportunities
             </Typography>
-            <Typography variant="bodyLarge">
+            <Typography variant="bodyLarge" className='text-white'>
               Explore investment opportunities, joint ventures, trade partnerships, and
               business collaborations across D-8 member countries.
             </Typography>

@@ -19,10 +19,10 @@ export default function DocumentsPage() {
       <Section variant="primary" padding="lg">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="display" color="onDark" as="h1">
+            <Typography variant="display" textColor="onDark" as="h1">
               Documents & Media
             </Typography>
-            <Typography variant="h3" color="onDark" className="font-normal max-w-3xl mx-auto">
+            <Typography variant="h3" textColor="onDark" className="font-normal max-w-3xl mx-auto">
               Official documents, press releases, and media resources
             </Typography>
           </div>
@@ -214,10 +214,10 @@ export default function DocumentsPage() {
       <Section variant="secondary" padding="md">
         <Container size="lg">
           <div className="text-center space-y-6">
-            <Typography variant="h2" color="onDark">
+            <Typography variant="h2" textColor="onDark">
               Media Inquiries
             </Typography>
-            <Typography variant="bodyLarge" color="onDark" className="max-w-2xl mx-auto">
+            <Typography variant="bodyLarge" textColor="onDark" className="max-w-2xl mx-auto">
               For media inquiries, interview requests, or press credentials
             </Typography>
             <Button asChild size="lg" variant="outline" className="bg-white text-[#00B3AA]">

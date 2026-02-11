@@ -12,7 +12,7 @@ import { cn } from '@/lib/utils';
  * - Content area must remain clean and readable
  */
 
-export type SupergraphicVariant = 'geometric-1' | 'geometric-2' | 'waves' | 'gradient';
+export type SupergraphicVariant = 'geometric-1' | 'geometric-2' | 'waves' | 'gradient' | 'solid';
 export type SupergraphicColorWay =
   | 'whiteOnBlue'
   | 'whiteOnTurquoise'
@@ -75,6 +75,7 @@ const supergraphicPatterns: Record<SupergraphicVariant, string> = {
       rgba(255, 255, 255, 0.1) 100%
     )
   `,
+  solid: 'none',
 };
 
 export function SupergraphicSection({
