@@ -123,9 +123,9 @@ export function MemberCard({ member, variant = 'default' }: MemberCardProps) {
           <Link
             href={member.website}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer" className='flex items-center gap-2'
           >
-            <Globe className="w-4 h-4 mr-2" />
+            <Globe className="w-4 h-4" />
             Website
           </Link>
         </Button>
@@ -135,8 +135,8 @@ export function MemberCard({ member, variant = 'default' }: MemberCardProps) {
           size="sm"
           className="flex-1 min-w-[120px]"
         >
-          <a href={`mailto:${member.email}`}>
-            <Mail className="w-4 h-4 mr-2" />
+          <a href={`mailto:${member.email}`} className='flex items-center gap-2'>
+            <Mail className="w-4 h-4" />
             Contact
           </a>
         </Button>

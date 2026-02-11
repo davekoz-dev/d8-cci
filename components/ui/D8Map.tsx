@@ -282,7 +282,7 @@ export function D8Map({
 
   return (
     <div
-      className={`relative rounded-lg overflow-hidden shadow-lg ${className}`}
+      className={`relative rounded-lg overflow-hidden ${className}`}
       style={{ height }}
     >
       <div ref={mapContainer} className="w-full h-full" />

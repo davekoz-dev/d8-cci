@@ -53,7 +53,7 @@ export default function MembersPage() {
               Malaysia, Nigeria, Pakistan, and Turkey.
             </Typography>
           </div>
-          <div className="bg-white rounded-lg shadow-lg p-8">
+          <div className="bg-white rounded-lg">
             <D8Map />
           </div>
         </Container>

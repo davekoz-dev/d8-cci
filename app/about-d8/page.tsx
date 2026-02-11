@@ -6,7 +6,8 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { memberCountries, organizationInfo, d8Statistics } from '@/lib/constants';
 import { Globe, Users, TrendingUp, Calendar } from 'lucide-react';
-
+import { d8CCIMembers } from '@/lib/constants/d8-cci-data';
+import Image from 'next/image';
 export const metadata = {
   title: 'About D-8 | D-8 Indonesia Chairmanship 2026-2027',
   description: 'Learn about the Developing-8 Organization for Economic Cooperation, its member countries, objectives, and achievements.',
@@ -87,14 +88,21 @@ export default function AboutD8Page() {
           </div>
 
           <Grid cols={4} gap="md">
-            {memberCountries.map((country) => (
+            {d8CCIMembers?.map((country) => (
               <Card
-                key={country.code}
-                className="hover:shadow-lg transition-shadow border-t-4 border-t-[#00B3AA]"
+                key={country.flag}
+                className="hover:shadow-lg transition-shadow border-t-4 border-t-[#00B3AA] bg-[#F7F8F9]"
               >
-                <CardHeader className="text-center">
-                  <div className="text-4xl mb-3">{country.flag}</div>
-                  <CardTitle className="text-lg">{country.name}</CardTitle>
+                <CardHeader className="text-center flex items-center">
+                  <div className="relative w-16 h-12 flex-shrink-0">
+                    <Image
+                      src={country.flag}
+                      alt={`${country.country} flag`}
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
+                  <CardTitle className="text-lg">{country.country}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
