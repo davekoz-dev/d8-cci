@@ -21,12 +21,12 @@ export function PalestineTeaser() {
       <Container size="lg">
         <div className="flex flex-col items-center text-center space-y-6">
           {/* Icon */}
-          <div className="p-4 rounded-full bg-white/20 backdrop-blur">
+          <div className="p-4 rounded-full bg-white/20 backdrop-blur" data-aos="fade-in">
             <Heart className="h-12 w-12 text-white" fill="white" />
           </div>
 
           {/* Content */}
-          <div className="space-y-4 max-w-3xl">
+          <div className="space-y-4 max-w-3xl" data-aos="fade-up" data-aos-delay="100">
             <Typography variant="h2" textColor="onDark">
               Palestine & Solidarity
             </Typography>

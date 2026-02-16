@@ -35,7 +35,7 @@ export default function PalestinePage() {
       <Section variant="default" padding="lg">
         <Container size="lg">
           <div className="prose prose-lg max-w-none">
-            <Typography variant="h2" className="text-[#055090] mb-6">
+            <Typography variant="h2" className="text-[#055090] mb-6" data-aos="fade-in">
               Statement of Solidarity
             </Typography>
 
@@ -66,11 +66,11 @@ export default function PalestinePage() {
       {/* Special Session */}
       <Section variant="muted" padding="lg">
         <Container size="lg">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             Special Session at D-8 Summit 2026
           </Typography>
 
-          <Card className="bg-white border-l-4 border-l-[#00B3AA]">
+          <Card className="bg-white border-l-4 border-l-[#00B3AA]" data-aos="fade-up">
             <CardContent className="p-8">
               <Typography variant="body" className="text-[#414042] mb-6">
                 The 11th D-8 Summit will feature a dedicated special session on Palestine,
@@ -103,7 +103,7 @@ export default function PalestinePage() {
       {/* D-8 Commitment */}
       <Section variant="primary" padding="lg">
         <Container size="xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" textColor="onDark" className="mb-4">
               D-8 Commitment
             </Typography>
@@ -138,7 +138,7 @@ export default function PalestinePage() {
             ].map((commitment, index) => {
               const Icon = commitment.icon;
               return (
-                <div key={index} className="text-center">
+                <div key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                   <div className="flex justify-center mb-4">
                     <div className="p-4 rounded-full bg-white/20 backdrop-blur">
                       <Icon className="h-8 w-8 text-white" />
@@ -160,12 +160,12 @@ export default function PalestinePage() {
       {/* Historical Context */}
       <Section variant="default" padding="lg">
         <Container size="lg">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             D-8 and Palestine: A History of Solidarity
           </Typography>
 
           <div className="space-y-6">
-            <div className="border-l-4 border-[#00B3AA] pl-6 py-4">
+            <div className="border-l-4 border-[#00B3AA] pl-6 py-4" data-aos="fade-up" data-aos-delay="0">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 1997: Founding Principle
               </Typography>
@@ -176,7 +176,7 @@ export default function PalestinePage() {
               </Typography>
             </div>
 
-            <div className="border-l-4 border-[#055090] pl-6 py-4">
+            <div className="border-l-4 border-[#055090] pl-6 py-4" data-aos="fade-up" data-aos-delay="100">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 Consistent Advocacy
               </Typography>
@@ -187,7 +187,7 @@ export default function PalestinePage() {
               </Typography>
             </div>
 
-            <div className="border-l-4 border-[#2BB5E9] pl-6 py-4">
+            <div className="border-l-4 border-[#2BB5E9] pl-6 py-4" data-aos="fade-up" data-aos-delay="200">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 Humanitarian Support
               </Typography>

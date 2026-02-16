@@ -59,6 +59,8 @@ export default function SummitEventsPage() {
                 <div
                   key={index}
                   className="bg-white/10 backdrop-blur rounded-lg p-6 text-center border border-white/20"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <Typography variant="display" color="onDark" className="text-4xl mb-2">
                     {stat.value}
@@ -76,7 +78,7 @@ export default function SummitEventsPage() {
       {/* Summit Agenda */}
       <Section variant="default" padding="lg">
         <Container size="lg">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             Summit Agenda
           </Typography>
 
@@ -115,6 +117,8 @@ export default function SummitEventsPage() {
               <div
                 key={index}
                 className="flex gap-4 p-6 rounded-lg bg-[#F7F8F9] border border-[#E5E7EB]"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
               >
                 <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#055090] text-white flex items-center justify-center font-bold">
                   {index + 1}
@@ -136,7 +140,7 @@ export default function SummitEventsPage() {
       {/* Related Events */}
       <Section variant="muted" padding="lg">
         <Container size="xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Related Events
             </Typography>
@@ -186,6 +190,8 @@ export default function SummitEventsPage() {
                   key={index}
                   className="border-l-4 hover:shadow-lg transition-shadow"
                   style={{ borderLeftColor: event.color }}
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <CardHeader>
                     <div

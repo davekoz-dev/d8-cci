@@ -15,6 +15,7 @@ import { cn } from '@/lib/utils';
 interface EventCardProps {
   event: D8CCIEvent;
   variant?: 'default' | 'compact' | 'featured';
+  detailsUrl?: string;
 }
 
 const eventTypeColors = {
@@ -35,10 +36,10 @@ const eventTypeLabels = {
   'trade-fair': 'Trade Fair',
 };
 
-export function EventCard({ event, variant = 'default' }: EventCardProps) {
+export function EventCard({ event, variant = 'default', detailsUrl }: EventCardProps) {
   if (variant === 'compact') {
     return (
-      <Card className="p-4 hover:shadow-lg transition-shadow">
+      <Card className="p-4 hover:shadow-lg transition-shadow" data-aos="fade-up">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1 min-w-0">
             <Badge className={cn('mb-2', eventTypeColors[event.type])}>
@@ -63,7 +64,7 @@ export function EventCard({ event, variant = 'default' }: EventCardProps) {
 
   if (variant === 'featured') {
     return (
-      <Card className="p-8 hover:shadow-2xl transition-all duration-300 border-2 border-[#055090]">
+      <Card className="p-8 hover:shadow-2xl transition-all duration-300 border-2 border-[#055090]" data-aos="fade-up">
         <Badge className={cn('mb-4', eventTypeColors[event.type])}>
           {eventTypeLabels[event.type]}
         </Badge>
@@ -97,18 +98,25 @@ export function EventCard({ event, variant = 'default' }: EventCardProps) {
           {event.description}
         </p>
 
-        {event.registrationOpen && (
+        {detailsUrl ? (
+          <Button asChild className="w-full bg-[#055090] hover:bg-[#055090]/90">
+            <Link href={detailsUrl}>
+              View Full Details
+              <ExternalLink className="w-4 h-4 ml-2" />
+            </Link>
+          </Button>
+        ) : event.registrationOpen ? (
           <Button className="w-full bg-[#00B3AA] hover:bg-[#00B3AA]/90">
             Register Interest
             <ExternalLink className="w-4 h-4 ml-2" />
           </Button>
-        )}
+        ) : null}
       </Card>
     );
   }
 
   return (
-    <Card className="p-6 hover:shadow-xl transition-shadow">
+    <Card className="p-6 hover:shadow-xl transition-shadow" data-aos="fade-up">
       <div className="flex items-start justify-between gap-3 mb-4">
         <Badge className={cn(eventTypeColors[event.type])}>
           {eventTypeLabels[event.type]}
@@ -142,14 +150,20 @@ export function EventCard({ event, variant = 'default' }: EventCardProps) {
         {event.description}
       </p>
 
-      {event.registrationOpen && (
+      {detailsUrl ? (
+        <Button asChild variant="default" className="w-full bg-[#055090] hover:bg-[#055090]/90">
+          <Link href={detailsUrl}>
+            View Details
+          </Link>
+        </Button>
+      ) : event.registrationOpen ? (
         <Button
           variant="outline"
           className="w-full border-[#00B3AA] text-[#00B3AA] hover:bg-[#00B3AA] hover:text-white"
         >
           Register Interest
         </Button>
-      )}
+      ) : null}
     </Card>
   );
 }

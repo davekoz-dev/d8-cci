@@ -44,7 +44,7 @@ export default function MembersPage() {
       {/* Interactive Map Section */}
       <Section className="bg-[#F7F8F9]">
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Member Countries
             </Typography>
@@ -62,7 +62,7 @@ export default function MembersPage() {
       {/* Member Chambers Grid */}
       <Section>
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Our Member Chambers
             </Typography>

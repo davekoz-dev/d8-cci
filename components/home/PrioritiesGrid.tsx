@@ -26,7 +26,7 @@ export function PrioritiesGrid() {
   return (
     <Section variant="default" padding="lg">
       <Container size="xl">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-in">
           <Typography variant="h2" className="text-[#055090] mb-4">
             Five Priority Areas
           </Typography>
@@ -44,6 +44,8 @@ export function PrioritiesGrid() {
                 key={index}
                 className="transition-all hover:shadow-lg border-t-4 hover:-translate-y-1"
                 style={{ borderTopColor: priority.color }}
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <CardHeader>
                   <div

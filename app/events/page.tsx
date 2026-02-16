@@ -1,6 +1,6 @@
 /**
- * D-8 CCI Events Page
- * Displays upcoming and past D-8 CCI events
+ * D-8 CCI Events Directory
+ * Central hub linking to detailed event pages
  */
 
 import * as React from 'react';
@@ -9,16 +9,29 @@ import { Section } from '@/components/ui/Section';
 import { Typography } from '@/components/ui/Typography';
 import { EventCard } from '@/components/shared/EventCard';
 import { SupergraphicSection } from '@/components/brand/SupergraphicSection';
-import { upcomingEvents, d8CCIMilestones } from '@/lib/constants/d8-cci-data';
+import { upcomingEvents } from '@/lib/constants/d8-cci-data';
 import { Calendar } from 'lucide-react';
 
 export const metadata = {
-  title: 'Events & Forums | D-8 CCI',
+  title: 'Events Directory | D-8 Indonesia Chairmanship 2026-2027',
   description:
-    'Explore upcoming D-8 CCI events including the 12th D-8 Summit, Business Forums, Trade Fairs, and Halal Expo.',
+    'Browse upcoming D-8 events including the 12th D-8 Summit, Business Forums, Trade Fairs, and Halal Expo.',
 };
 
 export default function EventsPage() {
+  // Map events to their detail pages
+  const getEventDetailUrl = (eventId: string): string | undefined => {
+    switch (eventId) {
+      case 'summit-2026':
+        return '/summit-events';
+      case 'business-forum-2026':
+      case 'halal-expo-2026':
+        return '/business-halal';
+      default:
+        return undefined;
+    }
+  };
+
   // Separate featured event (Summit)
   const summitEvent = upcomingEvents.find((e) => e.id === 'summit-2026');
   const otherEvents = upcomingEvents.filter((e) => e.id !== 'summit-2026');
@@ -30,14 +43,14 @@ export default function EventsPage() {
         <Container size="lg">
           <div className="max-w-3xl mx-auto text-center">
             <div className="flex items-center justify-center gap-3 mb-6 text-white">
-              <Calendar className="w-12 h-12 " />
+              <Calendar className="w-12 h-12" />
               <Typography variant="display" className="text-white">
-                Events & Forums
+                Events Directory
               </Typography>
             </div>
-            <Typography variant="bodyLarge" className='text-white'>
-              Join us for upcoming D-8 CCI events, business forums, trade fairs, and
-              exhibitions that facilitate cooperation among member countries.
+            <Typography variant="bodyLarge" className="text-white">
+              Explore upcoming D-8 events during Indonesia's Chairmanship. Click on any event for
+              full details, agenda, and registration information.
             </Typography>
           </div>
         </Container>
@@ -47,7 +60,7 @@ export default function EventsPage() {
       {summitEvent && (
         <Section id={summitEvent.id}>
           <Container size="md">
-            <div className="text-center mb-8">
+            <div className="text-center mb-8" data-aos="fade-in">
               <Typography variant="h2" className="text-[#055090] mb-4">
                 Featured Event
               </Typography>
@@ -55,7 +68,11 @@ export default function EventsPage() {
                 The premier event of Indonesia's D-8 Chairmanship 2026-2027
               </Typography>
             </div>
-            <EventCard event={summitEvent} variant="featured" />
+            <EventCard
+              event={summitEvent}
+              variant="featured"
+              detailsUrl={getEventDetailUrl(summitEvent.id)}
+            />
           </Container>
         </Section>
       )}
@@ -63,18 +80,22 @@ export default function EventsPage() {
       {/* Upcoming Events */}
       <Section className="bg-[#F7F8F9]">
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Upcoming Events 2026
             </Typography>
             <Typography variant="body" className="text-[#414042] max-w-2xl mx-auto">
-              Mark your calendar for these important D-8 CCI events during Indonesia's chairmanship.
+              Mark your calendar for these important D-8 events during Indonesia's chairmanship.
             </Typography>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {otherEvents.map((event) => (
-              <EventCard key={event.id} event={event} />
+              <EventCard
+                key={event.id}
+                event={event}
+                detailsUrl={getEventDetailUrl(event.id)}
+              />
             ))}
           </div>
         </Container>
@@ -83,148 +104,86 @@ export default function EventsPage() {
       {/* Event Types & Categories */}
       <Section>
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
-              Types of D-8 CCI Events
+              Types of D-8 Events
             </Typography>
             <Typography variant="body" className="text-[#414042] max-w-2xl mx-auto">
-              D-8 CCI organizes various types of events to facilitate business cooperation
-              and economic development.
+              D-8 organizes various types of events to facilitate cooperation and economic
+              development among member countries.
             </Typography>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white border-2 border-[#055090] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#055090] mb-3">
-                Business Forums
-              </h3>
+            <div className="bg-white border-2 border-[#055090] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="0">
+              <h3 className="font-bold text-lg text-[#055090] mb-3">High-Level Summits</h3>
               <p className="text-sm text-[#414042]">
-                Regular forums bringing together private sector leaders to discuss trade,
-                investment, and collaboration opportunities.
+                Gatherings of Heads of State and Government to set strategic direction and adopt
+                joint declarations.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#00B3AA] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#00B3AA] mb-3">
-                Trade Fairs & Exhibitions
-              </h3>
+            <div className="bg-white border-2 border-[#00B3AA] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="100">
+              <h3 className="font-bold text-lg text-[#00B3AA] mb-3">Business Forums</h3>
+              <p className="text-sm text-[#414042]">
+                Platforms for private sector leaders to explore partnerships, investments, and B2B
+                matchmaking opportunities.
+              </p>
+            </div>
+
+            <div className="bg-white border-2 border-[#2BB5E9] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="200">
+              <h3 className="font-bold text-lg text-[#2BB5E9] mb-3">Trade Fairs & Exhibitions</h3>
               <p className="text-sm text-[#414042]">
                 Showcasing products, services, and innovations from D-8 member countries to
-                facilitate trade and partnerships.
+                facilitate trade.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#2BB5E9] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#2BB5E9] mb-3">
+            <div className="bg-white border-2 border-[#00B9F0] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="300">
+              <h3 className="font-bold text-lg text-[#00B9F0] mb-3">
                 Ministerial & SOM Meetings
               </h3>
               <p className="text-sm text-[#414042]">
-                Senior Officials and Ministerial meetings to advance policy coordination
-                and strategic initiatives.
+                Senior Officials and Ministerial meetings to advance policy coordination and
+                strategic initiatives.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#00B9F0] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#00B9F0] mb-3">
-                Specialized Expos
-              </h3>
+            <div className="bg-white border-2 border-[#282561] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="400">
+              <h3 className="font-bold text-lg text-[#282561] mb-3">Specialized Expos</h3>
               <p className="text-sm text-[#414042]">
                 Sector-specific exhibitions including Halal Expo, SME forums, and industry
                 showcases.
               </p>
             </div>
 
-            <div className="bg-white border-2 border-[#282561] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#282561] mb-3">
-                Seminars & Conferences
-              </h3>
+            <div className="bg-white border-2 border-[#055090] rounded-lg p-6 hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay="500">
+              <h3 className="font-bold text-lg text-[#055090] mb-3">Special Sessions</h3>
               <p className="text-sm text-[#414042]">
-                Knowledge-sharing events featuring experts, researchers, and practitioners
-                on key economic topics.
+                Dedicated sessions addressing specific topics of importance to D-8 member
+                countries.
               </p>
-            </div>
-
-            <div className="bg-white border-2 border-[#055090] rounded-lg p-6">
-              <h3 className="font-bold text-lg text-[#055090] mb-3">
-                Joint Display Centers
-              </h3>
-              <p className="text-sm text-[#414042]">
-                Permanent and temporary centers displaying products and services from D-8
-                member countries.
-              </p>
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Historical Events Timeline */}
-      <Section className="bg-gradient-to-br from-[#055090] to-[#00B3AA]">
-        <Container size="lg">
-          <div className="text-center mb-12">
-            <Typography variant="h2" className="text-white mb-4">
-              D-8 CCI Historical Milestones
-            </Typography>
-            <Typography variant="bodyLarge" className="text-[#F7F8F9] max-w-2xl mx-auto">
-              Key events and milestones in the history of D-8 CCI
-            </Typography>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-white/20" />
-
-            {/* Timeline items */}
-            <div className="space-y-8">
-              {d8CCIMilestones.map((milestone, index) => (
-                <div
-                  key={index}
-                  className={`flex items-center gap-8 ${
-                    index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                  }`}
-                >
-                  <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
-                    <div className="bg-white rounded-lg p-6 shadow-xl">
-                      <p className="text-sm font-bold text-[#00B3AA] mb-2">
-                        {milestone.date}
-                      </p>
-                      <h4 className="font-bold text-[#055090] mb-2">
-                        {milestone.event}
-                      </h4>
-                      <p className="text-sm text-[#414042] mb-2">
-                        {milestone.location}
-                      </p>
-                      <p className="text-sm text-[#414042]">
-                        {milestone.significance}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="w-4 h-4 rounded-full bg-white relative z-10 flex-shrink-0" />
-
-                  <div className="flex-1" />
-                </div>
-              ))}
             </div>
           </div>
         </Container>
       </Section>
 
       {/* CTA Section */}
-      <Section>
+      <Section className="bg-[#F7F8F9]">
         <Container size="md">
-          <div className="text-center bg-[#F7F8F9] rounded-lg p-12">
+          <div className="text-center bg-white rounded-lg p-12 shadow-md">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Stay Updated on Events
             </Typography>
             <Typography variant="bodyLarge" className="text-[#414042] mb-8">
-              Subscribe to our newsletter or contact us to receive updates on upcoming
-              D-8 CCI events and registration information.
+              For event registration, media inquiries, or partnership opportunities, contact us for
+              more information.
             </Typography>
             <a
               href="/contact"
               className="inline-block px-8 py-3 bg-[#055090] text-white font-medium rounded-lg hover:bg-[#055090]/90 transition-colors"
             >
-              Contact Us for More Information
+              Contact Us
             </a>
           </div>
         </Container>

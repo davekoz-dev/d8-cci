@@ -79,7 +79,7 @@ export default function ContactPage() {
             ].map((contact, index) => {
               const Icon = contact.icon;
               return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
+                <Card key={index} className="hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay={index * 100}>
                   <CardHeader>
                     <div className="flex items-start gap-4">
                       <div className="p-3 rounded-lg bg-[#055090]/10">
@@ -107,7 +107,7 @@ export default function ContactPage() {
       <Section variant="muted" padding="lg">
         <Container size="lg">
           <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-8">
+            <div className="text-center mb-8" data-aos="fade-in">
               <Typography variant="h2" className="text-[#055090] mb-4">
                 Send Us a Message
               </Typography>
@@ -116,7 +116,7 @@ export default function ContactPage() {
               </Typography>
             </div>
 
-            <Card>
+            <Card data-aos="fade-up">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -223,7 +223,7 @@ export default function ContactPage() {
       {/* Specific Contacts */}
       <Section variant="default" padding="lg">
         <Container size="xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Specialized Contacts
             </Typography>
@@ -250,7 +250,7 @@ export default function ContactPage() {
                 description: 'Website issues, technical assistance',
               },
             ].map((dept, index) => (
-              <Card key={index}>
+              <Card key={index} data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
                   <CardTitle className="text-lg mb-2">{dept.title}</CardTitle>
                   <Typography variant="bodySmall" className="text-[#055090] font-medium mb-2">

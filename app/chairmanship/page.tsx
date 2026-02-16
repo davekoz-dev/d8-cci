@@ -66,7 +66,7 @@ export default function ChairmanshipPage() {
       <Section variant="default" padding="lg">
         <Container size="xl">
           <Grid cols={2} gap="lg">
-            <Card className="border-t-4 border-t-[#055090]">
+            <Card className="border-t-4 border-t-[#055090]" data-aos="fade-up" data-aos-delay="0">
               <CardHeader>
                 <div className="mb-4">
                   <Target className="h-12 w-12 text-[#055090]" />
@@ -81,7 +81,7 @@ export default function ChairmanshipPage() {
               </CardHeader>
             </Card>
 
-            <Card className="border-t-4 border-t-[#00B3AA]">
+            <Card className="border-t-4 border-t-[#00B3AA]" data-aos="fade-up" data-aos-delay="150">
               <CardHeader>
                 <div className="mb-4">
                   <CheckCircle2 className="h-12 w-12 text-[#00B3AA]" />

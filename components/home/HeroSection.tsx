@@ -62,7 +62,7 @@ export function HeroSection() {
           {/* Call-to-Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <Button asChild size="lg" variant="default">
-              <Link href="/summit-events">View Summit 2026</Link>
+              <Link href="/events">View Summit 2026</Link>
             </Button>
             <Button asChild size="lg" variant="outline">
               <Link href="/about-d8">About D-8</Link>

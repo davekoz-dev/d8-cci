@@ -23,7 +23,7 @@ export function D8Overview() {
       <Container size="lg">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
-          <div className="space-y-6">
+          <div className="space-y-6" data-aos="fade-up">
             <Badge variant="outline" className="text-sm px-4 py-1 border-[#055090] text-[#055090]">
               Est. 1997
             </Badge>
@@ -46,7 +46,7 @@ export function D8Overview() {
           </div>
 
           {/* Member Countries */}
-          <div>
+          <div data-aos="fade-up" data-aos-delay="150">
             <Typography variant="h3" className="text-[#282561] mb-6">
               8 Member Countries
             </Typography>

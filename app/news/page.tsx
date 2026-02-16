@@ -101,7 +101,7 @@ export default function NewsPage() {
       {sampleNews[0] && (
         <Section>
           <Container size="md">
-            <div className="text-center mb-8">
+            <div className="text-center mb-8" data-aos="fade-in">
               <Typography variant="h2" className="text-[#055090] mb-4">
                 Featured Story
               </Typography>
@@ -114,7 +114,7 @@ export default function NewsPage() {
       {/* Latest News */}
       <Section className="bg-[#F7F8F9]">
         <Container size="lg">
-          <div className="flex items-center gap-3 mb-8">
+          <div className="flex items-center gap-3 mb-8" data-aos="fade-in">
             <Newspaper className="w-8 h-8 text-[#055090]" />
             <Typography variant="h2" className="text-[#055090]">
               Latest News
@@ -133,7 +133,7 @@ export default function NewsPage() {
       {pressReleases.length > 0 && (
         <Section>
           <Container size="lg">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-8" data-aos="fade-in">
               <FileText className="w-8 h-8 text-[#00B3AA]" />
               <Typography variant="h2" className="text-[#055090]">
                 Press Releases
@@ -153,7 +153,7 @@ export default function NewsPage() {
       {mediaCoverage.length > 0 && (
         <Section className="bg-[#F7F8F9]">
           <Container size="lg">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-8" data-aos="fade-in">
               <Radio className="w-8 h-8 text-[#2BB5E9]" />
               <Typography variant="h2" className="text-[#055090]">
                 Media Coverage

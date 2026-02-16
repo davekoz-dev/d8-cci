@@ -52,7 +52,7 @@ export default function AboutD8Page() {
         <Container size="xl">
           <Grid cols={4} gap="lg">
             {d8Statistics.map((stat, index) => (
-              <Card key={index} className="text-center">
+              <Card key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
                   <Typography variant="display" className="text-[#055090]">
                     {stat.value}
@@ -77,7 +77,7 @@ export default function AboutD8Page() {
       {/* Member Countries */}
       <Section variant="default" padding="lg" id="members">
         <Container size="xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Member Countries
             </Typography>
@@ -88,10 +88,12 @@ export default function AboutD8Page() {
           </div>
 
           <Grid cols={4} gap="md">
-            {d8CCIMembers?.map((country) => (
+            {d8CCIMembers?.map((country, index) => (
               <Card
                 key={country.flag}
                 className="hover:shadow-lg transition-shadow border-t-4 border-t-[#00B3AA] bg-[#F7F8F9]"
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
               >
                 <CardHeader className="text-center flex items-center">
                   <div className="relative w-16 h-12 flex-shrink-0">
@@ -113,7 +115,7 @@ export default function AboutD8Page() {
       {/* Objectives */}
       <Section variant="primary" padding="lg">
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" textColor="onDark" className="mb-4">
               Objectives
             </Typography>
@@ -151,6 +153,8 @@ export default function AboutD8Page() {
                 <div
                   key={index}
                   className="flex gap-4 p-6 rounded-lg bg-white/10 backdrop-blur"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
                 >
                   <div className="flex-shrink-0">
                     <div className="p-3 rounded-lg bg-[#00B3AA]">
@@ -175,11 +179,11 @@ export default function AboutD8Page() {
       {/* History */}
       <Section variant="default" padding="lg">
         <Container size="lg">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             History
           </Typography>
           <div className="space-y-6">
-            <div className="border-l-4 border-[#00B3AA] pl-6 py-4">
+            <div className="border-l-4 border-[#00B3AA] pl-6 py-4" data-aos="fade-up" data-aos-delay="0">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 1997: Foundation
               </Typography>
@@ -189,7 +193,7 @@ export default function AboutD8Page() {
                 with large Muslim populations for economic cooperation.
               </Typography>
             </div>
-            <div className="border-l-4 border-[#055090] pl-6 py-4">
+            <div className="border-l-4 border-[#055090] pl-6 py-4" data-aos="fade-up" data-aos-delay="100">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 2001: Expansion of Cooperation
               </Typography>
@@ -199,7 +203,7 @@ export default function AboutD8Page() {
                 for each sector.
               </Typography>
             </div>
-            <div className="border-l-4 border-[#2BB5E9] pl-6 py-4">
+            <div className="border-l-4 border-[#2BB5E9] pl-6 py-4" data-aos="fade-up" data-aos-delay="200">
               <Typography variant="h4" className="text-[#282561] mb-2">
                 2026-2027: Indonesia's Chairmanship
               </Typography>

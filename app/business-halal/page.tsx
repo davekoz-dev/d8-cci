@@ -34,7 +34,7 @@ export default function BusinessHalalPage() {
         <Container size="xl">
           <Grid cols={2} gap="lg">
             {/* Business Forum */}
-            <Card className="border-t-4 border-t-[#055090]">
+            <Card className="border-t-4 border-t-[#055090]" data-aos="fade-up" data-aos-delay="0">
               <CardHeader>
                 <div className="mb-4 p-4 rounded-lg bg-[#055090]/10 w-fit">
                   <Briefcase className="h-12 w-12 text-[#055090]" />
@@ -71,7 +71,7 @@ export default function BusinessHalalPage() {
             </Card>
 
             {/* Halal Expo */}
-            <Card className="border-t-4 border-t-[#00B3AA]">
+            <Card className="border-t-4 border-t-[#00B3AA]" data-aos="fade-up" data-aos-delay="150">
               <CardHeader>
                 <div className="mb-4 p-4 rounded-lg bg-[#00B3AA]/10 w-fit">
                   <Award className="h-12 w-12 text-[#00B3AA]" />
@@ -112,7 +112,7 @@ export default function BusinessHalalPage() {
       {/* Halal Economy Potential */}
       <Section variant="muted" padding="lg">
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Halal Economy Potential
             </Typography>
@@ -128,7 +128,7 @@ export default function BusinessHalalPage() {
               { value: '1.8B', label: 'Muslim Consumers', color: '#055090' },
               { value: '35%', label: 'Annual Growth Rate', color: '#2BB5E9' },
             ].map((stat, index) => (
-              <Card key={index} className="text-center">
+              <Card key={index} className="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
                   <Typography
                     variant="display"
@@ -145,73 +145,31 @@ export default function BusinessHalalPage() {
         </Container>
       </Section>
 
-      {/* Investment Opportunities */}
-      <Section variant="default" padding="lg">
-        <Container size="xl">
-          <Typography variant="h2" className="text-[#055090] mb-8">
-            Investment Opportunities
-          </Typography>
-
-          <Grid cols={3} gap="lg">
-            {[
-              {
-                icon: TrendingUp,
-                title: 'Infrastructure Development',
-                description:
-                  'Transportation, energy, and digital infrastructure projects across D-8 countries.',
-              },
-              {
-                icon: Globe,
-                title: 'Technology & Innovation',
-                description:
-                  'Fintech, e-commerce, and digital solutions targeting D-8 markets.',
-              },
-              {
-                icon: Award,
-                title: 'Manufacturing & Industry',
-                description:
-                  'Halal food processing, pharmaceuticals, and consumer goods production.',
-              },
-              {
-                icon: Users,
-                title: 'Services Sector',
-                description:
-                  'Tourism, education, healthcare, and professional services.',
-              },
-              {
-                icon: Briefcase,
-                title: 'Agriculture & Food',
-                description:
-                  'Sustainable agriculture, food security, and halal supply chains.',
-              },
-              {
-                icon: CheckCircle2,
-                title: 'Green Economy',
-                description:
-                  'Renewable energy, carbon markets, and sustainable development projects.',
-              },
-            ].map((opportunity, index) => {
-              const Icon = opportunity.icon;
-              return (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <Icon className="h-10 w-10 text-[#055090] mb-3" />
-                    <CardTitle className="text-lg mb-2">{opportunity.title}</CardTitle>
-                    <CardDescription className="text-sm">
-                      {opportunity.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              );
-            })}
-          </Grid>
+      {/* Link to Business Opportunities */}
+      <Section variant="default" padding="md">
+        <Container size="lg">
+          <Card className="border-2 border-[#055090] bg-gradient-to-r from-[#F7F8F9] to-white">
+            <CardContent className="p-12 text-center">
+              <TrendingUp className="h-16 w-16 text-[#055090] mx-auto mb-6" />
+              <Typography variant="h2" className="text-[#055090] mb-4">
+                Explore Business Opportunities
+              </Typography>
+              <Typography variant="bodyLarge" className="text-[#414042] mb-8 max-w-2xl mx-auto">
+                Looking for specific investment opportunities, joint ventures, or trade partnerships
+                across D-8 member countries?
+              </Typography>
+              <Button asChild size="lg" className="bg-[#055090] hover:bg-[#055090]/90">
+                <Link href="/opportunities">Browse Opportunities</Link>
+              </Button>
+            </CardContent>
+          </Card>
         </Container>
       </Section>
 
       {/* Participation Benefits */}
       <Section variant="secondary" padding="lg">
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" textColor="onDark" className="mb-4">
               Why Participate?
             </Typography>
@@ -240,7 +198,7 @@ export default function BusinessHalalPage() {
                   'Build relationships through structured B2B sessions and social events.',
               },
             ].map((benefit, index) => (
-              <div key={index} className="flex gap-4 p-6 rounded-lg bg-white/10">
+              <div key={index} className="flex gap-4 p-6 rounded-lg bg-white/10" data-aos="fade-up" data-aos-delay={index * 100}>
                 <CheckCircle2 className="h-6 w-6 text-white flex-shrink-0 mt-1" />
                 <div>
                   <Typography variant="h4" textColor="onDark" className="mb-2">

@@ -5,6 +5,7 @@ import { Section } from '@/components/ui/Section';
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import { AnimatedCard } from '@/components/ui/Animated';
 import { Briefcase, Award } from 'lucide-react';
 
 /**
@@ -32,7 +33,8 @@ export function BusinessHalalTeaser() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           {/* Business & Investment Forum */}
-          <Card className="border-l-4 border-l-[#055090]">
+          <AnimatedCard delay={0}>
+            <Card className="border-l-4 border-l-[#055090]">
             <CardHeader>
               <div className="mb-4 p-3 rounded-lg bg-[#055090]/10 w-fit">
                 <Briefcase className="h-8 w-8 text-[#055090]" />
@@ -63,9 +65,11 @@ export function BusinessHalalTeaser() {
               </ul>
             </CardContent>
           </Card>
+          </AnimatedCard>
 
           {/* Halal Expo */}
-          <Card className="border-l-4 border-l-[#00B3AA]">
+          <AnimatedCard delay={150}>
+            <Card className="border-l-4 border-l-[#00B3AA]">
             <CardHeader>
               <div className="mb-4 p-3 rounded-lg bg-[#00B3AA]/10 w-fit">
                 <Award className="h-8 w-8 text-[#00B3AA]" />
@@ -94,13 +98,14 @@ export function BusinessHalalTeaser() {
               </ul>
             </CardContent>
           </Card>
+          </AnimatedCard>
         </div>
 
         {/* CTA */}
         <div className="text-center mt-12">
           <Button asChild size="lg" variant="default">
             <Link href="/business-halal">
-              Explore Business Opportunities
+              Learn More About These Events
             </Link>
           </Button>
         </div>

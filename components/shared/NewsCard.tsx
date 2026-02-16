@@ -32,7 +32,7 @@ const newsTypeLabels = {
 export function NewsCard({ news, variant = 'default' }: NewsCardProps) {
   if (variant === 'compact') {
     return (
-      <Card className="p-4 hover:shadow-lg transition-shadow">
+      <Card className="p-4 hover:shadow-lg transition-shadow" data-aos="fade-up">
         <Badge className={cn('mb-2', newsTypeColors[news.type])}>
           {newsTypeLabels[news.type]}
         </Badge>
@@ -52,7 +52,7 @@ export function NewsCard({ news, variant = 'default' }: NewsCardProps) {
 
   if (variant === 'featured') {
     return (
-      <Card className="overflow-hidden hover:shadow-xl transition-shadow">
+      <Card className="overflow-hidden hover:shadow-xl transition-shadow" data-aos="fade-up">
         {news.imageUrl && (
           <div className="relative w-full h-64">
             <Image
@@ -100,7 +100,7 @@ export function NewsCard({ news, variant = 'default' }: NewsCardProps) {
   }
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden hover:shadow-lg transition-shadow" data-aos="fade-up">
       {news.imageUrl && (
         <div className="relative w-full h-48">
           <Image

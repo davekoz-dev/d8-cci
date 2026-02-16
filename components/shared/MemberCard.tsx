@@ -20,7 +20,7 @@ interface MemberCardProps {
 export function MemberCard({ member, variant = 'default' }: MemberCardProps) {
   if (variant === 'compact') {
     return (
-      <Card className="p-4 hover:shadow-lg transition-shadow">
+      <Card className="p-4 hover:shadow-lg transition-shadow" data-aos="fade-up">
         <div className="flex items-start gap-4">
           <div className="relative w-16 h-12 flex-shrink-0">
             <Image
@@ -53,7 +53,7 @@ export function MemberCard({ member, variant = 'default' }: MemberCardProps) {
   }
 
   return (
-    <Card className="p-6 hover:shadow-xl transition-all duration-300">
+    <Card className="p-6 hover:shadow-xl transition-all duration-300" data-aos="fade-up">
       {/* Header with Flag and Chamber Name */}
       <div className="flex items-start gap-4 mb-4">
         <div className="relative w-20 h-14 flex-shrink-0">
@@ -129,17 +129,13 @@ export function MemberCard({ member, variant = 'default' }: MemberCardProps) {
             Website
           </Link>
         </Button>
-        <Button
-          asChild
-          variant="outline"
-          size="sm"
-          className="flex-1 min-w-[120px]"
+        <a
+          href={`mailto:${member.email}`}
+          className="inline-flex items-center justify-center gap-2 h-9 px-3 text-sm font-medium border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md transition-colors flex-1 min-w-[120px]"
         >
-          <a href={`mailto:${member.email}`} className='flex items-center gap-2'>
-            <Mail className="w-4 h-4" />
-            Contact
-          </a>
-        </Button>
+          <Mail className="w-4 h-4" />
+          Contact
+        </a>
       </div>
     </Card>
   );

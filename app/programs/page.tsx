@@ -105,7 +105,7 @@ function ProgramCard({
   color: string;
 }) {
   return (
-    <Card className="p-6 hover:shadow-xl transition-shadow h-full">
+    <Card className="p-6 hover:shadow-xl transition-shadow h-full" data-aos="fade-up">
       <div className="flex flex-col h-full">
         <div
           className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
@@ -145,7 +145,7 @@ export default function ProgramsPage() {
       {/* Programs Grid */}
       <Section>
         <Container size="lg">
-          <div className="text-center mb-12">
+          <div className="text-center mb-12" data-aos="fade-in">
             <Typography variant="h2" className="text-[#055090] mb-4">
               Our Core Programs
             </Typography>
@@ -167,7 +167,7 @@ export default function ProgramsPage() {
       <Section className="bg-[#F7F8F9]" id="trade">
         <Container size="lg">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div data-aos="fade-up">
               <Typography variant="h2" className="text-[#055090] mb-6">
                 Multi-Sector Enhancement
               </Typography>
@@ -201,7 +201,7 @@ export default function ProgramsPage() {
                 </li>
               </ul>
             </div>
-            <div className="bg-gradient-to-br from-[#055090] to-[#00B3AA] rounded-lg p-8 text-white">
+            <div className="bg-gradient-to-br from-[#055090] to-[#00B3AA] rounded-lg p-8 text-white" data-aos="fade-up" data-aos-delay="150">
               <Typography variant="h3" className="mb-4 text-white">
                 Collective Self-Reliance
               </Typography>

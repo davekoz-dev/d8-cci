@@ -6,6 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { FileText, Download, Image as ImageIcon, Video, Newspaper } from 'lucide-react';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Documents & Media | D-8 Indonesia Chairmanship',
@@ -32,7 +33,7 @@ export default function DocumentsPage() {
       {/* Official Documents */}
       <Section variant="default" padding="lg">
         <Container size="xl">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             Official Documents
           </Typography>
 
@@ -63,7 +64,7 @@ export default function DocumentsPage() {
                 status: 'available',
               },
             ].map((doc, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow" data-aos="fade-up" data-aos-delay={index * 100}>
                 <CardHeader>
                   <div className="flex items-start justify-between mb-3">
                     <FileText className="h-10 w-10 text-[#055090]" />
@@ -96,7 +97,7 @@ export default function DocumentsPage() {
       {/* Press Releases */}
       <Section variant="muted" padding="lg" id="press">
         <Container size="xl">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             Press Releases
           </Typography>
 
@@ -121,7 +122,7 @@ export default function DocumentsPage() {
                   'Major business and halal economy events will complement the D-8 Summit, creating unprecedented opportunities for trade and investment.',
               },
             ].map((press, index) => (
-              <Card key={index} className="hover:shadow-md transition-shadow">
+              <Card key={index} className="hover:shadow-md transition-shadow" data-aos="fade-up" data-aos-delay={index * 50}>
                 <CardContent className="p-6">
                   <div className="flex gap-4">
                     <div className="flex-shrink-0">
@@ -156,12 +157,12 @@ export default function DocumentsPage() {
       {/* Media Resources */}
       <Section variant="default" padding="lg">
         <Container size="xl">
-          <Typography variant="h2" className="text-[#055090] mb-8">
+          <Typography variant="h2" className="text-[#055090] mb-8" data-aos="fade-in">
             Media Resources
           </Typography>
 
           <Grid cols={3} gap="lg">
-            <Card className="border-t-4 border-t-[#055090]">
+            <Card className="border-t-4 border-t-[#055090]" data-aos="fade-up" data-aos-delay="0">
               <CardHeader>
                 <ImageIcon className="h-12 w-12 text-[#055090] mb-4" />
                 <CardTitle>Photo Gallery</CardTitle>
@@ -176,7 +177,7 @@ export default function DocumentsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-t-4 border-t-[#00B3AA]">
+            <Card className="border-t-4 border-t-[#00B3AA]" data-aos="fade-up" data-aos-delay="100">
               <CardHeader>
                 <Video className="h-12 w-12 text-[#00B3AA] mb-4" />
                 <CardTitle>Video Resources</CardTitle>
@@ -191,7 +192,7 @@ export default function DocumentsPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-t-4 border-t-[#2BB5E9]">
+            <Card className="border-t-4 border-t-[#2BB5E9]" data-aos="fade-up" data-aos-delay="200">
               <CardHeader>
                 <FileText className="h-12 w-12 text-[#2BB5E9] mb-4" />
                 <CardTitle>Fact Sheets</CardTitle>
@@ -221,7 +222,7 @@ export default function DocumentsPage() {
               For media inquiries, interview requests, or press credentials
             </Typography>
             <Button asChild size="lg" variant="outline" className="bg-white text-[#00B3AA]">
-              <a href="/contact">Contact Media Team</a>
+              <Link href="/contact">Contact Media Team</Link>
             </Button>
           </div>
         </Container>

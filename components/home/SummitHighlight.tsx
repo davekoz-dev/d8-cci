@@ -70,7 +70,7 @@ export function SummitHighlight() {
                 variant="secondary"
                 className="bg-white text-[#055090] hover:bg-white/90"
               >
-                <Link href="/summit-events">
+                <Link href="/events">
                   Learn More About the Summit
                 </Link>
               </Button>
@@ -88,6 +88,8 @@ export function SummitHighlight() {
               <div
                 key={index}
                 className="bg-white/10 backdrop-blur rounded-lg p-6 text-center border border-white/20"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
               >
                 <Typography
                   variant="display"

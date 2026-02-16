@@ -4,6 +4,7 @@
  */
 
 import * as React from 'react';
+import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Typography } from '@/components/ui/Typography';
@@ -242,7 +243,7 @@ export default function OpportunitiesPage() {
                 size="lg"
                 className="bg-white text-[#055090] hover:bg-[#F7F8F9]"
               >
-                <a href="/members">Contact Your Chamber</a>
+                <Link href="/members">Contact Your Chamber</Link>
               </Button>
               <Button
                 asChild
@@ -250,7 +251,7 @@ export default function OpportunitiesPage() {
                 variant="outline"
                 className="border-2 border-white text-white hover:bg-white/10"
               >
-                <a href="/contact">Contact D-8 CCI</a>
+                <Link href="/contact">Contact D-8 CCI</Link>
               </Button>
             </div>
           </div>
