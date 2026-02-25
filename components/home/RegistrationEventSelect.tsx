@@ -10,20 +10,35 @@ const eventOptions = [
   { value: 'halal-expo', label: 'D-8 Halal Expo Indonesia' },
 ];
 
-export function RegistrationEventSelect() {
+interface Props {
+  value?: string;
+  onChange?: (value: string) => void;
+}
+
+export function RegistrationEventSelect({ value: controlledValue, onChange }: Props) {
   const searchParams = useSearchParams();
-  const [value, setValue] = useState(searchParams.get('event') ?? '');
+  const [internalValue, setInternalValue] = useState(searchParams.get('event') ?? '');
+
+  const isControlled = controlledValue !== undefined;
+  const value = isControlled ? controlledValue : internalValue;
 
   useEffect(() => {
-    const event = searchParams.get('event');
-    if (event) setValue(event);
-  }, [searchParams]);
+    if (!isControlled) {
+      const event = searchParams.get('event');
+      if (event) setInternalValue(event);
+    }
+  }, [searchParams, isControlled]);
+
+  function handleChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    if (!isControlled) setInternalValue(e.target.value);
+    onChange?.(e.target.value);
+  }
 
   return (
     <select
       id="event"
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={handleChange}
       className="w-full px-3 py-2 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B3AA] focus:border-transparent"
     >
       <option value="">Choose an event...</option>

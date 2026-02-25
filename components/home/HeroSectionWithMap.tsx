@@ -5,8 +5,7 @@ import { Button } from '@/components/ui/button';
 import { theme, summit2026, memberCountries } from '@/lib/constants';
 import Link from 'next/link';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
-import { RegistrationEventSelect } from '@/components/home/RegistrationEventSelect';
-import { Suspense } from 'react';
+import { RegistrationForm } from '@/components/home/RegistrationForm';
 import { MapPin, Users, ChevronDown } from 'lucide-react';
 
 // ── Upcoming Events (d8.org style) ───────────────────────────────────
@@ -231,45 +230,7 @@ export function HeroSectionWithMap() {
               </CollapsibleTrigger>
               <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
                 <div className="px-4 pb-4 space-y-3 border-t border-gray-200">
-                  <form className="space-y-3 pt-3">
-                    <div>
-                      <label htmlFor="name" className="text-xs font-medium text-[#414042] block mb-1">
-                        Full Name
-                      </label>
-                      <input
-                        type="text"
-                        id="name"
-                        className="w-full px-3 py-2 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B3AA] focus:border-transparent"
-                        placeholder="Enter your name"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="text-xs font-medium text-[#414042] block mb-1">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        id="email"
-                        className="w-full px-3 py-2 text-xs border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B3AA] focus:border-transparent"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="event" className="text-xs font-medium text-[#414042] block mb-1">
-                        Select Event
-                      </label>
-                      <Suspense fallback={<div className="w-full h-8 rounded-md bg-gray-100 animate-pulse" />}>
-                        <RegistrationEventSelect />
-                      </Suspense>
-                    </div>
-                    <Button
-                      type="submit"
-                      size="sm"
-                      className="w-full bg-[#055090] text-white hover:bg-[#055090]/90 text-xs font-semibold"
-                    >
-                      Register Now
-                    </Button>
-                  </form>
+                  <RegistrationForm />
                   <p className="text-[10px] text-[#414042]/60 text-center mt-2">
                     You&apos;ll receive confirmation via email
                   </p>
