@@ -36,7 +36,7 @@ export function Header() {
         <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <LogoIcon size="sm" className="p-0" />
+            <LogoIcon size="md" className="p-0" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -100,7 +100,7 @@ export function EventCard({ event, variant = 'default', detailsUrl }: EventCardP
 
         {detailsUrl ? (
           <Button asChild className="w-full bg-[#055090] hover:bg-[#055090]/90">
-            <Link href={detailsUrl}>
+            <Link href={detailsUrl} className='flex items-center'>
               View Full Details
               <ExternalLink className="w-4 h-4 ml-2" />
             </Link>

@@ -1,7 +1,9 @@
+"use client"
 import { HeroSectionWithMap } from '@/components/home/HeroSectionWithMap';
 import { PrioritiesGrid } from '@/components/home/PrioritiesGrid';
 import { SummitHighlight } from '@/components/home/SummitHighlight';
 import { BusinessHalalTeaser } from '@/components/home/BusinessHalalTeaser';
+import { BusinessLeaderForum } from '@/components/home/BusinessLeaderForum';
 import { D8Overview } from '@/components/home/D8Overview';
 import { PalestineTeaser } from '@/components/home/PalestineTeaser';
 
@@ -22,6 +24,7 @@ export default function Home() {
   return (
     <>
       <HeroSectionWithMap />
+      <BusinessLeaderForum />
       <PrioritiesGrid />
       <SummitHighlight />
       <BusinessHalalTeaser />

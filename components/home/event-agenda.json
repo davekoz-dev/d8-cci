@@ -1,0 +1,119 @@
+{
+  "event": {
+    "name": "D8 Business Leaders Forum 2026",
+    "theme": "Achieving Sustainable Growth Through D8 Business Cooperation",
+    "date": "2026-04-14",
+    "timezone": "Asia/Jakarta",
+    "location": {
+      "venue": "Fairmont Hotel Jakarta",
+      "city": "Jakarta",
+      "country": "Indonesia"
+    }
+  },
+  "agenda": [
+    {
+      "start_time": "13:00",
+      "end_time": "13:30",
+      "title": "Registration and Networking",
+      "type": "registration",
+      "description": "Participant registration and informal networking among delegates and business leaders."
+    },
+    {
+      "start_time": "13:30",
+      "end_time": "13:40",
+      "title": "Opening and Housekeeping",
+      "type": "opening",
+      "description": "Opening of the forum and housekeeping announcements by the master of ceremony."
+    },
+    {
+      "start_time": "13:40",
+      "end_time": "13:55",
+      "title": "Organizing Committee Report",
+      "type": "report",
+      "speaker": "Representative of Organizing Committee",
+      "description": "Brief report on the objectives, background, and expected outcomes of the forum."
+    },
+    {
+      "start_time": "13:55",
+      "end_time": "14:10",
+      "title": "Welcoming Remarks",
+      "type": "remarks",
+      "speaker": "Chair of D8 CCI / KADIN Representative",
+      "description": "Welcoming address to all delegates and participating chambers of commerce and industry."
+    },
+    {
+      "start_time": "14:10",
+      "end_time": "14:30",
+      "title": "Keynote Speech 1",
+      "type": "keynote",
+      "speaker": "President of Indonesia (invited)",
+      "description": "Keynote on D8 cooperation and Indonesia’s priorities for sustainable growth."
+    },
+    {
+      "start_time": "14:30",
+      "end_time": "14:50",
+      "title": "Keynote Speech 2",
+      "type": "keynote",
+      "speaker": "Head of Government / Minister from D8 Country (invited)",
+      "description": "Keynote on regional economic integration and South–South cooperation."
+    },
+    {
+      "start_time": "14:50",
+      "end_time": "15:00",
+      "title": "Photo Session",
+      "type": "photo",
+      "description": "Group photo with VIPs, speakers, and representatives of D8 chambers."
+    },
+    {
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "title": "Panel Discussion: The Investment Roadmap",
+      "type": "panel_discussion",
+      "subtitle": "Catalyzing Cross-Border Capital for Industrial Synergy",
+      "moderator": "Business/Industry Expert",
+      "panelists": [
+        "Representatives of Investment Promotion Agencies",
+        "Leaders of D8 Chambers of Commerce and Industry",
+        "CEOs from strategic sectors"
+      ],
+      "description": "Panel on unlocking investment opportunities, reducing regulatory barriers, and building industrial synergies across D8 countries."
+    },
+    {
+      "start_time": "16:15",
+      "end_time": "16:30",
+      "title": "Signing of Memorandums of Understanding (MoUs)",
+      "type": "mou_signing",
+      "description": "Signing ceremony of MoUs between chambers, business councils, and strategic partners in D8 countries."
+    },
+    {
+      "start_time": "16:30",
+      "end_time": "16:45",
+      "title": "Launch of D8 Women Alliance",
+      "type": "launch",
+      "description": "Official launch of D8 Women Business Leaders / Women Alliance initiative to promote women’s economic empowerment."
+    },
+    {
+      "start_time": "16:45",
+      "end_time": "17:00",
+      "title": "Closing Remarks and Wrap-up",
+      "type": "closing",
+      "speaker": "Host Representative",
+      "description": "Summary of key points, next steps, and closing of the Business Leaders Forum."
+    }
+  ],
+  "side_events": [
+    {
+      "name": "D8 International Exhibition",
+      "description": "International B2B and B2C exhibition with country pavilions and business showcases.",
+      "estimated_participants": 500,
+      "components": [
+        "Country pavilions of D8 member states",
+        "Export–import talk shows and halal certification sessions",
+        "SME / MSME forum",
+        "Inclusive halal forum (women, youth, disability)",
+        "Chambers lounge and business matching area",
+        "Food court, food demo, and fashion show"
+      ]
+    }
+  ]
+}

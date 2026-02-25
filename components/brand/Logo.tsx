@@ -32,17 +32,16 @@ const sizeMap: Record<LogoSize, { width: number; height: number }> = {
 
 export function Logo({
   variant = 'main',
-  size = 'md',
+  size = 'lg',
   className,
   priority = false,
 }: LogoProps) {
   const dimensions = sizeMap[size];
 
-  // Placeholder paths - replace with actual logo files
   const logoPath =
     variant === 'main'
-      ? '/assets/d8/logo/d8-indonesia-logo-main.svg'
-      : '/assets/d8/logo/d8-indonesia-logo-secondary.svg';
+      ? '/assets/d8/logo/d8logo.png'
+      : '/assets/d8/logo/d8logo.png';
 
   return (
     <div
@@ -64,7 +63,7 @@ export function Logo({
         width={dimensions.width}
         height={dimensions.height}
         priority={priority}
-        className="object-contain"
+        className="object-cover"
         style={{
           // Prevent any transformations
           transform: 'none',
@@ -88,11 +87,11 @@ export function LogoIcon({ size = 'sm', className }: LogoIconProps) {
 
   return (
     <Image
-      src="/assets/d8/logo/d8-indonesia-logo-main.svg"
+      src="/assets/d8/logo/d8logo.png"
       alt="D-8 Indonesia Logo"
       width={dimensions.width}
       height={dimensions.height}
-      className={cn('object-contain', className)}
+      className={cn('object-cover', className)}
       style={{
         transform: 'none',
         filter: 'none',

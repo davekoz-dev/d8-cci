@@ -48,7 +48,7 @@ export function D8Overview() {
           {/* Member Countries */}
           <div data-aos="fade-up" data-aos-delay="150">
             <Typography variant="h3" className="text-[#282561] mb-6">
-              8 Member Countries
+              9 Member Countries
             </Typography>
             <div className="grid grid-cols-2 gap-4">
               {memberCountries.map((country) => (

@@ -11,7 +11,7 @@ import { Calendar, MapPin, Users } from 'lucide-react';
  * Summit 2026 Highlight Component
  *
  * Features:
- * - Date: 15 April 2026
+ * - Date: 14 April 2026
  * - Venue: Jakarta International Convention Center
  * - Short description
  * - Link to Summit detail page
@@ -45,7 +45,7 @@ export function SummitHighlight() {
               <div className="flex items-center gap-3 text-white">
                 <Calendar className="h-5 w-5 text-[#00B3AA]" />
                 <Typography variant="body" textColor="onDark">
-                  15 April 2026
+                  14 April 2026
                 </Typography>
               </div>
               <div className="flex items-center gap-3 text-white">

@@ -122,6 +122,15 @@ export const memberCountries: MemberCountry[] = [
     capital: 'Ankara',
     color: '#E30A17', // Turkey bright red (from flag)
   },
+  {
+    name: 'Azerbaijan',
+    code: 'AZ',
+    iso3: 'AZE',
+    flag: 'https://flagcdn.com/az.svg',
+    coordinates: [49.8671, 40.4093], // Baku
+    capital: 'Baku',
+    color: '#0092BC', // Azerbaijan blue (from flag)
+  },
 ];
 
 /**
@@ -176,7 +185,7 @@ export const theme = {
  */
 export const summit2026 = {
   title: '11th D-8 Summit',
-  date: '15 April 2026',
+  date: '14 April 2026',
   venue: 'Jakarta International Convention Center',
   location: 'Jakarta, Indonesia',
   description:

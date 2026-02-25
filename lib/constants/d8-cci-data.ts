@@ -176,6 +176,16 @@ export const d8CCIMembers: D8CCIMember[] = [
     keySectors: ['Manufacturing', 'Construction', 'Tourism', 'Agriculture', 'Services'],
     description: 'The umbrella organization of chambers in Turkey, supporting private sector development.',
   },
+  {
+    country: 'Azerbaijan',
+    chamberName: 'Chamber of Commerce and Industry of the Republic of Azerbaijan',
+    acronym: 'AzCCI',
+    flag: 'https://flagcdn.com/az.svg',
+    website: 'https://www.chamber.az',
+    email: 'info@chamber.az',
+    keySectors: ['Oil & Gas', 'Agriculture', 'Tourism', 'ICT', 'Manufacturing'],
+    description: 'The leading business organization of Azerbaijan, promoting trade, investment, and economic cooperation.',
+  },
 ];
 
 /**
@@ -261,8 +271,8 @@ export const upcomingEvents: D8CCIEvent[] = [
   {
     id: 'summit-2026',
     title: '12th D-8 Summit',
-    date: '15 April 2026',
-    dateEnd: '15 April 2026',
+    date: '14 April 2026',
+    dateEnd: '14 April 2026',
     location: 'Jakarta International Convention Center (JICC)',
     city: 'Jakarta',
     country: 'Indonesia',
