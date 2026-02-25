@@ -3,6 +3,7 @@ import { Fira_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { AOSInit } from "@/components/aos-init";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const firaSans = Fira_Sans({
@@ -43,6 +44,7 @@ export default function RootLayout({
         className={`${firaSans.variable} font-sans antialiased`}
       >
         <AOSInit />
+        <Toaster position="top-center" richColors />
         <div className="flex min-h-screen flex-col">
           <Header />
           <main className="flex-1">{children}</main>

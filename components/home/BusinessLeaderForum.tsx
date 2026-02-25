@@ -31,7 +31,7 @@ const highlights = [
 // ── Stats ─────────────────────────────────────────────────────────
 const stats = [
   { value: '300', label: 'CEOs & Business Leaders' },
-  { value: '8',   label: 'D-8 Member Countries' },
+  { value: '9',   label: 'D-8 Member Countries' },
   { value: '7',   label: 'Key Business Priorities' },
   { value: '1',   label: 'Women Alliance Launch' },
 ];

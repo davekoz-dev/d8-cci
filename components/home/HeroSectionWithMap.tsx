@@ -1,3 +1,6 @@
+'use client';
+
+import * as React from 'react';
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Typography } from '@/components/ui/Typography';
@@ -6,7 +9,9 @@ import { theme, summit2026, memberCountries } from '@/lib/constants';
 import Link from 'next/link';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import { RegistrationForm } from '@/components/home/RegistrationForm';
+import { BusinessLeaderModal } from '@/components/home/BusinessLeaderModal';
 import { MapPin, Users, ChevronDown } from 'lucide-react';
+import { LogoIcon } from '@/components/brand/Logo';
 
 // ── Upcoming Events (d8.org style) ───────────────────────────────────
 const upcomingEvents = [
@@ -78,6 +83,7 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false }: { name
 
 // ── Main Component ────────────────────────────────────────────────────
 export function HeroSectionWithMap() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F8F9] to-white">
@@ -107,6 +113,22 @@ export function HeroSectionWithMap() {
 
           {/* Centered leaders grid */}
           <div className="flex-1 min-w-0 max-w-4xl flex flex-col items-center text-center space-y-8">
+            {/* Section Heading with Logo */}
+            <div className="w-full text-center flex flex-col items-center gap-4">
+              <div className='relative w-64 h-16'>
+                <Image
+                  src="/assets/d8/logo/d8-logo-v2.png"
+                  alt='business-leader-2026'
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 192px, 256px"
+                />
+              </div>
+              <h2 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider drop-shadow-lg">
+                High Level Keynotes & Speakers
+              </h2>
+            </div>
+
             {/* Featured: 2 top heads of state */}
             <div className="flex flex-wrap justify-center gap-10">
               {featuredLeaders.map((leader) => (
@@ -153,7 +175,7 @@ export function HeroSectionWithMap() {
           <aside className="hidden xl:flex flex-col w-72 flex-shrink-0 pt-2 space-y-6">
 
             {/* UPCOMING EVENTS */}
-            <Collapsible  className="border rounded-lg bg-white group/events overflow-hidden">
+            <Collapsible className="border rounded-lg bg-white group/events overflow-hidden" defaultOpen>
               <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
                 <p className="text-[#055090] font-bold text-sm uppercase tracking-widest">
                   Upcoming Events
@@ -197,47 +219,59 @@ export function HeroSectionWithMap() {
             </Collapsible>
 
             {/* BUSINESS LEADER FORUM HIGHLIGHT */}
-            <Collapsible  className="border rounded-lg bg-gradient-to-br from-[#055090] to-[#00B3AA] group/forum">
+            <Collapsible className="border rounded-lg bg-gradient-to-br from-[#055090] to-[#00B3AA] group/forum" defaultOpen>
               <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-white" />
                   <p className="text-white font-bold text-xs uppercase tracking-wider">
-                    Featured Event
+                    D8 BUSINESS LEADERS FORUM
                   </p>
                 </div>
                 <ChevronDown className="h-4 w-4 text-white transition-transform duration-200 group-data-[state=open]/forum:rotate-180" />
               </CollapsibleTrigger>
+
               <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
                 <div className="px-4 pb-4 space-y-3 border-t border-white/20 pt-3">
-                  <h3 className="text-white font-bold text-base leading-tight">
-                    D-8 Business Leaders Forum
-                  </h3>
-                  <p className="text-white/90 text-xs leading-relaxed">
-                    Join 300+ CEOs and business leaders from D-8 countries for strategic partnerships and investment dialogue.
+                  <p className="text-white/95 text-sm font-semibold uppercase tracking-wide text-center">
+                    Registration for D8‑CCI Business Leaders Forum 2026
                   </p>
+
+                  <p className="text-white/90 text-xs leading-relaxed">
+                    Join 300+ CEOs and business leaders from D‑8 member countries to
+                    strengthen trade, investment, and industrial cooperation for sustainable growth.
+                  </p>
+
                   <div className="space-y-2 text-xs">
                     <div className="flex items-center gap-2 text-white/90">
                       <MapPin className="h-3 w-3 flex-shrink-0" />
                       <span>Fairmont Hotel, Jakarta</span>
                     </div>
                     <div className="flex items-center gap-2 text-white/90">
+                      <span className="font-semibold">Date &amp; Time:</span>
+                      <span>14 April 2026, 13.00 Jakarta Time</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-white/90">
                       <span className="font-semibold">Theme:</span>
-                      <span className="text-xs">Achieving Sustainable Growth</span>
+                      <span>Achieving Sustainable Growth Through D8 Business Cooperation</span>
                     </div>
                   </div>
+
                   <Button
-                    asChild
+                    onClick={() => setIsModalOpen(true)}
                     size="sm"
-                    className="w-full bg-white text-[#055090] hover:bg-white/90 text-xs font-semibold"
+                    className="w-full bg-white text-[#055090] hover:bg-white/90 text-xs font-semibold cursor-pointer"
                   >
-                    <Link href="#business-leader-forum">Learn More</Link>
+                    Register Now
                   </Button>
                 </div>
               </CollapsibleContent>
             </Collapsible>
 
+
+
+
             {/* EVENT REGISTRATION FORM */}
-            <Collapsible  id="event-registration" className="border rounded-lg bg-white group/reg">
+            <Collapsible id="event-registration" className="border rounded-lg bg-white group/reg">
               <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
                 <h3 className="text-[#055090] font-bold text-sm uppercase tracking-wider">
                   Event Registration
@@ -331,6 +365,7 @@ export function HeroSectionWithMap() {
 
         </div>
       </Container >
+      <BusinessLeaderModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
     </section >
   );
