@@ -42,21 +42,30 @@ const supportingLeaders = [
 ];
 
 // ── Reusable leader card ──────────────────────────────────────────────
-function LeaderCard({ name, role, photo, size = 'sm' }: { name: string; role: string; photo: string; size?: 'lg' | 'sm' }) {
+function LeaderCard({ name, role, photo, size = 'sm', priority = false }: { name: string; role: string; photo: string; size?: 'lg' | 'sm'; priority?: boolean }) {
   const dim = size === 'lg' ? 'w-32 h-32 md:w-32 md:h-32' : 'w-16 h-16 md:w-16 md:h-16';
   const imgPx = size === 'lg' ? 160 : 80;
   const nameCls = size === 'lg' ? 'text-sm md:text-base font-bold' : 'text-xs font-semibold';
   const roleCls = size === 'lg' ? 'text-xs md:text-sm' : 'text-[10px]';
 
+  // Responsive sizes for Next.js Image optimization
+  const sizes = size === 'lg'
+    ? '(max-width: 768px) 128px, 160px'
+    : '(max-width: 768px) 64px, 80px';
+
   return (
     <div className="flex flex-col items-center gap-2 text-center" style={{ maxWidth: size === 'lg' ? 150 : 110 }}>
-      <div className={`${dim} rounded-full overflow-hidden  shadow-xl flex-shrink-0`}>
+      <div className={`${dim} rounded-full overflow-hidden shadow-xl flex-shrink-0 bg-white/20`}>
         <Image
           src={photo}
           alt={name}
           width={imgPx}
           height={imgPx}
+          sizes={sizes}
+          quality={90}
           className="w-full h-full object-cover object-top"
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
         />
       </div>
       <div>
@@ -74,7 +83,7 @@ export function HeroSectionWithMap() {
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F8F9] to-white">
 
       {/* ── LEADERS SECTION with hero background ── */}
-      <div className="relative w-full overflow-hidden">
+      <div className="relative w-full overflow-hidden bg-[#055090]">
         {/* Background image */}
         <Image
           src="/assets/hero.jpeg"
@@ -82,6 +91,10 @@ export function HeroSectionWithMap() {
           fill
           className="object-cover object-center"
           priority
+          quality={85}
+          sizes="100vw"
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         {/* Blue overlay */}
         {/* <div className="absolute inset-0 bg-[#055090]/80" /> */}
@@ -97,14 +110,14 @@ export function HeroSectionWithMap() {
             {/* Featured: 2 top heads of state */}
             <div className="flex flex-wrap justify-center gap-10">
               {featuredLeaders.map((leader) => (
-                <LeaderCard key={leader.name} {...leader} size="lg" />
+                <LeaderCard key={leader.name} {...leader} size="lg" priority={true} />
               ))}
             </div>
 
             {/* Supporting leaders */}
             <div className="flex flex-wrap justify-center gap-4 md:gap-4">
               {supportingLeaders.map((leader) => (
-                <LeaderCard key={leader.name} {...leader} size="sm" />
+                <LeaderCard key={leader.name} {...leader} size="sm" priority={false} />
               ))}
             </div>
             {/* Member Country Flags */}
@@ -115,13 +128,16 @@ export function HeroSectionWithMap() {
               <div className="flex flex-wrap justify-center gap-4">
                 {memberCountries.map((country) => (
                   <div key={country.code} className="flex flex-col items-center gap-1.5 group">
-                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white ring-2 ring-[#055090]/10 group-hover:ring-[#055090]/40 transition-all">
+                    <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white ring-2 ring-[#055090]/10 group-hover:ring-[#055090]/40 transition-all bg-white/20">
                       <Image
                         src={country.flag ?? ''}
                         alt={`${country.name} flag`}
                         width={48}
                         height={48}
+                        sizes="48px"
+                        quality={85}
                         className="w-full h-full object-cover"
+                        loading="lazy"
                       />
                     </div>
                     <Typography variant="bodySmall" className="text-white text-xs font-medium">
