@@ -74,7 +74,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#00B3AA] bg-white px-6 py-3">
               <div className="h-2 w-2 rounded-full bg-[#00B3AA] animate-pulse" />
               <Typography variant="bodySmall" className="font-medium text-[#282561]">
-                11th D-8 Summit • 15 April 2026 • Jakarta
+                11th D-8 Summit • 14 April 2026 • Jakarta
               </Typography>
             </div>
           </div>

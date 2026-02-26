@@ -11,7 +11,6 @@ import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/component
 import { RegistrationForm } from '@/components/home/RegistrationForm';
 import { BusinessLeaderModal } from '@/components/home/BusinessLeaderModal';
 import { MapPin, Users, ChevronDown } from 'lucide-react';
-import { LogoIcon } from '@/components/brand/Logo';
 
 // ── Upcoming Events (d8.org style) ───────────────────────────────────
 const upcomingEvents = [
@@ -22,32 +21,37 @@ const upcomingEvents = [
 ];
 
 // ── Leader data ──────────────────────────────────────────────────────
-const featuredLeaders = [
-  { name: 'Prabowo Subianto', role: 'President of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png' },
-  { name: 'Anwar Ibrahim', role: 'Prime Minister of Malaysia', photo: '/assets/d8/leader/anwar-ibrahim.jpeg' },
+// objectPosition: where to anchor the crop (e.g. 'center 10%' = near top-center)
+// scale: zoom multiplier — 1 = no zoom, 1.5 = 50% zoom in, 2 = 100% zoom in
+type Leader = { name: string; role: string; photo: string; objectPosition: string; scale?: number };
+
+const featuredLeaders: Leader[] = [
+  { name: 'Prabowo Subianto*', role: 'President of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
+  { name: 'Recep Tayyip Erdoğan*', role: 'President of Turkey', photo: '/assets/d8/leader/erdogan.jpg', objectPosition: 'center 15%' },
+  { name: 'Anwar Ibrahim*', role: 'Prime Minister of Malaysia', photo: '/assets/d8/leader/anwar-ibrahim.jpeg', objectPosition: 'center 10%' },
 ];
 
-const supportingLeaders = [
-  { name: 'Rosan Roeslani', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png' },
-  { name: 'Dyah Roro Esti Widya Putri', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg' },
-  { name: 'Anindya Bakrie', role: 'President of D-8 CCI', photo: '/assets/d8/leader/anindya-bakrie.png' },
-  { name: 'Ambassador Sohail Mahmood', role: 'Secretary General of D-8 CCI', photo: '/assets/d8/leader/ambassador-sohail-mahmood.png' },
-  { name: 'James T. Riyadi', role: 'Vice Chairman, Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png' },
-  { name: 'Andi Anzhar Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar.png' },
-  { name: 'Rifat Hisarciklioglu', role: 'Chairman of TOBB Türkiye', photo: '/assets/d8/leader/rifat-hisarciklioglu.jpg' },
-  { name: 'Dato Seri N Gobalakrishnan', role: 'Chairman, National Chamber Malaysia', photo: '/assets/d8/leader/dato seri-n-gobalakrishnan.jpg' },
-  { name: 'Atif Ikram', role: 'Chairman of FPCCI Pakistan', photo: '/assets/d8/leader/atif-ikram.jpeg' },
-  { name: 'Jani Ibrahim', role: 'Chairman, NACCIMA Nigeria', photo: '/assets/d8/leader/jani-ibrahim.jpeg' },
-  { name: 'Ahmed El', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg' },
-  { name: 'Mohamad Bawazeer', role: 'Chairman, Standing Committee D-8 KADIN', photo: '/assets/business-leader/mohammad-bawazeer.png' },
-  { name: 'Nita Yudi', role: 'Chairwoman of IWAPI', photo: '/assets/d8/leader/nita-yudi.png' },
-  { name: 'Irawati Hermawan', role: 'CEO of Hermawan Juniarto & Partners', photo: '/assets/business-leader/irawati-hermawan.jpg' },
-  { name: 'Samad Hasanzadeh', role: 'Vice Chairman of Iran Chambers', photo: '/assets/d8/leader/samad-hasanzadeh.jpg' },
-  { name: 'Abdur Karim', role: 'Administrator of Bangladesh Chambers', photo: '/assets/d8/leader/abdur-karim.jpg' },
+const supportingLeaders: Leader[] = [
+  { name: 'Rosan Roeslani', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png', objectPosition: '10% 0%', scale: 1.2 },
+  { name: 'Dyah Roro Esti Widya Putri', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Anindya Bakrie', role: 'President of D-8 CCI', photo: '/assets/d8/leader/anindya-bakrie-2.png', objectPosition: 'center 15%', scale: 1.2 },
+  { name: 'Ambassador Sohail Mahmood', role: 'Secretary General of D-8 CCI', photo: '/assets/d8/leader/ambassador-sohail-mahmood-2.png', objectPosition: '75% 20%', scale: 1.2 },
+  { name: 'James T. Riyadi', role: 'Vice Chairman, Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Andi Anzhar Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar-2.png', objectPosition: 'center 10%', scale: 1.5 },
+  { name: 'Rifat Hisarciklioglu', role: 'Chairman of TOBB Türkiye', photo: '/assets/d8/leader/rifat-hisarciklioglu.jpg', objectPosition: 'center 10%' },
+  { name: 'Dato Seri N Gobalakrishnan', role: 'Chairman, National Chamber Malaysia', photo: '/assets/d8/leader/dato seri-n-gobalakrishnan.jpg', objectPosition: 'center 30%' },
+  { name: 'Atif Ikram', role: 'Chairman of FPCCI Pakistan', photo: '/assets/d8/leader/atif-ikram.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Jani Ibrahim', role: 'Chairman, NACCIMA Nigeria', photo: '/assets/d8/leader/jani-ibrahim.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Ahmed El', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Mohamad Bawazeer', role: 'Chairman, Standing Committee D-8 KADIN', photo: '/assets/business-leader/mohammad-bawazeer.png', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Nita Yudi', role: 'Chairwoman of IWAPI', photo: '/assets/d8/leader/nita-yudi-2.png', objectPosition: 'center 10%', scale: 1.5 },
+  { name: 'Irawati Hermawan', role: 'CEO of Hermawan Juniarto & Partners', photo: '/assets/business-leader/irawati-hermawan-2.jpg', objectPosition: '70% 10%', scale: 1.2 },
+  { name: 'Samad Hasanzadeh', role: 'Vice Chairman of Iran Chambers', photo: '/assets/d8/leader/samad-hasanzadeh.jpg', objectPosition: 'center 40%', scale: 1.2 },
+  { name: 'Abdur Karim', role: 'Administrator of Bangladesh Chambers', photo: '/assets/d8/leader/abdur-karim.jpg', objectPosition: 'center 10%', },
 ];
 
 // ── Reusable leader card ──────────────────────────────────────────────
-function LeaderCard({ name, role, photo, size = 'sm', priority = false }: { name: string; role: string; photo: string; size?: 'lg' | 'sm'; priority?: boolean }) {
+function LeaderCard({ name, role, photo, size = 'sm', priority = false, objectPosition, scale }: { name: string; role: string; photo: string; size?: 'lg' | 'sm'; priority?: boolean; objectPosition: string; scale?: number }) {
   const dim = size === 'lg' ? 'w-32 h-32 md:w-32 md:h-32' : 'w-16 h-16 md:w-16 md:h-16';
   const imgPx = size === 'lg' ? 160 : 80;
   const nameCls = size === 'lg' ? 'text-sm md:text-base font-bold' : 'text-xs font-semibold';
@@ -68,7 +72,8 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false }: { name
           height={imgPx}
           sizes={sizes}
           quality={90}
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover"
+          style={{ objectPosition, transform: `scale(${scale ?? 1})`, transformOrigin: 'center top' }}
           priority={priority}
           loading={priority ? 'eager' : 'lazy'}
         />

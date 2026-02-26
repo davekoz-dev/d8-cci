@@ -45,7 +45,7 @@ export function SummitHighlight() {
               <div className="flex items-center gap-3 text-white">
                 <Calendar className="h-5 w-5 text-[#00B3AA]" />
                 <Typography variant="body" textColor="onDark">
-                  14 April 2026
+                  15 April 2026
                 </Typography>
               </div>
               <div className="flex items-center gap-3 text-white">
