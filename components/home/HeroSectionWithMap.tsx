@@ -55,7 +55,7 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false, objectPo
   const dim = size === 'lg' ? 'w-32 h-32 md:w-32 md:h-32' : 'w-16 h-16 md:w-16 md:h-16';
   const imgPx = size === 'lg' ? 160 : 80;
   const nameCls = size === 'lg' ? 'text-sm md:text-base font-bold' : 'text-xs font-semibold';
-  const roleCls = size === 'lg' ? 'text-xs md:text-sm' : 'text-[10px]';
+  const roleCls = size === 'lg' ? 'text-xs md:text-sm' : 'text-xs';
 
   // Responsive sizes for Next.js Image optimization
   const sizes = size === 'lg'
@@ -79,8 +79,8 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false, objectPo
         />
       </div>
       <div>
-        <p className={`${nameCls} text-white leading-tight drop-shadow`}>{name}</p>
-        <p className={`${roleCls} text-white/80 leading-tight mt-0.5`}>{role}</p>
+        <p className={`${nameCls} text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]`}>{name}</p>
+        <p className={`${roleCls} text-white leading-tight mt-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]`}>{role}</p>
       </div>
     </div>
   );
@@ -94,13 +94,13 @@ export function HeroSectionWithMap() {
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F8F9] to-white">
 
       {/* ── LEADERS SECTION with hero background ── */}
-      <div className="relative w-full overflow-hidden bg-[#055090]">
+      <div className="relative w-full overflow-hidden">
         {/* Background image */}
         <Image
-          src="/assets/hero.jpeg"
+          src="/assets/hero/jakarta-city.jpg"
           alt="D-8 Leaders Background"
           fill
-          className="object-cover object-center"
+          className="object-cover object-center opacity-90"
           priority
           quality={85}
           sizes="100vw"
@@ -108,7 +108,7 @@ export function HeroSectionWithMap() {
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         {/* Blue overlay */}
-        {/* <div className="absolute inset-0 bg-[#055090]/80" /> */}
+        <div className="absolute inset-0 bg-[#055090]/40" />
 
         {/* Leaders content — full width, no Container */}
         <div className="relative z-10 py-16 md:py-16 px-4 md:px-8 flex items-start justify-center gap-6">
