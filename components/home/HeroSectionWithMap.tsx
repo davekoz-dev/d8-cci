@@ -97,7 +97,7 @@ export function HeroSectionWithMap() {
       <div className="relative w-full overflow-hidden">
         {/* Background image */}
         <Image
-          src="/assets/hero/jakarta-city.jpg"
+          src="/assets/hero/jakarta.png"
           alt="D-8 Leaders Background"
           fill
           className="object-cover object-center opacity-90"
@@ -108,7 +108,7 @@ export function HeroSectionWithMap() {
           blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABQODxIPDRQSEBIXFRQYHjIhHhwcHj0sLiQySUBMS0dARkVQWnNiUFVtVkVGZIhlbXd7gYKBTmCNl4x9lnN+gXz/2wBDARUXFx4aHjshITt8U0ZTfHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHx8fHz/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWEREiMxUf/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
         />
         {/* Blue overlay */}
-        <div className="absolute inset-0 bg-[#055090]/40" />
+        <div className="absolute inset-0 bg-[#055090]/50" />
 
         {/* Leaders content — full width, no Container */}
         <div className="relative z-10 py-16 md:py-16 px-4 md:px-8 flex items-start justify-center gap-6">
