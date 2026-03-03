@@ -98,7 +98,7 @@ function StatCard({ value, label }: { value: string; label: string }) {
       <Typography variant="display" className="text-white text-2xl md:text-3xl font-bold mb-1">
         {value}
       </Typography>
-      <Typography variant="bodySmall" className="text-white/70 text-xs md:text-sm">
+      <Typography variant="bodySmall" className="text-white text-xs md:text-sm">
         {label}
       </Typography>
     </div>
@@ -109,17 +109,17 @@ function RelatedEventCard({ title, date, location, href }: typeof relatedEvents[
   return (
     <Link href={href} className="block group">
       <div className="bg-white/5 border border-white/10 rounded-lg p-4 md:p-5 hover:bg-white/10 hover:border-white/20 transition-all h-full">
-        <Typography variant="h3" className="text-white text-sm md:text-base font-bold mb-2 group-hover:text-[#00B3AA] transition-colors">
+        <Typography variant="h3" className="text-white text-sm md:text-base font-bold mb-2 group-hover:text-white transition-colors">
           {title}
         </Typography>
         <div className="space-y-1">
           <div className="flex items-center gap-2">
-            <Calendar className="h-3 w-3 text-[#00B3AA]" />
-            <Typography variant="bodySmall" className="text-white/70 text-xs">{date}</Typography>
+            <Calendar className="h-3 w-3 text-white" />
+            <Typography variant="bodySmall" className="text-white text-xs">{date}</Typography>
           </div>
           <div className="flex items-center gap-2">
-            <MapPin className="h-3 w-3 text-[#00B3AA]" />
-            <Typography variant="bodySmall" className="text-white/70 text-xs">{location}</Typography>
+            <MapPin className="h-3 w-3 text-white" />
+            <Typography variant="bodySmall" className="text-white text-xs">{location}</Typography>
           </div>
         </div>
       </div>
@@ -203,7 +203,7 @@ export function BusinessLeaderForum() {
                     <Typography variant="h3" className="text-white font-bold text-base">
                       {member.name}
                     </Typography>
-                    <Typography variant="bodySmall" className="text-[#00B3AA] font-medium text-xs">
+                    <Typography variant="bodySmall" className="text-white font-medium text-xs">
                       {member.role}
                     </Typography>
                   </div>
