@@ -10,7 +10,7 @@ import Link from 'next/link';
 import { Collapsible, CollapsibleTrigger, CollapsibleContent } from '@/components/ui/collapsible';
 import { RegistrationForm } from '@/components/home/RegistrationForm';
 import { BusinessLeaderModal } from '@/components/home/BusinessLeaderModal';
-import { MapPin, Users, ChevronDown } from 'lucide-react';
+import { MapPin, Users, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 
 // ── Upcoming Events (d8.org style) ───────────────────────────────────
 const upcomingEvents = [
@@ -19,6 +19,9 @@ const upcomingEvents = [
   { day: '14', month: 'APR', name: '11th D-8 Summit', location: 'JICC, Jakarta', href: '/events' },
   { day: '14–18', month: 'APR', name: 'D-8 Halal Expo Indonesia', location: 'Jakarta, Indonesia', href: '/events' },
 ];
+
+// ── News ──────────────────────────────────────────────────────────────
+type SidebarNews = { id: string; title: string; description: string; date: string | null; image_url: string; href: string };
 
 // ── Leader data ──────────────────────────────────────────────────────
 // objectPosition: where to anchor the crop (e.g. 'center 10%' = near top-center)
@@ -78,9 +81,147 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false, objectPo
           loading={priority ? 'eager' : 'lazy'}
         />
       </div>
-      <div>
-        <p className={`${nameCls} text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.8)]`}>{name}</p>
-        <p className={`${roleCls} text-white leading-tight mt-0.5 drop-shadow-[0_1px_2px_rgba(0,0,0,0.7)]`}>{role}</p>
+      <div className="bg-white/10 backdrop-blur-sm rounded-lg px-1 py-1.5">
+        <p className={`${nameCls} text-white leading-tight`}>{name}</p>
+        <p className={`${roleCls} text-white/85 leading-tight mt-0.5`}>{role}</p>
+      </div>
+    </div>
+  );
+}
+
+// ── Sidebar news item ─────────────────────────────────────────────────
+function SidebarNewsItem({ title, date, image_url, href }: Omit<SidebarNews, 'id'>) {
+  return (
+    <Link href={href} className="group flex gap-3 py-3 px-4 hover:bg-gray-50 transition-colors">
+      <div className="relative w-16 h-16 flex-shrink-0 rounded-md overflow-hidden bg-gray-100">
+        <Image src={image_url} alt={title} fill className="object-cover" sizes="64px" unoptimized />
+      </div>
+      <div className="flex-1 min-w-0">
+        <p className="text-[#055090] text-xs font-semibold leading-snug line-clamp-2 group-hover:text-[#00B3AA] transition-colors">{title}</p>
+        {date && <p className="text-[#414042] text-[10px] mt-1">{new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</p>}
+        <p className="text-[#00B3AA] text-[10px] font-semibold mt-0.5">Read more →</p>
+      </div>
+    </Link>
+  );
+}
+
+// ── Skeleton pulse helper ─────────────────────────────────────────────
+function Pulse({ className }: { className: string }) {
+  return <div className={`animate-pulse rounded bg-white/20 ${className}`} />;
+}
+
+// ── News carousel skeleton (matches NewsCarousel layout exactly) ───────
+function NewsCarouselSkeleton() {
+  return (
+    <div className="w-full max-w-xl">
+      {/* Header row */}
+      <div className="flex items-center justify-between mb-3">
+        <Pulse className="h-3 w-28" />
+        <div className="flex items-center gap-2">
+          <Pulse className="h-7 w-7 rounded-full" />
+          <Pulse className="h-3 w-8" />
+          <Pulse className="h-7 w-7 rounded-full" />
+        </div>
+      </div>
+      {/* Card */}
+      <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden">
+        {/* Image placeholder */}
+        <Pulse className="w-full h-52 rounded-none" />
+        {/* Content */}
+        <div className="p-4 space-y-2">
+          <Pulse className="h-4 w-3/4" />
+          <Pulse className="h-3 w-full" />
+          <Pulse className="h-3 w-5/6" />
+          <Pulse className="h-3 w-16 mt-1" />
+        </div>
+      </div>
+      {/* Dots */}
+      <div className="flex justify-center gap-1.5 mt-3">
+        {[0, 1, 2, 3].map(i => <Pulse key={i} className={`h-1 ${i === 0 ? 'w-6' : 'w-1.5'}`} />)}
+      </div>
+    </div>
+  );
+}
+
+// ── Sidebar news skeleton (matches SidebarNewsItem list layout) ────────
+function SidebarNewsSkeleton() {
+  return (
+    <Collapsible className="border rounded-lg bg-white group/news overflow-hidden" defaultOpen>
+      <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
+        <Pulse className="h-3 w-24 bg-gray-200" />
+        <Pulse className="h-4 w-4 rounded bg-gray-200" />
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        <div className="flex flex-col divide-y divide-gray-100 border-t border-gray-200">
+          {[0, 1, 2].map(i => (
+            <div key={i} className="flex gap-3 py-3 px-4">
+              <div className="w-16 h-16 flex-shrink-0 rounded-md bg-gray-100 animate-pulse" />
+              <div className="flex-1 space-y-2 py-1">
+                <div className="h-3 bg-gray-200 rounded animate-pulse w-full" />
+                <div className="h-3 bg-gray-200 rounded animate-pulse w-4/5" />
+                <div className="h-2.5 bg-gray-100 rounded animate-pulse w-20" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </CollapsibleContent>
+    </Collapsible>
+  );
+}
+
+// ── News carousel (hero area) ─────────────────────────────────────────
+function NewsCarousel({ items }: { items: SidebarNews[] }) {
+  const [idx, setIdx] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const item = items[idx];
+
+  React.useEffect(() => {
+    if (paused) return;
+    const t = setInterval(() => setIdx(i => (i + 1) % items.length), 2000);
+    return () => clearInterval(t);
+  }, [paused, items.length]);
+  return (
+    <div className="w-full max-w-2xl">
+      <div className="flex items-center justify-between mb-3">
+        <p className="text-white text-sm font-bold uppercase tracking-widest">News Releases</p>
+        <div className="flex items-center gap-2">
+          <button onClick={() => setIdx((idx - 1 + items.length) % items.length)} className="p-1.5 rounded-full bg-white/15 hover:bg-white/30 transition-colors">
+            <ChevronLeft className="w-4 h-4 text-white" />
+          </button>
+          <span className="text-white/60 text-xs">{idx + 1} / {items.length}</span>
+          <button onClick={() => setIdx((idx + 1) % items.length)} className="p-1.5 rounded-full bg-white/15 hover:bg-white/30 transition-colors">
+            <ChevronRight className="w-4 h-4 text-white" />
+          </button>
+        </div>
+      </div>
+
+      <Link href={item.href} target="_blank" rel="noopener noreferrer" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} className="group block bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl overflow-hidden hover:bg-white/15 transition-colors">
+        {/* Large image */}
+        <div className="relative w-full h-52 bg-white/10">
+          <Image src={item.image_url} alt={item.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 576px" unoptimized />
+          {/* Gradient overlay for text legibility */}
+          <div className="absolute inset-0 bg-linear-to-t from-black/40 to-transparent" />
+          {item.date && (
+            <span className="absolute bottom-3 left-3 text-white/80 text-[10px] bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-sm">
+              {new Date(item.date).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+            </span>
+          )}
+        </div>
+        {/* Content */}
+        <div className="p-4 space-y-2">
+          <p className="text-white font-semibold text-sm leading-snug line-clamp-2 transition-colors">{item.title}</p>
+          {item.description && (
+            <p className="text-white/75 text-xs leading-relaxed line-clamp-3">{item.description}</p>
+          )}
+          <p className="text-[#00B3AA] text-xs font-semibold pt-1">Read more →</p>
+        </div>
+      </Link>
+
+      {/* Dot indicators */}
+      <div className="flex justify-center gap-1.5 mt-3">
+        {items.map((_, i) => (
+          <button key={i} onClick={() => setIdx(i)} className={`h-1 rounded-full transition-all duration-300 ${i === idx ? 'bg-[#00B3AA] w-6' : 'bg-white/30 w-1.5'}`} />
+        ))}
       </div>
     </div>
   );
@@ -89,6 +230,12 @@ function LeaderCard({ name, role, photo, size = 'sm', priority = false, objectPo
 // ── Main Component ────────────────────────────────────────────────────
 export function HeroSectionWithMap() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
+  const [news, setNews] = React.useState<SidebarNews[]>([]);
+  const [newsLoading, setNewsLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    fetch('/api/news').then(r => r.json()).then(data => { setNews(data); setNewsLoading(false); }).catch(() => setNewsLoading(false));
+  }, []);
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-[#F7F8F9] to-white">
@@ -97,7 +244,7 @@ export function HeroSectionWithMap() {
       <div className="relative w-full overflow-hidden">
         {/* Background image */}
         <Image
-          src="/assets/hero/jakarta-city-landscape.jpg"
+          src="/assets/hero/labuanbajo.jpg"
           alt="D-8 Leaders Background"
           fill
           className="object-cover object-center opacity-100"
@@ -129,8 +276,8 @@ export function HeroSectionWithMap() {
                   sizes="(max-width: 768px) 192px, 256px"
                 />
               </div>
-              <h2 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider drop-shadow-lg">
-                High Level Keynotes & Speakers
+              <h2 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider drop-shadow-lg max-w-md">
+                High Key Level Keynotes Of Business Leader Forum
               </h2>
             </div>
 
@@ -142,11 +289,24 @@ export function HeroSectionWithMap() {
             </div>
 
             {/* Supporting leaders */}
+
+
+            {/* LATEST NEWS */}
+            {newsLoading ? <NewsCarouselSkeleton /> : news.length > 0 && <NewsCarousel items={news} />}
+
+
+            <h2 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider drop-shadow-lg max-w-md">
+              Speakers
+            </h2>
             <div className="flex flex-wrap justify-center gap-4 md:gap-4">
               {supportingLeaders.map((leader) => (
                 <LeaderCard key={leader.name} {...leader} size="sm" priority={false} />
               ))}
             </div>
+            {/* News Releases News */}
+
+
+
             {/* Member Country Flags */}
             <div className="w-full">
               <Typography variant="bodySmall" className="text-white mb-4 uppercase tracking-widest font-medium">
@@ -275,6 +435,21 @@ export function HeroSectionWithMap() {
 
 
 
+            {/* LATEST NEWS */}
+            {newsLoading ? <SidebarNewsSkeleton /> : news.length > 0 && (
+              <Collapsible className="border rounded-lg bg-white group/news overflow-hidden" defaultOpen>
+                <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
+                  <p className="text-[#055090] font-bold text-sm uppercase tracking-widest">Latest News</p>
+                  <ChevronDown className="h-4 w-4 text-[#055090] transition-transform duration-200 group-data-[state=open]/news:rotate-180" />
+                </CollapsibleTrigger>
+                <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
+                  <div className="flex flex-col divide-y divide-gray-100 border-t border-gray-200">
+                    {news.map((item) => <SidebarNewsItem key={item.id} {...item} />)}
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            )}
+
             {/* EVENT REGISTRATION FORM */}
             <Collapsible id="event-registration" className="border rounded-lg bg-white group/reg">
               <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
@@ -326,14 +501,14 @@ export function HeroSectionWithMap() {
           </div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button asChild size="lg" variant="default">
-              <Link href="/events">View Summit 2026</Link>
+          {/* <div className="flex flex-col sm:flex-row gap-4">
+            <Button asChild size="sm" variant="default" className='rounded-lg'>
+              <Link href="/events">View Business Leaders Forum</Link>
             </Button>
-            <Button asChild size="lg" variant="outline">
+            <Button asChild size="sm" variant="outline" className='rounded-lg'>
               <Link href="/about-d8">About D-8</Link>
             </Button>
-          </div>
+          </div> */}
 
           {/* Upcoming Events — mobile/tablet, hidden on xl (shown in sidebar) */}
           <div className="xl:hidden w-full max-w-lg">

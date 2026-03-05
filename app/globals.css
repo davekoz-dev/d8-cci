@@ -9,7 +9,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-fira-sans);
 
-  /* D-8 Brand Colors */
+  /* D-8 Brand Colors - Design Tokens */
   --color-primary-blue: #055090;
   --color-primary-turquoise: #00B3AA;
   --color-midnight-blue: #282561;
@@ -18,11 +18,13 @@
   --color-dark-grey: #414042;
   --color-soft-white: #F7F8F9;
 
-  /* Semantic Color Mappings */
+  /* Semantic Color Mappings for Tailwind classes */
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-d8-primary: #055090;
+  --color-d8-secondary: #00B3AA;
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
