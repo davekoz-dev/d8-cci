@@ -269,10 +269,23 @@ export const d8CCIMilestones: D8CCIMilestone[] = [
  */
 export const upcomingEvents: D8CCIEvent[] = [
   {
-    id: 'summit-2026',
-    title: '12th D-8 Summit',
+    id: "business-leader-forum",
+    title: "D8 Business Leaders Forum",
     date: '14 April 2026',
     dateEnd: '14 April 2026',
+    location: "Fairmont Hotel, Jakarta",
+    city: 'Jakarta',
+    country: 'Indonesia',
+    type: 'business-forum',
+    description:
+      'Achieving Sustainable Growth Through D8 Business Cooperation',
+    registrationOpen: true,
+  },
+  {
+    id: 'summit-2026',
+    title: '12th D-8 Summit',
+    date: '15 April 2026',
+    dateEnd: '15 April 2026',
     location: 'Jakarta International Convention Center (JICC)',
     city: 'Jakarta',
     country: 'Indonesia',

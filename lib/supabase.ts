@@ -12,6 +12,18 @@ export function getSupabase(): SupabaseClient {
   return _client;
 }
 
+/** Server-side admin client — uses service role key, never exposed to client */
+let _admin: SupabaseClient | null = null;
+export function getAdminSupabase(): SupabaseClient {
+  if (!_admin) {
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    if (!url || !key) throw new Error('Missing NEXT_PUBLIC_SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY');
+    _admin = createClient(url, key, { auth: { persistSession: false } });
+  }
+  return _admin;
+}
+
 /** @deprecated use getSupabase() */
 export const supabase = new Proxy({} as SupabaseClient, {
   get(_, prop) {

@@ -33,8 +33,8 @@ export default function EventsPage() {
   };
 
   // Separate featured event (Summit)
-  const summitEvent = upcomingEvents.find((e) => e.id === 'summit-2026');
-  const otherEvents = upcomingEvents.filter((e) => e.id !== 'summit-2026');
+  const businessLeaderForum = upcomingEvents.find((e) => e.id === 'business-leader-forum');
+  const otherEvents = upcomingEvents.filter((e) => e.id !== 'business-leader-forum');
 
   return (
     <>
@@ -57,8 +57,8 @@ export default function EventsPage() {
       </SupergraphicSection>
 
       {/* Featured Event - 12th Summit */}
-      {summitEvent && (
-        <Section id={summitEvent.id}>
+      {businessLeaderForum && (
+        <Section id={businessLeaderForum.id}>
           <Container size="md">
             <div className="text-center mb-8" data-aos="fade-in">
               <Typography variant="h2" className="text-[#055090] mb-4">
@@ -69,9 +69,9 @@ export default function EventsPage() {
               </Typography>
             </div>
             <EventCard
-              event={summitEvent}
+              event={businessLeaderForum}
               variant="featured"
-              detailsUrl={getEventDetailUrl(summitEvent.id)}
+              detailsUrl={getEventDetailUrl(businessLeaderForum.id)}
             />
           </Container>
         </Section>
