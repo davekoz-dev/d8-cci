@@ -2,6 +2,7 @@
 import { Hero } from '@/components/home/Hero';
 import { D8CciOverview } from '@/components/home/D8CciOverview';
 import { BusinessLeaderForum } from '@/components/home/BusinessLeaderForum';
+import { UpcomingEvents } from '@/components/home/UpcomingEvents';
 import { PrioritiesGrid } from '@/components/home/PrioritiesGrid';
 import { BusinessHalalTeaser } from '@/components/home/BusinessHalalTeaser';
 import { SummitHighlight } from '@/components/home/SummitHighlight';
@@ -14,7 +15,7 @@ import { PalestineTeaser } from '@/components/home/PalestineTeaser';
  * Information Hierarchy:
  *   PRIMARY   — D-8 CCI (Hero + CCI Overview)
  *   SECONDARY — Business Leaders Forum 2026
- *   TERTIARY  — Business priorities, Halal Expo, D-8 Summit, Organization overview, Palestine
+ *   TERTIARY  — Events, Business priorities, Halal Expo, D-8 Summit, Organization overview, Palestine
  */
 
 export default function Home() {
@@ -28,6 +29,7 @@ export default function Home() {
       <BusinessLeaderForum />
 
       {/* ── TERTIARY: Supporting Content ─────────────────── */}
+      <UpcomingEvents />
       <PrioritiesGrid />
       <BusinessHalalTeaser />
       <SummitHighlight />

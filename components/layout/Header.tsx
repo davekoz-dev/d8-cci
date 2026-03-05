@@ -40,7 +40,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex lg:gap-x-2">
+          <div className="hidden lg:flex lg:items-center lg:gap-x-2">
             {mainNavigation.map((item) => (
               <Link
                 key={item.name}
@@ -55,6 +55,17 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/business-leaders-forum"
+              className={cn(
+                'ml-1 rounded-full px-4 py-2 text-sm font-semibold transition-all',
+                pathname === '/business-leaders-forum'
+                  ? 'bg-[#00B3AA] text-white shadow-md shadow-[#00B3AA]/25'
+                  : 'bg-gradient-to-r from-[#00B3AA] to-[#055090] text-white hover:shadow-md hover:shadow-[#00B3AA]/30 hover:brightness-110'
+              )}
+            >
+              Business Leaders Forum 2026
+            </Link>
           </div>
 
           {/* Language Switcher & Mobile Menu */}
@@ -92,6 +103,18 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden border-t py-4">
             <div className="flex flex-col space-y-2">
+              <Link
+                href="/business-leaders-forum"
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  'rounded-full px-4 py-2.5 text-base font-semibold text-center transition-all',
+                  pathname === '/business-leaders-forum'
+                    ? 'bg-[#00B3AA] text-white'
+                    : 'bg-gradient-to-r from-[#00B3AA] to-[#055090] text-white'
+                )}
+              >
+                Business Leaders Forum 2026
+              </Link>
               {mainNavigation.map((item) => (
                 <Link
                   key={item.name}

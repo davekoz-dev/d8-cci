@@ -109,10 +109,10 @@ export function Hero() {
             <Image
               src="/assets/d8/logo/d8-logo-v2.png"
               alt="D-8 CCI"
-              width={280}
-              height={70}
+              width={1200}
+              height={850}
               priority
-              className="h-14 md:h-[70px] w-auto drop-shadow-xl"
+              className="-my-4 md:-my-8 lg:-my-16 w-48 sm:w-64 md:w-80 lg:w-[480px] h-auto drop-shadow-2xl"
             />
           </div>
 
@@ -176,7 +176,7 @@ export function Hero() {
                 transition-all duration-300 group
               "
             >
-              <Link href="/business-halal">
+              <Link href="/business-leaders-forum">
                 Business Leaders Forum
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
