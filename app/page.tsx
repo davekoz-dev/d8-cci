@@ -6,6 +6,7 @@ import { UpcomingEvents } from '@/components/home/UpcomingEvents';
 import { PrioritiesGrid } from '@/components/home/PrioritiesGrid';
 import { BusinessHalalTeaser } from '@/components/home/BusinessHalalTeaser';
 import { SummitHighlight } from '@/components/home/SummitHighlight';
+import { NewsReleases } from '@/components/home/NewsReleases';
 import { D8Overview } from '@/components/home/D8Overview';
 import { PalestineTeaser } from '@/components/home/PalestineTeaser';
 
@@ -33,6 +34,7 @@ export default function Home() {
       <PrioritiesGrid />
       <BusinessHalalTeaser />
       <SummitHighlight />
+      <NewsReleases />
       <D8Overview />
       <PalestineTeaser />
     </>
