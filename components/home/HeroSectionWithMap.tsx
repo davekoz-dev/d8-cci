@@ -436,7 +436,7 @@ export function HeroSectionWithMap() {
 
 
             {/* LATEST NEWS */}
-            {newsLoading ? <SidebarNewsSkeleton /> : news.length > 0 && (
+            {/* {newsLoading ? <SidebarNewsSkeleton /> : news.length > 0 && (
               <Collapsible className="border rounded-lg bg-white group/news overflow-hidden" defaultOpen>
                 <CollapsibleTrigger className="flex w-full items-center justify-between p-4">
                   <p className="text-[#055090] font-bold text-sm uppercase tracking-widest">Latest News</p>
@@ -448,7 +448,7 @@ export function HeroSectionWithMap() {
                   </div>
                 </CollapsibleContent>
               </Collapsible>
-            )}
+            )} */}
 
             {/* EVENT REGISTRATION FORM */}
             <Collapsible id="event-registration" className="border rounded-lg bg-white group/reg">
