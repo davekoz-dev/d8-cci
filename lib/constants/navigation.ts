@@ -7,7 +7,6 @@ import type { NavigationItem } from '@/lib/types';
 
 export const mainNavigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
-  { name: 'About D-8 CCI', href: '/about-d8' },
   { name: 'Members', href: '/members' },
   { name: 'Chairmanship', href: '/chairmanship' },
   { name: 'Programs', href: '/programs' },
@@ -20,10 +19,8 @@ export const mainNavigation: NavigationItem[] = [
 
 export const footerNavigation = {
   about: [
-    { name: 'About D-8 CCI', href: '/about-d8' },
+    { name: 'About D-8 CCI', href: '/#about-d8' },
     { name: 'Member Chambers', href: '/members' },
-    { name: 'History & Milestones', href: '/about-d8#history' },
-    { name: 'Objectives', href: '/about-d8#objectives' },
   ],
   services: [
     { name: 'Programs & Services', href: '/programs' },

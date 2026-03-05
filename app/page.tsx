@@ -1,33 +1,36 @@
 "use client"
-import { HeroSectionWithMap } from '@/components/home/HeroSectionWithMap';
-import { PrioritiesGrid } from '@/components/home/PrioritiesGrid';
-import { SummitHighlight } from '@/components/home/SummitHighlight';
-import { BusinessHalalTeaser } from '@/components/home/BusinessHalalTeaser';
+import { Hero } from '@/components/home/Hero';
+import { D8CciOverview } from '@/components/home/D8CciOverview';
 import { BusinessLeaderForum } from '@/components/home/BusinessLeaderForum';
+import { PrioritiesGrid } from '@/components/home/PrioritiesGrid';
+import { BusinessHalalTeaser } from '@/components/home/BusinessHalalTeaser';
+import { SummitHighlight } from '@/components/home/SummitHighlight';
 import { D8Overview } from '@/components/home/D8Overview';
 import { PalestineTeaser } from '@/components/home/PalestineTeaser';
 
 /**
- * D-8 Indonesia Chairmanship 2026-2027
- * Home Page
+ * D-8 CCI Portal — Home Page
  *
- * Structure:
- * 1. Hero Section with Interactive Map - Logo, theme, D-8 member countries map, CTAs
- * 2. Five Priorities Grid - Key focus areas
- * 3. Summit Highlight - Summit 2026 details
- * 4. Business & Halal Expo - Economic cooperation
- * 5. D-8 Overview - About the organization
- * 6. Palestine & Solidarity - Special session focus
+ * Information Hierarchy:
+ *   PRIMARY   — D-8 CCI (Hero + CCI Overview)
+ *   SECONDARY — Business Leaders Forum 2026
+ *   TERTIARY  — Business priorities, Halal Expo, D-8 Summit, Organization overview, Palestine
  */
 
 export default function Home() {
   return (
     <>
-      <HeroSectionWithMap />
+      {/* ── PRIMARY: D-8 CCI ─────────────────────────────── */}
+      <Hero />
+      <D8CciOverview />
+
+      {/* ── SECONDARY: Flagship Event ────────────────────── */}
       <BusinessLeaderForum />
+
+      {/* ── TERTIARY: Supporting Content ─────────────────── */}
       <PrioritiesGrid />
-      <SummitHighlight />
       <BusinessHalalTeaser />
+      <SummitHighlight />
       <D8Overview />
       <PalestineTeaser />
     </>
