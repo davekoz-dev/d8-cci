@@ -7,19 +7,16 @@ import type { NavigationItem } from '@/lib/types';
 
 export const mainNavigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
+  { name: 'About', href: '/about-d8' },
   { name: 'Members', href: '/members' },
-  { name: 'Chairmanship', href: '/chairmanship' },
   { name: 'Programs', href: '/programs' },
-  { name: 'Events', href: '/events' },
-  { name: 'Opportunities', href: '/opportunities' },
-  { name: 'Resources', href: '/documents' },
-  { name: 'News', href: '/news' },
+  { name: 'Updates', href: '/news' },
   { name: 'Contact', href: '/contact' },
 ];
 
 export const footerNavigation = {
   about: [
-    { name: 'About D-8 CCI', href: '/#about-d8' },
+    { name: 'About D-8 CCI', href: '/about-d8' },
     { name: 'Member Chambers', href: '/members' },
   ],
   services: [

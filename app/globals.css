@@ -51,7 +51,8 @@
 :root {
   /* D-8 Brand Colors - Light Mode (Primary) */
   --background: #FFFFFF;
-  --foreground: #414042; /* Dark Grey */
+  --foreground: #414042;
+  /* Dark Grey */
 
   --card: #FFFFFF;
   --card-foreground: #414042;
@@ -59,23 +60,30 @@
   --popover: #FFFFFF;
   --popover-foreground: #414042;
 
-  --primary: #055090; /* Blue Azure */
+  --primary: #055090;
+  /* Blue Azure */
   --primary-foreground: #FFFFFF;
 
-  --secondary: #00B3AA; /* Turquoise */
+  --secondary: #00B3AA;
+  /* Turquoise */
   --secondary-foreground: #FFFFFF;
 
-  --muted: #F7F8F9; /* Soft White */
+  --muted: #F7F8F9;
+  /* Soft White */
   --muted-foreground: #414042;
 
-  --accent: #2BB5E9; /* Blue Sky */
+  --accent: #2BB5E9;
+  /* Blue Sky */
   --accent-foreground: #FFFFFF;
 
-  --destructive: #DC2626; /* Red for errors */
+  --destructive: #DC2626;
+  /* Red for errors */
 
-  --border: #E5E7EB; /* Light grey border */
+  --border: #E5E7EB;
+  /* Light grey border */
   --input: #E5E7EB;
-  --ring: #055090; /* Primary blue for focus rings */
+  --ring: #055090;
+  /* Primary blue for focus rings */
 
   --radius: 0.5rem;
 }
@@ -84,6 +92,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -93,6 +102,7 @@
 .mapboxgl-ctrl-top-right {
   @apply right-2 top-20;
 }
+
 .mapboxgl-ctrl-bottom-left {
   @apply hidden;
 }
@@ -104,22 +114,28 @@
 .mapboxgl-popup-close-button {
   display: none;
 }
+
 .mapboxgl-popup-tip {
   border: 8px solid transparent;
   @apply relative -top-[1px] z-10;
 }
+
 .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
   border-top-color: hsl(var(--background));
 }
+
 .mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
   border-bottom-color: hsl(var(--background));
 }
+
 .mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
   border-right-color: hsl(var(--background));
 }
+
 .mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
   border-left-color: hsl(var(--background));
 }
+
 .mapboxgl-popup-content {
   @apply !rounded-lg border bg-background !p-0 text-foreground;
 }

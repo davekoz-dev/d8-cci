@@ -84,7 +84,7 @@ export function D8CciOverview() {
                     </Typography>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        {d8CCIMembers.map((member) => (
+                        {[...d8CCIMembers].sort((a, b) => a.chamberName.localeCompare(b.chamberName)).map((member) => (
                             <div
                                 key={member.acronym}
                                 className="
@@ -128,7 +128,7 @@ export function D8CciOverview() {
                 {/* ── CTA ─────────────────────────────────────────── */}
                 <div className="text-center mt-12">
                     <Button asChild size="lg" variant="outline" className="group">
-                        <Link href="/#about-d8">
+                        <Link href="/about-d8">
                             Learn More About D-8 CCI
                             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>

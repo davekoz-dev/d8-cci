@@ -31,12 +31,12 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-white ">
       <Container size="xl">
         <nav className="flex h-20 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <LogoIcon size="md" className="p-0" />
+            <LogoIcon size="xl" className="p-0" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,7 +64,7 @@ export function Header() {
                   : 'bg-gradient-to-r from-[#00B3AA] to-[#055090] text-white hover:shadow-md hover:shadow-[#00B3AA]/30 hover:brightness-110'
               )}
             >
-              Business Leaders Forum 2026
+              DBLF 2026
             </Link>
           </div>
 
