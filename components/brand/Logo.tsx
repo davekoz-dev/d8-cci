@@ -87,7 +87,7 @@ export function LogoIcon({ size = 'sm', className }: LogoIconProps) {
 
   return (
     <Image
-      src="/assets/d8/logo/d8logo.png"
+      src="/assets/d8/logo/d8-logo-v4.png"
       alt="D-8 Indonesia Logo"
       width={dimensions.width}
       height={dimensions.height}

@@ -1,13 +1,12 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Typography } from '@/components/ui/Typography';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Calendar, MapPin } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-// ── Hero / Header ─────────────────────────────────────────────────
+// ── Forum data ───────────────────────────────────────────────────
 const forum = {
   badge: 'DBLF 2026 · 14 April 2026 · Fairmont Hotel, Jakarta',
   title: 'D8‑CCI Business Leaders Forum 2026',
@@ -20,74 +19,18 @@ const forum = {
   sectionId: 'business-leader-forum',
 };
 
-// ── Key Highlights ────────────────────────────────────────────────
-const highlights = [
-  'Cross-border business cooperation and B2B / B2G engagement',
-  'Identifying solutions to regulatory barriers and market-access issues',
-  'Supporting D‑8 chairmanship priorities including sustainability and food security',
-  'Launch of the D‑8 Women Business Leaders initiative & D‑8 Women Alliance',
-];
-
 // ── Stats ─────────────────────────────────────────────────────────
 const stats = [
   { value: '300', label: 'CEOs & Business Leaders' },
-  { value: '9',   label: 'D-8 Member Countries' },
-  { value: '7',   label: 'Key Business Priorities' },
-  { value: '1',   label: 'Women Alliance Launch' },
-];
-
-// ── Organizing Committee ──────────────────────────────────────────
-const committee = [
-  {
-    name: 'Andi Anzhar Wijaya',
-    role: 'Head of Steering Committee',
-    photo: '/assets/business-leader/andi-anzhar.png',
-  },
-  {
-    name: 'Mohamad Bawazeer',
-    role: 'Deputy Head of Steering Committee',
-    photo: '/assets/business-leader/mohammad-bawazeer.png',
-  },
-  {
-    name: 'Irawati Hermawan',
-    role: 'Head of Organizing Committee',
-    photo: '/assets/business-leader/irawati-hermawan.jpg',
-  },
-];
-
-// ── Related Events ────────────────────────────────────────────────
-const relatedEvents = [
-  {
-    title: 'Senior Officials & Ministerial Meeting',
-    date: '12–14 April 2026',
-    location: 'Jakarta, Indonesia',
-    href: '/events',
-  },
-  {
-    title: '11th D-8 Summit',
-    date: '14 April 2026',
-    location: 'JICC, Jakarta',
-    href: '/events',
-  },
-  {
-    title: 'D-8 Halal Expo Indonesia',
-    date: '14–18 April 2026',
-    location: 'Jakarta, Indonesia',
-    href: '/events',
-  },
+  { value: '9', label: 'D-8 Member Countries' },
+  { value: '7', label: 'Key Business Priorities' },
+  { value: '1', label: 'Women Alliance Launch' },
 ];
 
 // ── CTAs ──────────────────────────────────────────────────────────
 const ctas = {
-  learnMore: { label: 'Learn More', href: '/business-halal' },
-  register:  { label: 'Register Now', href: '/?event=business-forum#event-registration' },
-};
-
-// ── Section labels ────────────────────────────────────────────────
-const labels = {
-  highlights:    'Key Highlights',
-  committee:     'Organizing Committee',
-  relatedEvents: 'Related D8 CCI Events',
+  learnMore: { label: 'Learn More', href: '/business-leaders-forum' },
+  register: { label: 'Register Now', href: '/business-leaders-forum#register' },
 };
 
 // ── Sub-Components ────────────────────────────────────────────────
@@ -102,28 +45,6 @@ function StatCard({ value, label }: { value: string; label: string }) {
         {label}
       </Typography>
     </div>
-  );
-}
-
-function RelatedEventCard({ title, date, location, href }: typeof relatedEvents[0]) {
-  return (
-    <Link href={href} className="block group">
-      <div className="bg-white/5 border border-white/10 rounded-lg p-4 md:p-5 hover:bg-white/10 hover:border-white/20 transition-all h-full">
-        <Typography variant="h3" className="text-white text-sm md:text-base font-bold mb-2 group-hover:text-white transition-colors">
-          {title}
-        </Typography>
-        <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-3 w-3 text-white" />
-            <Typography variant="bodySmall" className="text-white text-xs">{date}</Typography>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="h-3 w-3 text-white" />
-            <Typography variant="bodySmall" className="text-white text-xs">{location}</Typography>
-          </div>
-        </div>
-      </div>
-    </Link>
   );
 }
 
@@ -155,73 +76,11 @@ export function BusinessLeaderForum() {
             </Typography>
           </div>
 
-          {/* Key Highlights */}
-          <div className="max-w-2xl mx-auto" data-aos="fade-up">
-            <Typography variant="h3" className="text-white font-bold mb-6 text-center">
-              {labels.highlights}
-            </Typography>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {highlights.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="mt-1.5 h-2 w-2 rounded-full bg-[#00B3AA] flex-shrink-0" />
-                  <Typography variant="body" className="text-white/90 text-sm">{item}</Typography>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up">
             {stats.map((stat) => (
               <StatCard key={stat.label} {...stat} />
             ))}
-          </div>
-
-          {/* Committee */}
-          <div className="space-y-8" data-aos="fade-up">
-            <Typography variant="h3" className="text-white font-bold tracking-wide uppercase text-center">
-              {labels.committee}
-            </Typography>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {committee.map((member, index) => (
-                <div
-                  key={member.name}
-                  className="flex flex-col items-center gap-3 text-center"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="w-28 h-28 rounded-full overflow-hidden border-4 border-white shadow-lg ring-4 ring-[#00B3AA]/30">
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      width={112}
-                      height={112}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <div>
-                    <Typography variant="h3" className="text-white font-bold text-base">
-                      {member.name}
-                    </Typography>
-                    <Typography variant="bodySmall" className="text-white font-medium text-xs">
-                      {member.role}
-                    </Typography>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Related Events */}
-          <div className="space-y-6" data-aos="fade-up">
-            <Typography variant="h3" className="text-white font-bold text-center">
-              {labels.relatedEvents}
-            </Typography>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {relatedEvents.map((event) => (
-                <RelatedEventCard key={event.title} {...event} />
-              ))}
-            </div>
           </div>
 
           {/* CTAs */}

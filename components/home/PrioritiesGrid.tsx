@@ -28,11 +28,11 @@ export function PrioritiesGrid() {
       <Container size="xl">
         <div className="text-center mb-12" data-aos="fade-in">
           <Typography variant="h2" className="text-[#055090] mb-4">
-            Five Priority Areas
+            Business Priorities
           </Typography>
           <Typography variant="bodyLarge" className="text-[#414042] max-w-3xl mx-auto">
-            Indonesia&apos;s Chairmanship focuses on five key areas to advance
-            cooperation and shared prosperity among D-8 member nations.
+            D-8 CCI drives private-sector engagement across five strategic
+            areas during Indonesia&apos;s Chairmanship 2026–2027.
           </Typography>
         </div>
 
