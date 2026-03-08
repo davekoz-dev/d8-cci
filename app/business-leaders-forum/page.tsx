@@ -191,7 +191,7 @@ export default function BusinessLeadersForumPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-[#055090]/85 via-[#282561]/80 to-[#00B3AA]/60" />
 
-                <Container size="xl" className="relative z-10 py-20 md:py-28 lg:py-32">
+                <Container size="xl" className="relative z-10 py-20 md:py-28 lg:py-28">
                     <div className="text-center space-y-6 max-w-4xl mx-auto">
                         <Image
                             src="/assets/d8/logo/d8-logo-v2.png"
@@ -199,7 +199,7 @@ export default function BusinessLeadersForumPage() {
                             width={1200}
                             height={850}
                             priority
-                            className="-my-4 md:-my-8 lg:-my-14 w-44 sm:w-60 md:w-72 lg:w-[420px] h-auto mx-auto drop-shadow-2xl"
+                            className="w-44 sm:w-60 md:w-72 lg:w-[420px] h-auto mx-auto drop-shadow-2xl"
                         />
                         <Badge variant="secondary" className="text-sm md:text-base px-6 py-2">
                             {forum.badge}
@@ -219,52 +219,14 @@ export default function BusinessLeadersForumPage() {
                             <Button
                                 onClick={() => setIsModalOpen(true)}
                                 size="lg"
-                                className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-8 shadow-lg shadow-[#00B3AA]/25 cursor-pointer"
+                                className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-8  shadow-[#00B3AA]/25 cursor-pointer group"
                             >
-                                Register Now <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                            <Button
-                                asChild
-                                size="lg"
-                                variant="outline"
-                                className="border-white/30 text-white hover:bg-white/10 rounded-full px-8"
-                            >
-                                <a href="#speakers">View Speakers</a>
+                                Register Now <ArrowRight className="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" />
                             </Button>
                         </div>
                     </div>
                 </Container>
             </section>
-
-            {/* ── Stats ────────────────────────────────────────────────── */}
-            <Section variant="primary" padding="md">
-                <Container size="xl">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        {stats.map((stat) => (
-                            <StatCard key={stat.label} {...stat} />
-                        ))}
-                    </div>
-                </Container>
-            </Section>
-
-            {/* ── Key Highlights ───────────────────────────────────────── */}
-            <Section variant="default" padding="lg">
-                <Container size="lg">
-                    <div className="max-w-3xl mx-auto">
-                        <Typography variant="h2" className="text-[#055090] text-center mb-8">
-                            Key Highlights
-                        </Typography>
-                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {highlights.map((item) => (
-                                <li key={item} className="flex items-start gap-3 p-4 rounded-xl bg-[#F7F8F9] border border-gray-100">
-                                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#00B3AA] flex-shrink-0" />
-                                    <span className="text-[#414042] text-sm leading-relaxed">{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </Container>
-            </Section>
 
             {/* ── Keynote Speakers ─────────────────────────────────────── */}
             <section id="speakers" className="relative w-full overflow-hidden">
@@ -305,6 +267,36 @@ export default function BusinessLeadersForumPage() {
                     </div>
                 </Container>
             </section>
+            {/* ── Stats ────────────────────────────────────────────────── */}
+            <Section variant="primary" padding="md">
+                <Container size="xl">
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {stats.map((stat) => (
+                            <StatCard key={stat.label} {...stat} />
+                        ))}
+                    </div>
+                </Container>
+            </Section>
+
+            {/* ── Key Highlights ───────────────────────────────────────── */}
+            <Section variant="default" padding="lg">
+                <Container size="lg">
+                    <div className="max-w-3xl mx-auto">
+                        <Typography variant="h2" className="text-[#055090] text-center mb-8">
+                            Key Highlights
+                        </Typography>
+                        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {highlights.map((item) => (
+                                <li key={item} className="flex items-start gap-3 p-4 rounded-xl bg-[#F7F8F9] border border-gray-100">
+                                    <span className="mt-1.5 h-2.5 w-2.5 rounded-full bg-[#00B3AA] flex-shrink-0" />
+                                    <span className="text-[#414042] text-sm leading-relaxed">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </Container>
+            </Section>
+
 
             {/* ── Organizing Committee ──────────────────────────────────── */}
             <Section variant="default" padding="lg">
@@ -365,7 +357,7 @@ export default function BusinessLeadersForumPage() {
                     </div>
                     <div className="text-center mt-8">
                         <Button asChild size="lg" className="bg-white text-[#055090] hover:bg-white/90 rounded-full px-8">
-                            <Link href="/events">View All Events <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                            <Link href="/events" className='flex items-center'>View All Events <ArrowRight className="ml-2 h-4 w-4" /></Link>
                         </Button>
                     </div>
                 </Container>

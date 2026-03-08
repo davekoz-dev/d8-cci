@@ -71,7 +71,7 @@ export function Header() {
           {/* Language Switcher & Mobile Menu */}
           <div className="flex items-center gap-4">
             {/* Language Switcher */}
-            <Button
+            {/* <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
@@ -79,7 +79,7 @@ export function Header() {
             >
               <Globe className="h-4 w-4" />
               <span className="text-sm font-medium uppercase">{language}</span>
-            </Button>
+            </Button> */}
 
             {/* Mobile Menu Button */}
             <button

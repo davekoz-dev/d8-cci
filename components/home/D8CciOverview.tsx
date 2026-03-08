@@ -127,10 +127,10 @@ export function D8CciOverview() {
 
                 {/* ── CTA ─────────────────────────────────────────── */}
                 <div className="text-center mt-12">
-                    <Button asChild size="lg" variant="outline" className="group">
-                        <Link href="/about-d8">
+                    <Button asChild size="lg" variant="outline" className="group rounded-lg">
+                        <Link href="/about-d8" className='flex items-center gap-2'>
                             Learn More About D-8 CCI
-                            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </Button>
                 </div>

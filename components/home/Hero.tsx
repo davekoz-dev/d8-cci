@@ -6,7 +6,8 @@ import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
 import { d8CCIMembers } from '@/lib/constants/d8-cci-data';
-import { CalendarDays, MapPin, ChevronsRight, ChevronDown } from 'lucide-react';
+import { CalendarDays, MapPin, ChevronsRight, ChevronDown, ArrowRight } from 'lucide-react';
+import { Arrow } from 'radix-ui/internal';
 
 /* ────────────────────────────────────────────────────────────
    Countdown hook — ticks every second until the forum date
@@ -99,20 +100,21 @@ export function Hero() {
         </div>
 
         {/* Quotation Badge (Top Left) */}
-        <div className="hidden lg:block absolute top-8 left-8 right-8 z-20">
+        <div className="hidden lg:block absolute top-8 left-8 right-8 z-20 space-y-4">
           <p className="text-white text-md md:text-md font-small leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business Leaders Forum on 14 April."{' '}
           </p>
           <Button
             asChild
-            variant="outline"
             className="
-              border-white/30 text-white hover:bg-white/10 hover:border-white/50
-              rounded-full px-6 backdrop-blur-sm
-              transition-all duration-300
+              bg-[#00B3AA] hover:bg-[#00a09a] text-white
+              rounded-full px-6 shadow-lg shadow-[#00B3AA]/30
+              transition-all duration-300 group
             "
           >
-            <Link href="/business-leaders-forum">Register now</Link>
+            <Link href="/business-leaders-forum" className='flex items-center gap-2'>Register now
+              <ArrowRight size={16} className='group-hover:translate-x-1 transition-transform duration-200' />
+            </Link>
           </Button>
         </div>
       </div>
