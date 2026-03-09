@@ -80,7 +80,7 @@ export function D8CciOverview() {
                 {/* ── Member Chambers ─────────────────────────────── */}
                 <div data-aos="fade-up">
                     <Typography variant="h3" className="text-[#282561] text-center mb-8">
-                        Our Member Chambers
+                        Our Member Chambers of Commerce & Industry
                     </Typography>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -102,12 +102,18 @@ export function D8CciOverview() {
                                         className="h-full w-full object-cover"
                                     />
                                 </div>
-                                <div className="min-w-0">
-                                    <Typography variant="bodySmall" className="font-semibold text-[#282561] truncate">
-                                        {member.acronym}
-                                    </Typography>
-                                    <Typography variant="caption" className="text-[#414042]/60 truncate block">
-                                        {member.country}
+                                <div className="min-w-0 flex-1">
+                                    <div className="flex items-baseline gap-1 flex-wrap">
+                                        <Typography variant="bodySmall" className="font-bold text-[#282561]">
+                                            {member.acronym}
+                                        </Typography>
+                                        <span className="text-muted-foreground">·</span>
+                                        <Typography variant="caption" className="text-muted-foreground">
+                                            {member.country}
+                                        </Typography>
+                                    </div>
+                                    <Typography variant="caption" className="text-muted-foreground tracking-normal">
+                                        {member.chamberName}
                                     </Typography>
                                 </div>
                                 {member.isPresident && (

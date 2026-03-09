@@ -3,6 +3,7 @@
 import * as React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/button';
 import { d8CCIMembers } from '@/lib/constants/d8-cci-data';
@@ -71,8 +72,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative w-full min-h-screen flex items-center bg-[#055090] overflow-hidden">
+    <section id="hero" className="relative w-full h-[calc(100dvh-81px)] flex items-center bg-[#055090] overflow-hidden">
       {/* ── Background layers (Left side / Mobile hidden) ───────────────── */}
+      {/*  */}
+      <div className='w-1/2 lg:block hidden' />
       <div className="absolute inset-0 lg:w-1/2">
         <style>{`
           @keyframes pan-bg {
@@ -101,145 +104,133 @@ export function Hero() {
 
         {/* Quotation Badge (Top Left) */}
         <div className="hidden lg:block absolute top-8 left-8 right-8 z-20 space-y-4">
-          <p className="text-white text-md md:text-md font-small leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business Leaders Forum on 14 April."{' '}
+          <p className="text-white text-base md:text-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business Leaders Forum on 14 April."
           </p>
           <Button
             asChild
-            className="
-              bg-[#00B3AA] hover:bg-[#00a09a] text-white
-              rounded-full px-6 shadow-lg shadow-[#00B3AA]/30
-              transition-all duration-300 group
-            "
+            className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-6 shadow-lg hover:shadow-xl shadow-[#00B3AA]/30 transition-all duration-300 group"
           >
-            <Link href="/business-leaders-forum" className='flex items-center gap-2'>Register now
-              <ArrowRight size={16} className='group-hover:translate-x-1 transition-transform duration-200' />
+            <Link href="/business-leaders-forum" className="flex items-center gap-2">
+              Register to D-8 Business Leaders Forum now
+              <ChevronsRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </Button>
         </div>
       </div>
 
-      {/* ── Content (Right side Opaque Block) ───────────────────────────── */}
-      <Container size="xl" className="relative z-10 w-full pt-2 pb-16 md:pt-2 md:pb-20 lg:pt-6 lg:pb-20">
-        <div className="flex flex-col items-center text-center lg:items-start lg:text-left lg:w-1/2 lg:ml-auto lg:pl-16 space-y-8">
+      {/* ── Content ─────────────────────────────────────────────────────── */}
+      <Container size="xl" className="z-10 relative lg:w-1/2 flex flex-col justify-center items-center">
+        <Image
+          src="/assets/d8/logo/d8-logo-v2.png"
+          alt="D-8 Indonesia 2026-2027"
+          width={800}
+          height={566}
+          priority
+          className="w-28 sm:w-36 md:w-40 h-auto object-contain drop-shadow-lg"
+        />
+        {/* Layout: city spacer (left) + all right-side content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
 
-          {/* D-8 Indonesia Logo (Top Right) */}
-          <div className="w-full flex justify-center lg:justify-end mb-0">
-            <div className={`relative w-32 sm:w-40 md:w-48 lg:w-56 h-auto transition-all duration-700 delay-100 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}>
-              <Image
-                src="/assets/d8/logo/d8-logo-v2.png"
-                alt="D-8 Indonesia 2026-2027"
-                width={800}
-                height={566}
-                priority
-                className="w-full h-auto object-contain drop-shadow-lg"
-              />
+
+
+          {/* Hero content + banner row */}
+
+          {/* Hero content */}
+          <div className="flex-1 flex flex-col items-center text-center lg:items-start lg:text-left space-y-6">
+
+            {/* D-8 Indonesia Logo — always centered */}
+            <div className={cn('w-full flex justify-center transition-all duration-700 delay-100 ease-out', mounted ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4')}>
+
             </div>
-          </div>
 
-          <div
-            className={`flex flex-col items-center lg:items-start space-y-3 max-w-4xl transition-all duration-700 delay-150 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight">
-              9 countries<br />1.2 billion people<br />One shared future.
-            </h1>
-            <p
-              className={`text-white max-w-2xl text-sm sm:text-base leading-relaxed transition-all duration-700 delay-300 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-                }`}
+            <div
+              className={cn('flex flex-col items-center lg:items-start space-y-2 transition-all duration-700 delay-150 ease-out', mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6')}
             >
-              DEVELOPMENT-8 CHAMBERS OF COMMERCE AND INDUSTRY
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.08] tracking-tight">
+                9 countries<br />1.2 billion people<br />One shared future.
+              </h1>
+              <p className="text-white text-xs sm:text-sm leading-relaxed uppercase tracking-wide">
+                Development-8 Chambers of Commerce and Industry
+              </p>
+            </div>
+
+            {/* Description */}
+            <p
+              className={cn('text-white/70 text-sm leading-relaxed transition-all duration-700 delay-300 ease-out', mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6')}
+            >
+              D-8 CCI unites the chambers of commerce of nine member countries to
+              foster trade, investment, and business collaboration — building bridges
+              for sustainable economic growth across a combined market of 1.2 billion
+              people.
             </p>
-          </div>
-
-          {/* Description */}
-          <p
-            className={`text-white/70 max-w-2xl text-sm sm:text-base leading-relaxed transition-all duration-700 delay-300 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
-          >
-            D-8 CCI unites the chambers of commerce of nine member countries to
-            foster trade, investment, and business collaboration — building bridges
-            for sustainable economic growth across a combined market of 1.2 billion
-            people.
-          </p>
-
-          {/* Countdown — Business Leaders Forum */}
-          <div
-            className={`transition-all duration-700 delay-[400ms] ease-out ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-              }`}
-          >
-            <div className="inline-flex items-center gap-1 rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-md px-5 sm:px-6 py-3 shadow-xl">
-              <div className="flex items-center gap-1 mr-3 sm:mr-4">
-                <CalendarDays className="h-4 w-4 text-[#00B3AA]" />
-                <span className="text-xs sm:text-sm text-white/80 font-medium whitespace-nowrap">
+            {/* Countdown */}
+            <div className={cn('transition-all duration-700 delay-[400ms] ease-out space-y-1', mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-95')}>
+              <div className="hidden items-center gap-1 mr-2 sm:mr-3 lg:flex ">
+                <CalendarDays className="h-3.5 w-3.5 text-[#00B3AA]" />
+                <span className="text-sm text-white/80 font-medium whitespace-nowrap">
                   D-8 Business Leaders Forum 2026
                 </span>
               </div>
-
-              <div className="flex items-center gap-2 sm:gap-4">
-                <CountdownCell value={countdown.days} label="Days" />
-                <span className="text-xl text-white/30 font-light -mt-3">:</span>
-                <CountdownCell value={countdown.hours} label="Hrs" />
-                <span className="text-xl text-white/30 font-light -mt-3">:</span>
-                <CountdownCell value={countdown.minutes} label="Min" />
-                <span className="text-xl text-white/30 font-light -mt-3">:</span>
-                <CountdownCell value={countdown.seconds} label="Sec" />
+              <div className="inline-flex items-center gap-1 rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-md px-4 py-3 shadow-xl">
+                <div className="flex items-center gap-1 mr-2 sm:mr-3 lg:hidden ">
+                  <CalendarDays className="h-3.5 w-3.5 text-[#00B3AA]" />
+                  <span className="text-sm text-white/80 font-medium whitespace-nowrap">
+                    D-8 Business Leaders Forum 2026
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 sm:gap-3">
+                  <CountdownCell value={countdown.days} label="Days" />
+                  <span className="text-lg text-white/30 font-light -mt-3">:</span>
+                  <CountdownCell value={countdown.hours} label="Hrs" />
+                  <span className="text-lg text-white/30 font-light -mt-3">:</span>
+                  <CountdownCell value={countdown.minutes} label="Min" />
+                  <span className="text-lg text-white/30 font-light -mt-3">:</span>
+                  <CountdownCell value={countdown.seconds} label="Sec" />
+                </div>
               </div>
+            </div>
+
+            {/* CTA */}
+            <div className={cn('transition-all duration-700 delay-500 ease-out', mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6')}>
+              <Button
+                asChild
+                className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-6 shadow-lg shadow-[#00B3AA]/25 hover:shadow-xl hover:shadow-[#00B3AA]/30 transition-all duration-300 group"
+              >
+                <Link href="/business-leaders-forum" className='flex items-center'>
+                  D-8 Business Leaders Forum 2026
+                  <ChevronsRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </Button>
             </div>
           </div>
 
-          {/* CTAs */}
+          {/* Banner placeholder */}
           <div
-            className={`flex flex-col sm:flex-row gap-3 transition-all duration-700 delay-500 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-              }`}
+            className={`hidden lg:flex shrink-0 w-full items-center justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-700 delay-200 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <Button
-              asChild
-              className="
-                bg-[#00B3AA] hover:bg-[#00a09a] text-white
-                rounded-full px-6 shadow-lg shadow-[#00B3AA]/25
-                hover:shadow-xl hover:shadow-[#00B3AA]/30
-                transition-all duration-300 group
-              "
-            >
-              <Link href="/business-leaders-forum">
-                D-8 Business Leaders Forum 2026
-              </Link>
-              <ChevronsRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="
-                border-white/30 text-white hover:bg-white/10 hover:border-white/50
-                rounded-full px-6 backdrop-blur-sm
-                transition-all duration-300
-              "
-            >
-              <Link href="/#about-d8">
-                D-8 Women Business Alliance
-              </Link>
-              <ChevronsRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <p className="text-white/20 text-sm font-medium tracking-widest uppercase rotate-90">Banner</p>
           </div>
 
-          {/* Member chamber flags */}
-          <div
-            className={`pt-2 w-full flex flex-col items-center lg:items-start transition-all duration-700 delay-[700ms] ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-          >
-            <p className="text-white/50 text-[10px] sm:text-xs w-full text-center lg:text-left uppercase tracking-[0.25em] font-medium mb-3">
-              Member Chambers
-            </p>
-            <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 max-w-[500px]">
-              {[...d8CCIMembers].sort((a, b) => a.chamberName.localeCompare(b.chamberName)).map((member, i) => (
+
+
+        </div>{/* end right column */}
+        {/* Members strip — inside right column */}
+        <div
+          className={`mt-8 transition-all duration-700 delay-700 ease-out flex flex-col items-center pt-4 w-full ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
+          <p className="text-white/50 text-[10px] sm:text-xs uppercase tracking-[0.25em] font-medium mb-4">
+            Member Chambers of Commerce &amp; Industry
+          </p>
+          <div className="flex flex-wrap gap-4 sm:gap-5">
+            {[...d8CCIMembers].sort((a, b) => a.chamberName.localeCompare(b.chamberName)).map((member, i) => (
+              <div
+                key={member.acronym}
+                className="group flex flex-col items-center gap-1.5"
+                style={{ animationDelay: `${800 + i * 80}ms` }}
+              >
                 <div
-                  key={member.acronym}
-                  className="group flex flex-col items-center gap-1.5"
-                  style={{ animationDelay: `${800 + i * 80}ms` }}
-                >
-                  <div
-                    className="
+                  className="
                       w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden
                       border-2 border-white/30
                       ring-2 ring-transparent
@@ -248,31 +239,28 @@ export function Hero() {
                       transition-all duration-300
                       shadow-lg shadow-black/20
                     "
-                  >
-                    <Image
-                      src={member.flag}
-                      alt={`${member.country} flag`}
-                      width={48}
-                      height={48}
-                      sizes="48px"
-                      className="w-full h-full object-cover"
-                      loading="lazy"
-                    />
-                  </div>
-                  <span className="text-[10px] sm:text-xs text-white/60 group-hover:text-white/90 font-medium transition-colors">
-                    {member.acronym}
-                  </span>
+                >
+                  <Image
+                    src={member.logo}
+                    alt={`${member.country} flag`}
+                    width={48}
+                    height={48}
+                    sizes="48px"
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
                 </div>
-              ))}
-            </div>
+                <span className="text-[10px] sm:text-xs text-white/60 group-hover:text-white/90 font-medium transition-colors">
+                  {member.acronym}
+                </span>
+              </div>
+            ))}
           </div>
-        </div>
+        </div>{/* end members */}
       </Container>
 
       {/* Scroll indicator */}
-      <div className="absolute inset-x-0 bottom-6 z-10 flex justify-center">
-        <ChevronDown className="h-6 w-6 text-[#055090]/40 animate-bounce" />
-      </div>
+
     </section>
   );
 }

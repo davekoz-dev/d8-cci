@@ -20,7 +20,7 @@ export interface D8CCIMember {
   address?: string;
   keySectors: string[];
   description: string;
-  logo?: string;
+  logo: string;
   isPresident?: boolean;
   hasSecretariat?: boolean;
 }
