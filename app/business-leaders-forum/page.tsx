@@ -23,10 +23,10 @@ import {
    ───────────────────────────────────────────────────────────────────── */
 const forum = {
     badge: 'DBLF 2026 · 14 April 2026 · Fairmont Hotel, Jakarta',
-    title: 'D8‑CCI Business Leaders Forum 2026',
-    theme: 'Achieving Sustainable Growth Through D8 Business Cooperation',
+    title: 'D8‑CCI Business  Forum 2026',
+    theme: 'Connecting D-8 Business for Sustainable and Resilient Growth',
     description:
-        'The D8‑CCI Business Leaders Forum 2026 convenes 300 CEOs and business leaders ' +
+        'The D8‑CCI Business  Forum 2026 convenes 300 CEOs and Business  ' +
         'from D‑8 member countries to strengthen economic collaboration, address regulatory ' +
         'and market-access barriers, and produce practical, actionable solutions that will ' +
         'be formally brought to D‑8 Heads of State at the 11th Summit.',
@@ -39,14 +39,14 @@ const highlights = [
     'Cross-border business cooperation and B2B / B2G engagement',
     'Identifying solutions to regulatory barriers and market-access issues',
     'Supporting D‑8 chairmanship priorities including sustainability and food security',
-    'Launch of the D‑8 Women Business Leaders initiative & D‑8 Women Alliance',
+    'Launch of the D‑8 Women Business  initiative & D‑8 Women Alliance',
 ];
 
 /* ─────────────────────────────────────────────────────────────────────
    Data — Stats
    ───────────────────────────────────────────────────────────────────── */
 const stats = [
-    { value: '300', label: 'CEOs & Business Leaders' },
+    { value: '300', label: 'CEOs & Business ' },
     { value: '9', label: 'D-8 Member Countries' },
     { value: '7', label: 'Key Business Priorities' },
     { value: '1', label: 'Women Alliance Launch' },
@@ -183,7 +183,7 @@ export default function BusinessLeadersForumPage() {
             <section className="relative w-full overflow-hidden">
                 <Image
                     src="/assets/hero/labuanbajo.jpg"
-                    alt="D-8 Business Leaders Forum"
+                    alt="D-8 Business  Forum"
                     fill
                     priority
                     className="object-cover object-center"
@@ -335,7 +335,7 @@ export default function BusinessLeadersForumPage() {
                                 Register for the Forum
                             </Typography>
                             <p className="text-[#414042] text-sm">
-                                Secure your seat at the D8‑CCI Business Leaders Forum 2026.
+                                Secure your seat at the D8‑CCI Business  Forum 2026.
                                 You&apos;ll receive confirmation and a QR code via email.
                             </p>
                         </div>

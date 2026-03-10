@@ -64,7 +64,7 @@ export function Header() {
                   : 'bg-gradient-to-r from-[#00B3AA] to-[#055090] text-white hover:shadow-md hover:shadow-[#00B3AA]/30 hover:brightness-110'
               )}
             >
-              D-8 Business Leaders Forum 2026
+              D-8 Business  Forum 2026
             </Link>
           </div>
 
@@ -113,7 +113,7 @@ export function Header() {
                     : 'bg-gradient-to-r from-[#00B3AA] to-[#055090] text-white'
                 )}
               >
-                Business Leaders Forum 2026
+                Business  Forum 2026
               </Link>
               {mainNavigation.map((item) => (
                 <Link

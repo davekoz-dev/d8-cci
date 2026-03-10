@@ -279,7 +279,7 @@ export const d8CCIMilestones: D8CCIMilestone[] = [
 export const upcomingEvents: D8CCIEvent[] = [
   {
     id: "business-leader-forum",
-    title: "D8 Business Leaders Forum",
+    title: "D8 Business  Forum",
     date: '14 April 2026',
     dateEnd: '14 April 2026',
     location: "Fairmont Hotel, Jakarta",
@@ -287,7 +287,7 @@ export const upcomingEvents: D8CCIEvent[] = [
     country: 'Indonesia',
     type: 'business-forum',
     description:
-      'Achieving Sustainable Growth Through D8 Business Cooperation',
+      'Connecting D-8 Business for Sustainable and Resilient Growth',
     registrationOpen: true,
   },
   {

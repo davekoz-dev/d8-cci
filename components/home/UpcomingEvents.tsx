@@ -7,7 +7,7 @@ import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 
 const events = [
     {
-        title: 'D-8 Business Leaders Forum',
+        title: 'D-8 Business  Forum',
         date: '14 April 2026',
         location: 'Fairmont Hotel, Jakarta',
         href: '/business-leaders-forum',

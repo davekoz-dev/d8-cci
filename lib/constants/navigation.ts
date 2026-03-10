@@ -22,7 +22,7 @@ export const footerNavigation = {
   services: [
     { name: 'Programs & Services', href: '/programs' },
     { name: 'Business Opportunities', href: '/opportunities' },
-    { name: 'Business Leaders Forum', href: '/business-leaders-forum' },
+    { name: 'Business  Forum', href: '/business-leaders-forum' },
     { name: 'Events & Forums', href: '/events' },
     { name: 'Trade Facilitation', href: '/programs#trade' },
   ],

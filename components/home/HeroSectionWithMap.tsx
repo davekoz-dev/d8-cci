@@ -15,7 +15,7 @@ import { MapPin, Users, ChevronDown, ChevronLeft, ChevronRight } from 'lucide-re
 // ── Upcoming Events (d8.org style) ───────────────────────────────────
 const upcomingEvents = [
   { day: '12–14', month: 'APR', name: 'Senior Officials & Ministerial Meeting', location: 'Jakarta, Indonesia', href: '/events' },
-  { day: '14', month: 'APR', name: 'D-8 Business Leaders Forum', location: 'Fairmont Hotel, Jakarta', href: '/business-halal' },
+  { day: '14', month: 'APR', name: 'D-8 Business  Forum', location: 'Fairmont Hotel, Jakarta', href: '/business-halal' },
   { day: '14', month: 'APR', name: '11th D-8 Summit', location: 'JICC, Jakarta', href: '/events' },
   { day: '14–18', month: 'APR', name: 'D-8 Halal Expo Indonesia', location: 'Jakarta, Indonesia', href: '/events' },
 ];
@@ -389,7 +389,7 @@ export function HeroSectionWithMap() {
                 <div className="flex items-center gap-2">
                   <Users className="h-4 w-4 text-white" />
                   <p className="text-white font-bold text-xs uppercase tracking-wider">
-                    D8 BUSINESS LEADERS FORUM
+                    D8 Business  FORUM
                   </p>
                 </div>
                 <ChevronDown className="h-4 w-4 text-white transition-transform duration-200 group-data-[state=open]/forum:rotate-180" />
@@ -398,11 +398,11 @@ export function HeroSectionWithMap() {
               <CollapsibleContent className="overflow-hidden data-[state=open]:animate-collapsible-down data-[state=closed]:animate-collapsible-up">
                 <div className="px-4 pb-4 space-y-3 border-t border-white/20 pt-3">
                   <p className="text-white/95 text-sm font-semibold uppercase tracking-wide text-center">
-                    Registration for D8‑CCI Business Leaders Forum 2026
+                    Registration for D8‑CCI Business  Forum 2026
                   </p>
 
                   <p className="text-white/90 text-xs leading-relaxed">
-                    Join 300+ CEOs and business leaders from D‑8 member countries to
+                    Join 300+ CEOs and Business  from D‑8 member countries to
                     strengthen trade, investment, and industrial cooperation for sustainable growth.
                   </p>
 
@@ -417,7 +417,7 @@ export function HeroSectionWithMap() {
                     </div>
                     <div className="flex items-center gap-2 text-white/90">
                       <span className="font-semibold">Theme:</span>
-                      <span>Achieving Sustainable Growth Through D8 Business Cooperation</span>
+                      <span>Connecting D-8 Business for Sustainable and Resilient Growth</span>
                     </div>
                   </div>
 
@@ -497,13 +497,13 @@ export function HeroSectionWithMap() {
           {/* Summit Badge */}
           <div className="inline-flex items-center gap-2 rounded-full border-2 border-[#00B3AA] bg-white px-6 py-3">
             <div className="h-2 w-2 rounded-full bg-[#00B3AA] animate-pulse" />
-            <Typography variant="bodySmall" className="font-medium text-[#282561]">Business Leaders Forum • 14 April 2026 • Jakarta</Typography>
+            <Typography variant="bodySmall" className="font-medium text-[#282561]">Business  Forum • 14 April 2026 • Jakarta</Typography>
           </div>
 
           {/* CTAs */}
           {/* <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="sm" variant="default" className='rounded-lg'>
-              <Link href="/events">View Business Leaders Forum</Link>
+              <Link href="/events">View Business  Forum</Link>
             </Button>
             <Button asChild size="sm" variant="outline" className='rounded-lg'>
               <Link href="/about-d8">About D-8</Link>

@@ -51,10 +51,10 @@ export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProp
 
         <div className="mb-6 mt-4 flex flex-col gap-4">
           <div className="relative w-48 h-16 bg-[#055090] mx-auto rounded-lg">
-            <Image src="/assets/d8/logo/d8-logo-v2.png" alt="D8-CCI Business Leaders Forum 2026" fill className="object-cover" sizes="192px" />
+            <Image src="/assets/d8/logo/d8-logo-v2.png" alt="D8-CCI Business  Forum 2026" fill className="object-cover" sizes="192px" />
           </div>
           <h2 className="text-lg font-bold text-[#055090] text-center">
-            Registration for D8‑CCI Business Leaders Forum 2026
+            Registration for D8‑CCI Business  Forum 2026
           </h2>
         </div>
 
@@ -82,10 +82,10 @@ export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProp
         </form>
 
         <div className="mt-6 pt-4 border-t border-gray-200 text-xs text-gray-600 space-y-1">
-          <p><span className="font-semibold">Event:</span> D8‑CCI Business Leaders Forum 2026</p>
+          <p><span className="font-semibold">Event:</span> D8‑CCI Business  Forum 2026</p>
           <p><span className="font-semibold">Location:</span> Fairmont Hotel, Jakarta</p>
           <p><span className="font-semibold">Date &amp; Time:</span> 14 April 2026, 13.00 Jakarta Time</p>
-          <p><span className="font-semibold">Theme:</span> Achieving Sustainable Growth Through D8 Business Cooperation</p>
+          <p><span className="font-semibold">Theme:</span> Connecting D-8 Business for Sustainable and Resilient Growth</p>
         </div>
       </div>
     </div>

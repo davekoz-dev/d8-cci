@@ -15,7 +15,7 @@ import { PalestineTeaser } from '@/components/home/PalestineTeaser';
  *
  * Information Hierarchy:
  *   PRIMARY   — D-8 CCI (Hero + CCI Overview)
- *   SECONDARY — Business Leaders Forum 2026
+ *   SECONDARY — Business  Forum 2026
  *   TERTIARY  — Events, Business priorities, Halal Expo, D-8 Summit, Organization overview, Palestine
  */
 

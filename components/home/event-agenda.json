@@ -1,7 +1,7 @@
 {
   "event": {
-    "name": "D8 Business Leaders Forum 2026",
-    "theme": "Achieving Sustainable Growth Through D8 Business Cooperation",
+    "name": "D8 Business  Forum 2026",
+    "theme": "Connecting D-8 Business for Sustainable and Resilient Growth",
     "date": "2026-04-14",
     "timezone": "Asia/Jakarta",
     "location": {
@@ -16,7 +16,7 @@
       "end_time": "13:30",
       "title": "Registration and Networking",
       "type": "registration",
-      "description": "Participant registration and informal networking among delegates and business leaders."
+      "description": "Participant registration and informal networking among delegates and Business ."
     },
     {
       "start_time": "13:30",
@@ -90,7 +90,7 @@
       "end_time": "16:45",
       "title": "Launch of D8 Women Alliance",
       "type": "launch",
-      "description": "Official launch of D8 Women Business Leaders / Women Alliance initiative to promote women’s economic empowerment."
+      "description": "Official launch of D8 Women Business  / Women Alliance initiative to promote women’s economic empowerment."
     },
     {
       "start_time": "16:45",
@@ -98,7 +98,7 @@
       "title": "Closing Remarks and Wrap-up",
       "type": "closing",
       "speaker": "Host Representative",
-      "description": "Summary of key points, next steps, and closing of the Business Leaders Forum."
+      "description": "Summary of key points, next steps, and closing of the Business  Forum."
     }
   ],
   "side_events": [

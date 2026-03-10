@@ -105,14 +105,14 @@ export function Hero() {
         {/* Quotation Badge (Top Left) */}
         <div className="hidden lg:block absolute top-8 left-8 right-8 z-20 space-y-4">
           <p className="text-white text-base md:text-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business Leaders Forum on 14 April."
+            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business  Forum on 14 April."
           </p>
           <Button
             asChild
             className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-6 shadow-lg hover:shadow-xl shadow-[#00B3AA]/30 transition-all duration-300 group"
           >
             <Link href="/business-leaders-forum" className="flex items-center gap-2">
-              Register to D-8 Business Leaders Forum now
+              Register to D-8 Business  Forum now
               <ChevronsRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </Button>
@@ -169,14 +169,14 @@ export function Hero() {
               <div className="hidden items-center gap-1 mr-2 sm:mr-3 lg:flex ">
                 <CalendarDays className="h-3.5 w-3.5 text-[#00B3AA]" />
                 <span className="text-sm text-white/80 font-medium whitespace-nowrap">
-                  D-8 Business Leaders Forum 2026
+                  D-8 Business  Forum 2026
                 </span>
               </div>
               <div className="inline-flex items-center gap-1 rounded-2xl border border-white/15 bg-white/[0.07] backdrop-blur-md px-4 py-3 shadow-xl">
                 <div className="flex items-center gap-1 mr-2 sm:mr-3 lg:hidden ">
                   <CalendarDays className="h-3.5 w-3.5 text-[#00B3AA]" />
                   <span className="text-sm text-white/80 font-medium whitespace-nowrap">
-                    D-8 Business Leaders Forum 2026
+                    D-8 Business  Forum 2026
                   </span>
                 </div>
                 <div className="flex items-center gap-1.5 sm:gap-3">
@@ -198,7 +198,7 @@ export function Hero() {
                 className="bg-[#00B3AA] hover:bg-[#00a09a] text-white rounded-full px-6 shadow-lg shadow-[#00B3AA]/25 hover:shadow-xl hover:shadow-[#00B3AA]/30 transition-all duration-300 group"
               >
                 <Link href="/business-leaders-forum" className='flex items-center'>
-                  D-8 Business Leaders Forum 2026
+                  D-8 Business  Forum 2026
                   <ChevronsRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

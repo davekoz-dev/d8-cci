@@ -5,7 +5,7 @@ import { getAdminSupabase } from '@/lib/supabase';
 
 const EVENT_LABELS: Record<string, { label: string; date: string; location: string }> = {
   ministerial: { label: 'Senior Officials & Ministerial Meeting', date: '12–14 April 2026', location: 'Jakarta, Indonesia' },
-  'business-forum': { label: 'D-8 Business Leaders Forum', date: '14 April 2026', location: 'Fairmont Hotel, Jakarta' },
+  'business-forum': { label: 'D-8 Business  Forum', date: '14 April 2026', location: 'Fairmont Hotel, Jakarta' },
   summit: { label: '11th D-8 Summit', date: '14 April 2026', location: 'JICC, Jakarta' },
   'halal-expo': { label: 'D-8 Halal Expo Indonesia', date: '14–18 April 2026', location: 'Jakarta, Indonesia' },
 };

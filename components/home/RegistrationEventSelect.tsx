@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation';
 
 const eventOptions = [
   { value: 'ministerial', label: 'Senior Officials & Ministerial Meeting' },
-  { value: 'business-forum', label: 'D-8 Business Leaders Forum' },
+  { value: 'business-forum', label: 'D-8 Business  Forum' },
   { value: 'summit', label: '11th D-8 Summit' },
   { value: 'halal-expo', label: 'D-8 Halal Expo Indonesia' },
 ];
