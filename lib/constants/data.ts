@@ -153,7 +153,7 @@ export const d8Statistics: Statistic[] = [
     description: 'Since establishment in 1997',
   },
   {
-    value: '8',
+    value: '9',
     label: 'Member Countries',
     description: 'Developing nations with large Muslim populations',
   },
@@ -163,7 +163,7 @@ export const d8Statistics: Statistic[] = [
  * Summit 2026 Statistics
  */
 export const summitStatistics: Statistic[] = [
-  { value: '8', label: 'Member Countries' },
+  { value: '9', label: 'Member Countries' },
   { value: '1.2B', label: 'Combined Population' },
   { value: '$4.7T', label: 'Combined GDP' },
   { value: '11th', label: 'Summit Edition' },

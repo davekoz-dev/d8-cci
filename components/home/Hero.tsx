@@ -72,7 +72,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="hero" className="relative w-full h-[calc(100dvh-81px)] flex items-center bg-[#055090] overflow-hidden">
+    <section id="hero" className="relative w-full h-screen flex items-center bg-[#055090] overflow-hidden">
       {/* ── Background layers (Left side / Mobile hidden) ───────────────── */}
       {/*  */}
       <div className='w-1/2 lg:block hidden' />
@@ -105,7 +105,7 @@ export function Hero() {
         {/* Quotation Badge (Top Left) */}
         <div className="hidden lg:block absolute top-8 left-8 right-8 z-20 space-y-4">
           <p className="text-white text-base md:text-xl leading-relaxed drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business  Forum on 14 April."
+            "Jakarta, Indonesia, will host the D-8 Summit 2026 attended by 16 heads of state and D-8 CCI will concurrently host a Business  Forum on 14th."
           </p>
           <Button
             asChild

@@ -48,7 +48,7 @@ export default function SummitEventsPage() {
                 <div className="flex items-center gap-3 text-white">
                   <Users className="h-5 w-5 text-[#00B3AA]" />
                   <Typography variant="body" color="onDark">
-                    Leaders from 8 Member Countries
+                    Leaders from 9 Member Countries
                   </Typography>
                 </div>
               </div>

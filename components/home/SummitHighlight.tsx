@@ -80,7 +80,7 @@ export function SummitHighlight() {
           {/* Visual Element / Stats */}
           <div className="grid grid-cols-2 gap-6">
             {[
-              { number: '8', label: 'Member Countries' },
+              { number: '9', label: 'Member Countries' },
               { number: '1.2B', label: 'Combined Population' },
               { number: '$4.7T', label: 'Combined GDP' },
               { number: '11th', label: 'Summit Edition' },

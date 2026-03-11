@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import QRCode from 'qrcode';
 import { getAdminSupabase } from '@/lib/supabase';
@@ -61,16 +61,12 @@ export async function POST(req: Request) {
       }
     }
 
-    // 3. Send confirmation email with QR via Gmail SMTP
-    const gmailUser = process.env.GMAIL_USER;
-    const gmailPass = process.env.GMAIL_APP_PASSWORD;
+    // 3. Send confirmation email with QR via Resend
+    const resendKey = process.env.RESEND_API_KEY;
 
-    if (gmailUser && gmailPass) {
+    if (resendKey) {
       try {
-        const transporter = nodemailer.createTransport({
-          service: 'gmail',
-          auth: { user: gmailUser, pass: gmailPass },
-        });
+        const resend = new Resend(resendKey);
 
         const qrSection = qrBase64
           ? `<div style="text-align:center;margin:24px 0;">
@@ -82,10 +78,12 @@ export async function POST(req: Request) {
              </div>`
           : `<p style="color:#6b7280;font-size:12px;text-align:center;margin:16px 0;">Registration ID: ${registrationId ?? 'N/A'}</p>`;
 
-        await transporter.sendMail({
-          from: `D-8 CCI 2026 <${gmailUser}>`,
+        const { error: emailError } = await resend.emails.send({
+          from: 'D-8 CCI 2026 <noreply@d-8cci.org>',
           to: email,
+          replyTo: 'developing8.cci@gmail.com',
           subject: `Registration Confirmed — ${eventInfo.label}`,
+          attachments: qrBase64 ? [{ filename: 'QR-Code.png', content: qrBase64, contentId: 'qrcode' }] : [],
           html: `
             <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;border:1px solid #e5e7eb;border-radius:10px;overflow:hidden;">
               <div style="background:linear-gradient(to right,#055090,#00B3AA);padding:28px 24px;">
@@ -118,20 +116,14 @@ export async function POST(req: Request) {
                 </p>
               </div>
             </div>`,
-          ...(qrBase64 ? {
-            attachments: [{
-              filename: 'qr-code.png',
-              content: Buffer.from(qrBase64, 'base64'),
-              cid: 'qrcode',
-            }],
-          } : {}),
         });
-        console.log('Confirmation sent to', email);
+        if (emailError) console.error('Resend error:', emailError);
+        else console.log('Confirmation sent to', email);
       } catch (emailErr) {
         console.error('Email error:', emailErr);
       }
     } else {
-      console.warn('Email not sent: GMAIL_USER or GMAIL_APP_PASSWORD not set');
+      console.warn('Email not sent: RESEND_API_KEY not set');
     }
 
     console.log('Registration:', { name, company, email, phone, event: eventInfo.label, token, timestamp });
