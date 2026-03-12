@@ -39,18 +39,19 @@ const supportingLeaders: Leader[] = [
   { name: 'Dyah Roro Esti Widya Putri', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg', objectPosition: 'center 10%', scale: 1.2 },
   { name: 'Anindya Bakrie', role: 'President of D-8 CCI', photo: '/assets/d8/leader/anindya-bakrie-2.png', objectPosition: 'center 15%', scale: 1.2 },
   { name: 'Ambassador Sohail Mahmood', role: 'Secretary General of D-8 CCI', photo: '/assets/d8/leader/ambassador-sohail-mahmood-2.png', objectPosition: '75% 20%', scale: 1.2 },
-  { name: 'James T. Riyadi', role: 'Vice Chairman, Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },
-  { name: 'Andi Anzhar Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar-2.png', objectPosition: 'center 10%', scale: 1.5 },
+  { name: 'Dr. James T. Riyadi', role: 'Coordinating Vice Chairman  for Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Andi Anzhar Cakra Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar-2.png', objectPosition: 'center 10%', scale: 1.5 },
   { name: 'Rifat Hisarciklioglu', role: 'Chairman of TOBB Republic of Türkiye', photo: '/assets/d8/leader/rifat-hisarciklioglu.jpg', objectPosition: 'center 10%' },
   { name: 'Dato Seri N Gobalakrishnan', role: 'Chairman, National Chamber Malaysia', photo: '/assets/d8/leader/dato seri-n-gobalakrishnan.jpg', objectPosition: 'center 30%' },
   { name: 'Atif Ikram', role: 'Chairman of FPCCI Pakistan', photo: '/assets/d8/leader/atif-ikram.jpeg', objectPosition: 'center 10%', scale: 1.2 },
   { name: 'Jani Ibrahim', role: 'Chairman, NACCIMA Nigeria', photo: '/assets/d8/leader/jani-ibrahim.jpeg', objectPosition: 'center 10%', scale: 1.2 },
-  { name: 'Ahmed El', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+  { name: 'Ahmad El-Wakil', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg', objectPosition: 'center 10%', scale: 1.2 },
   { name: 'Mohamad Bawazeer', role: 'Chairman, Standing Committee D-8 KADIN', photo: '/assets/business-leader/mohammad-bawazeer.png', objectPosition: 'center 10%', scale: 1.2 },
   { name: 'Nita Yudi', role: 'Chairwoman of IWAPI', photo: '/assets/d8/leader/nita-yudi-2.png', objectPosition: 'center 10%', scale: 1.5 },
   { name: 'Irawati Hermawan', role: 'CEO of Hermawan Juniarto & Partners', photo: '/assets/business-leader/irawati-hermawan-2.jpg', objectPosition: '70% 10%', scale: 1.2 },
-  { name: 'Samad Hasanzadeh', role: 'Vice Chairman of Iran Chambers', photo: '/assets/d8/leader/samad-hasanzadeh.jpg', objectPosition: 'center 40%', scale: 1.2 },
+  { name: 'Samad Hassanzadeh', role: 'Chairman of Iran Chamber of Commerce, Industries, Mines and Agriculture (ICCIMA)', photo: '/assets/d8/leader/samad-hasanzadeh.jpg', objectPosition: 'center 40%', scale: 1.2 },
   { name: 'Abdur Karim', role: 'Administrator of Bangladesh Chambers', photo: '/assets/d8/leader/abdur-karim.jpg', objectPosition: 'center 10%', },
+  { name: 'Niyaz Ali-Zada', role: 'President The Azerbaijan Republic Chamber of Commerce and Industry', photo: '/assets/d8/leader/niyaz-ali-zada.jgp', objectPosition: 'center 40%', scale: 1.5 }
 ];
 
 // ── Reusable leader card ──────────────────────────────────────────────

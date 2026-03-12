@@ -67,27 +67,28 @@ type Leader = {
 const featuredLeaders: Leader[] = [
     { name: 'H.E. Dato\' Seri Anwar Ibrahim*', role: 'Prime Minister of Malaysia', photo: '/assets/d8/leader/anwar-ibrahim.jpeg', objectPosition: 'center 10%' },
     { name: 'H.E. Prabowo Subianto', role: 'President of the Republic of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
-    { name: 'H.E. Abdel Fattah Al-Sisi*', role: 'President of the Arab Republic of Egypt', photo: '/assets/d8/leader/abdel-fattah-al-sisi.jpg', objectPosition: 'center 45%' },
+    { name: 'H.E. Abdel Fattah El-Sisi*', role: 'President of the Arab Republic of Egypt', photo: '/assets/d8/leader/abdel-fattah-al-sisi.jpg', objectPosition: 'center 45%' },
     { name: 'H.E. Shehbaz Sharif*', role: 'Prime Minister of the Islamic Republic of Pakistan', photo: '/assets/d8/leader/shehbaz-sharif.jpg', objectPosition: 'center 0%' },
 ];
 
 const supportingLeaders: Leader[] = [
-    { name: 'Rosan Roeslani*', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png', objectPosition: '10% 0%', scale: 1.2 },
+    { name: 'H.E. Rosan Roeslani*', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png', objectPosition: '10% 0%', scale: 1.2 },
     { name: 'Dyah Roro Esti Widya Putri*', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg', objectPosition: 'center 10%', scale: 1.2 },
     { name: 'Anindya Bakrie', role: 'President of D-8 CCI', photo: '/assets/d8/leader/anindya-bakrie-2.png', objectPosition: 'center 15%', scale: 1.2 },
     { name: 'Ambassador Sohail Mahmood', role: 'Secretary General of D-8 CCI', photo: '/assets/d8/leader/ambassador-sohail-mahmood-2.png', objectPosition: '75% 20%', scale: 1.2 },
-    { name: 'James T. Riyadi', role: 'Vice Chairman, Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },
-    { name: 'Andi Anzhar Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar-2.png', objectPosition: 'center 10%', scale: 1.5 },
+    { name: 'Dr. James T. Riyadi', role: 'Coordinating Vice Chairman  for Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },
+    { name: 'Andi Anzhar Cakra Wijaya', role: 'Vice Chairman for Multilateral Diplomacy', photo: '/assets/business-leader/andi-anzhar-cakra.webp', objectPosition: 'center 10%', scale: 1 },
     { name: 'Rifat Hisarciklioglu', role: 'Chairman of TOBB Republic of Türkiye', photo: '/assets/d8/leader/rifat-hisarciklioglu.jpg', objectPosition: 'center 10%' },
     { name: 'Dato Seri N Gobalakrishnan', role: 'Chairman, National Chamber Malaysia', photo: '/assets/d8/leader/dato seri-n-gobalakrishnan.jpg', objectPosition: 'center 30%' },
     { name: 'Atif Ikram', role: 'Chairman of FPCCI Pakistan', photo: '/assets/d8/leader/atif-ikram.jpeg', objectPosition: 'center 10%', scale: 1.2 },
     { name: 'Jani Ibrahim', role: 'Chairman, NACCIMA Nigeria', photo: '/assets/d8/leader/jani-ibrahim.jpeg', objectPosition: 'center 10%', scale: 1.2 },
-    { name: 'Ahmed El', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+    { name: 'Ahmad El-Wakil', role: 'Chairman of FEDCOC', photo: '/assets/d8/leader/ahmed-el.jpeg', objectPosition: 'center 10%', scale: 1.2 },
     { name: 'Mohamad Bawazeer', role: 'Chairman, Standing Committee D-8 KADIN', photo: '/assets/business-leader/mohammad-bawazeer.png', objectPosition: 'center 10%', scale: 1.2 },
     { name: 'Nita Yudi', role: 'Chairwoman of IWAPI', photo: '/assets/d8/leader/nita-yudi-2.png', objectPosition: 'center 10%', scale: 1.5 },
-    { name: 'Irawati Hermawan', role: 'CEO of Hermawan Juniarto & Partners', photo: '/assets/business-leader/irawati-hermawan-2.jpg', objectPosition: '70% 10%', scale: 1.2 },
-    { name: 'Samad Hasanzadeh', role: 'Vice Chairman of Iran Chambers', photo: '/assets/d8/leader/samad-hasanzadeh.jpg', objectPosition: 'center 40%', scale: 1.2 },
-    { name: 'Abdur Karim', role: 'Administrator of Bangladesh Chambers', photo: '/assets/d8/leader/abdur-karim.jpg', objectPosition: 'center 10%' },
+    { name: 'Irawati Hermawan', role: 'CEO of Hermawan Juniarto & Partners', photo: '/assets/business-leader/irawati-hermawan-2.jpg', objectPosition: '70% 40%', scale: 1.5 },
+    { name: 'Samad Hassanzadeh', role: 'Chairman of Iran Chamber of Commerce, Industries, Mines and Agriculture (ICCIMA)', photo: '/assets/d8/leader/samad-hasanzadeh.jpg', objectPosition: 'center 40%', scale: 1.2 },
+    { name: 'Abdur Karim', role: 'Administrator of Bangladesh Chambers', photo: '/assets/d8/leader/abdul-karim2.jpg', objectPosition: 'center 10%' },
+    { name: 'Niyaz Ali-Zada', role: 'President The Azerbaijan Republic Chamber of Commerce and Industry', photo: '/assets/d8/leader/niyaz-ali-zada.jpg', objectPosition: 'center 40%', scale: 1.5 }
 ];
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -154,7 +155,7 @@ const agenda: AgendaItem[] = [
             'Keynote Remarks: Dyah Roro Esti Widya Putri*, Vice-Minister of Trade of The Republic of Indonesia',
             'Mr. Ahmed El-Wakil*, Chairman of Federation of Egyptian Chambers of Commerce (FEDCOC)',
             'Mr. Atif Ikram, President of Federation of Pakistan Chambers of Commerce and Industry (FPCCI)',
-            'Mr. Samad Hasanzadeh*, Chairman of Iran Chamber of Commerce, Industries, Mines and Agriculture (ICCIMA)',
+            'Mr. Samad Hassanzadeh*, Chairman of Iran Chamber of Commerce, Industries, Mines and Agriculture (ICCIMA)',
             'Mr. Niyaz Ali-Zada*, President of The Azerbaijan Republic Chamber of Commerce and Industry',
             'Mr. Md. Abdur Rahim Khan*, Administrator of Federation of Bangladesh Chambers of Commerce and Industry (FBCCI)',
             'Moderator: Mr. Mufti Hamka, Head of the Permanent Committee for International Treaties of Kadin Indonesia',
@@ -181,7 +182,7 @@ const agenda: AgendaItem[] = [
    Data — Organizing Committee
    ───────────────────────────────────────────────────────────────────── */
 const committee = [
-    { name: 'Andi Anzhar Wijaya', role: 'Head of Steering Committee', photo: '/assets/business-leader/andi-anzhar.png' },
+    { name: 'Andi Anzhar Cakra Wijaya', role: 'Head of Steering Committee', photo: '/assets/business-leader/andi-anzhar.png' },
     { name: 'Mohamad Bawazeer', role: 'Deputy Head of Steering Committee', photo: '/assets/business-leader/mohammad-bawazeer.png' },
     { name: 'Irawati Hermawan', role: 'Head of Organizing Committee', photo: '/assets/business-leader/irawati-hermawan.jpg' },
 ];
@@ -216,7 +217,7 @@ function LeaderCard({
                     width={imgPx}
                     height={imgPx}
                     sizes={size === 'lg' ? '(max-width: 768px) 112px, 144px' : '80px'}
-                    quality={90}
+                    quality={100}
                     className="w-full h-full object-cover"
                     style={{ objectPosition, transform: `scale(${scale ?? 1})`, transformOrigin: 'center top' }}
                     loading="lazy"
@@ -242,13 +243,13 @@ function StatCard({ value, label }: { value: string; label: string }) {
 function AgendaRow({ time, title, details, type }: AgendaItem) {
     const icon =
         type === 'panel' ? <Users className="h-4 w-4 text-[#055090]" /> :
-        type === 'ceremony' ? <Calendar className="h-4 w-4 text-[#00B3AA]" /> :
-        <Clock className="h-4 w-4 text-[#055090]" />;
+            type === 'ceremony' ? <Calendar className="h-4 w-4 text-[#00B3AA]" /> :
+                <Clock className="h-4 w-4 text-[#055090]" />;
 
     const bgClass =
         type === 'panel' ? 'bg-[#055090]/5 border-[#055090]/15' :
-        type === 'ceremony' ? 'bg-[#00B3AA]/5 border-[#00B3AA]/15' :
-        'bg-white border-gray-100';
+            type === 'ceremony' ? 'bg-[#00B3AA]/5 border-[#00B3AA]/15' :
+                'bg-white border-gray-100';
 
     return (
         <div className={`flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-4 rounded-xl border ${bgClass} transition-all hover:shadow-sm`}>
@@ -386,7 +387,7 @@ export default function BusinessLeadersForumPage() {
                             <Typography variant="h2" textColor="onDark" className="uppercase tracking-wider">
                                 Speakers &amp; Panellists
                             </Typography>
-                            <div className="flex flex-wrap justify-center gap-5 md:gap-6">
+                            <div className="flex flex-wrap justify-center gap-4 md:gap-4">
                                 {supportingLeaders.map((leader) => (
                                     <LeaderCard key={leader.name} {...leader} size="sm" />
                                 ))}
