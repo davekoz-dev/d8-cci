@@ -175,14 +175,14 @@ export const d8CCIMembers: D8CCIMember[] = [
   },
   {
     country: 'Republic of Türkiye',
-    chamberName: 'The Union of Chambers and Commodity Exchanges of Turkey',
+    chamberName: 'The Union of Chambers and Commodity Exchanges of Türkiye',
     acronym: 'TOBB',
     flag: 'https://flagcdn.com/tr.svg',
     logo: '/assets/d8/members/logotr-tobb-turkiye.png',
     website: 'https://www.tobb.org.tr',
     email: 'info@tobb.org.tr',
     keySectors: ['Manufacturing', 'Construction', 'Tourism', 'Agriculture', 'Services'],
-    description: 'The umbrella organization of chambers in Turkey, supporting private sector development.',
+    description: 'The umbrella organization of chambers in Türkiye, supporting private sector development.',
   },
   {
     country: 'Azerbaijan',

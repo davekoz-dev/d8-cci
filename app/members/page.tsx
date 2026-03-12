@@ -50,7 +50,7 @@ export default function MembersPage() {
             </Typography>
             <Typography variant="body" className="text-[#414042] max-w-2xl mx-auto">
               D-8 CCI brings together chambers from Bangladesh, Egypt, Indonesia, Iran,
-              Malaysia, Nigeria, Pakistan, and Turkey.
+              Malaysia, Nigeria, Pakistan, and Türkiye.
             </Typography>
           </div>
           <div className="bg-white rounded-lg">

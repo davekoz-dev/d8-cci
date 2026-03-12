@@ -188,7 +188,7 @@ export default function AboutD8Page() {
                 1997: Foundation
               </Typography>
               <Typography variant="body" className="text-[#414042]">
-                D-8 was established on June 15, 1997, in Istanbul, Turkey, with the
+                D-8 was established on June 15, 1997, in Istanbul, Türkiye, with the
                 Istanbul Declaration, bringing together eight developing nations
                 with large Muslim populations for economic cooperation.
               </Typography>

@@ -61,7 +61,7 @@ const sampleOpportunities: BusinessOpportunity[] = [
   {
     id: 'renewable-1',
     title: 'Renewable Energy Trade Agreement',
-    country: 'Turkey',
+    country: 'Türkiye',
     sector: 'Renewable Energy',
     type: 'trade',
     description:

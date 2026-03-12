@@ -22,8 +22,8 @@ import {
    Data — Forum details
    ───────────────────────────────────────────────────────────────────── */
 const forum = {
-    badge: 'DBLF 2026 · 14 April 2026 · Fairmont Hotel, Jakarta',
-    title: 'D8‑CCI Business  Forum 2026',
+    badge: '14 April 2026 · Fairmont Hotel, Jakarta',
+    title: 'D8‑CCI Business Forum 2026',
     theme: 'Connecting D-8 Business for Sustainable and Resilient Growth',
     description:
         'The D8‑CCI Business  Forum 2026 convenes 300 CEOs and Business  ' +
@@ -64,14 +64,14 @@ type Leader = {
 };
 
 const featuredLeaders: Leader[] = [
-    { name: 'Prabowo Subianto*', role: 'President of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
+    { name: 'Prabowo Subianto', role: 'President of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
     { name: 'Recep Tayyip Erdoğan*', role: 'President of the Republic of Türkiye', photo: '/assets/d8/leader/erdogan.jpg', objectPosition: 'center 15%' },
     { name: 'Anwar Ibrahim*', role: 'Prime Minister of Malaysia', photo: '/assets/d8/leader/anwar-ibrahim.jpeg', objectPosition: 'center 10%' },
 ];
 
 const supportingLeaders: Leader[] = [
-    { name: 'Rosan Roeslani', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png', objectPosition: '10% 0%', scale: 1.2 },
-    { name: 'Dyah Roro Esti Widya Putri', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg', objectPosition: 'center 10%', scale: 1.2 },
+    { name: 'Rosan Roeslani*', role: 'Minister of Investment & Head of BKPM', photo: '/assets/d8/leader/rosan-roeslani.png', objectPosition: '10% 0%', scale: 1.2 },
+    { name: 'Dyah Roro Esti Widya Putri*', role: 'Deputy Minister of Trade', photo: '/assets/d8/leader/dyah-roro-esti-widya-putri.jpeg', objectPosition: 'center 10%', scale: 1.2 },
     { name: 'Anindya Bakrie', role: 'President of D-8 CCI', photo: '/assets/d8/leader/anindya-bakrie-2.png', objectPosition: 'center 15%', scale: 1.2 },
     { name: 'Ambassador Sohail Mahmood', role: 'Secretary General of D-8 CCI', photo: '/assets/d8/leader/ambassador-sohail-mahmood-2.png', objectPosition: '75% 20%', scale: 1.2 },
     { name: 'James T. Riyadi', role: 'Vice Chairman, Foreign Affairs, KADIN Indonesia', photo: '/assets/d8/leader/james-t-riyadi.png', objectPosition: 'center 10%', scale: 1.2 },

@@ -47,7 +47,7 @@ const history = [
     year: '1997',
     title: 'Foundation',
     description:
-      'D-8 was established on June 15, 1997, in Istanbul, Turkey, with the Istanbul Declaration, bringing together eight developing nations with large Muslim populations for economic cooperation.',
+      'D-8 was established on June 15, 1997, in Istanbul, Türkiye, with the Istanbul Declaration, bringing together eight developing nations with large Muslim populations for economic cooperation.',
     color: '#00B3AA',
   },
   {
