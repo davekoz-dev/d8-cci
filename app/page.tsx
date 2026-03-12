@@ -9,12 +9,13 @@ import { SummitHighlight } from '@/components/home/SummitHighlight';
 import { NewsReleases } from '@/components/home/NewsReleases';
 import { D8Overview } from '@/components/home/D8Overview';
 import { PalestineTeaser } from '@/components/home/PalestineTeaser';
+import { MemberChambers } from '@/components/home/MemberChambers';
 
 /**
  * D-8 CCI Portal — Home Page
  *
  * Information Hierarchy:
- *   PRIMARY   — D-8 CCI (Hero + CCI Overview)
+ *   PRIMARY   — D-8 CCI (Hero + Member Chambers + CCI Overview)
  *   SECONDARY — Business  Forum 2026
  *   TERTIARY  — Events, Business priorities, Halal Expo, D-8 Summit, Organization overview, Palestine
  */
@@ -24,6 +25,7 @@ export default function Home() {
     <>
       {/* ── PRIMARY: D-8 CCI ─────────────────────────────── */}
       <Hero />
+      <MemberChambers />
       <D8CciOverview />
 
       {/* ── SECONDARY: Flagship Event ────────────────────── */}
