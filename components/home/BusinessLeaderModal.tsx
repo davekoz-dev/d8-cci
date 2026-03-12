@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import Image from 'next/image';
 import { toast } from 'sonner';
+import { CountrySelect } from '@/components/home/CountrySelect';
 
 interface BusinessLeaderModalProps {
   isOpen: boolean;
@@ -15,8 +16,10 @@ interface BusinessLeaderModalProps {
 
 export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProps) {
   const [name, setName] = React.useState('');
+  const [title, setTitle] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [company, setCompany] = React.useState('');
+  const [country, setCountry] = React.useState('');
   const [phone, setPhone] = React.useState('');
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
@@ -27,11 +30,11 @@ export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProp
       const res = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, phone, event: 'business-forum' }),
+        body: JSON.stringify({ name, title, email, company, country, phone, event: 'business-forum' }),
       });
       if (!res.ok) throw new Error('Failed');
       toast.success('Registration confirmed! Check your email for your QR code.', { duration: 4000 });
-      setName(''); setEmail(''); setCompany(''); setPhone('');
+      setName(''); setTitle(''); setEmail(''); setCompany(''); setCountry(''); setPhone('');
       setTimeout(onClose, 1500);
     } catch {
       toast.error('Registration failed. Please try again.', { duration: 4000 });
@@ -50,8 +53,8 @@ export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProp
         </button>
 
         <div className="mb-6 mt-4 flex flex-col gap-4">
-          <div className="relative w-48 h-16 bg-[#055090] mx-auto rounded-lg">
-            <Image src="/assets/d8/logo/d8-logo-v2.png" alt="D8-CCI Business  Forum 2026" fill className="object-cover" sizes="192px" />
+          <div className="relative w-48 h-16 mx-auto bg-[#055090] rounded">
+            <Image src="/assets/d8/logo/d8-logo-v2.png" alt="D8-CCI Business  Forum 2026" fill className="object-contain" sizes="192px" />
           </div>
           <h2 className="text-lg font-bold text-[#055090] text-center">
             Registration for D8‑CCI Business  Forum 2026
@@ -64,8 +67,16 @@ export function BusinessLeaderModal({ isOpen, onClose }: BusinessLeaderModalProp
             <Input id="bl-name" type="text" required value={name} onChange={e => setName(e.target.value)} placeholder="Enter your full name" disabled={isSubmitting} />
           </div>
           <div className="space-y-1.5">
+            <Label htmlFor="bl-title">Title / Position</Label>
+            <Input id="bl-title" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Director, CEO" disabled={isSubmitting} />
+          </div>
+          <div className="space-y-1.5">
             <Label htmlFor="bl-company">Company / Organization</Label>
             <Input id="bl-company" type="text" value={company} onChange={e => setCompany(e.target.value)} placeholder="PT / Company name" disabled={isSubmitting} />
+          </div>
+          <div className="space-y-1.5">
+            <Label>Country</Label>
+            <CountrySelect value={country} onChange={setCountry} disabled={isSubmitting} className='w-full' />
           </div>
           <div className="space-y-1.5">
             <Label htmlFor="bl-email">Email Address *</Label>

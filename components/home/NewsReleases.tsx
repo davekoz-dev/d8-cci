@@ -70,7 +70,7 @@ export function NewsReleases() {
                         </Typography>
                     </div>
                     <Button asChild variant="outline" className="hidden sm:flex text-[#055090] border-[#055090] hover:bg-[#055090]/5">
-                        <Link href="/news">
+                        <Link href="/news" className='flex items-center'>
                             View All News <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                     </Button>
@@ -84,7 +84,7 @@ export function NewsReleases() {
 
                 <div className="mt-8 text-center sm:hidden">
                     <Button asChild variant="outline" className="w-full text-[#055090] border-[#055090] hover:bg-[#055090]/5">
-                        <Link href="/news">
+                        <Link href="/news" className='flex items-center'>
                             View All News <ArrowRight className="ml-2 w-4 h-4" />
                         </Link>
                     </Button>

@@ -5,13 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RegistrationEventSelect } from '@/components/home/RegistrationEventSelect';
+import { CountrySelect } from '@/components/home/CountrySelect';
 
 type Status = 'idle' | 'loading' | 'success' | 'error';
 
 export function RegistrationForm() {
   const [name, setName] = useState('');
+  const [title, setTitle] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
+  const [country, setCountry] = useState('');
   const [phone, setPhone] = useState('');
   const [event, setEvent] = useState('');
   const [status, setStatus] = useState<Status>('idle');
@@ -24,11 +27,11 @@ export function RegistrationForm() {
       const res = await fetch('/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, phone, event }),
+        body: JSON.stringify({ name, title, email, company, country, phone, event }),
       });
       if (!res.ok) throw new Error('Failed');
       setStatus('success');
-      setName(''); setEmail(''); setCompany(''); setPhone(''); setEvent('');
+      setName(''); setTitle(''); setEmail(''); setCompany(''); setCountry(''); setPhone(''); setEvent('');
     } catch {
       setStatus('error');
     }
@@ -54,8 +57,16 @@ export function RegistrationForm() {
         <Input id="reg-name" type="text" required value={name} onChange={e => setName(e.target.value)} placeholder="Enter your name" className="h-8 text-xs" />
       </div>
       <div className="space-y-1.5">
+        <Label htmlFor="reg-title" className="text-xs">Title / Position</Label>
+        <Input id="reg-title" type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="e.g. Director, CEO" className="h-8 text-xs" />
+      </div>
+      <div className="space-y-1.5">
         <Label htmlFor="reg-company" className="text-xs">Company / Organization</Label>
         <Input id="reg-company" type="text" value={company} onChange={e => setCompany(e.target.value)} placeholder="PT / Company name" className="h-8 text-xs" />
+      </div>
+      <div className="space-y-1.5">
+        <Label className="text-xs">Country</Label>
+        <CountrySelect value={country} onChange={setCountry} className="h-8 text-xs" />
       </div>
       <div className="space-y-1.5">
         <Label htmlFor="reg-email" className="text-xs">Email Address *</Label>

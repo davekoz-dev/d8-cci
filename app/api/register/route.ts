@@ -12,7 +12,7 @@ const EVENT_LABELS: Record<string, { label: string; date: string; location: stri
 
 export async function POST(req: Request) {
   try {
-    const { name, email, company = '', phone = '', event } = await req.json();
+    const { name, title = '', email, company = '', country = '', phone = '', event } = await req.json();
 
     if (!name || !email || !event) {
       return NextResponse.json({ error: 'Name, email and event are required.' }, { status: 400 });
@@ -28,7 +28,7 @@ export async function POST(req: Request) {
       const db = getAdminSupabase();
       const { data: reg, error: dbError } = await db
         .from('registrations')
-        .insert({ name, email, company, phone, event })
+        .insert({ name, title, email, company, country, phone, event })
         .select('token, id')
         .single();
       if (dbError) console.error('DB insert error:', dbError);
@@ -43,7 +43,9 @@ export async function POST(req: Request) {
       try {
         const qrPayload = JSON.stringify({
           name,
+          title: title || '',
           company: company || '',
+          country: country || '',
           email,
           phone: phone || '',
           event: eventInfo.label,
