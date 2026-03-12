@@ -8,7 +8,7 @@ import { ArrowRight } from 'lucide-react';
 
 // ── Forum data ───────────────────────────────────────────────────
 const forum = {
-  badge: 'DBLF 2026 · 14 April 2026 · Fairmont Hotel, Jakarta',
+  badge: '14 April 2026 · Fairmont Hotel, Jakarta',
   title: 'D8‑CCI Business  Forum 2026',
   theme: 'Connecting D-8 Business for Sustainable and Resilient Growth',
   description:
