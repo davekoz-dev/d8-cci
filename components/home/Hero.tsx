@@ -205,11 +205,18 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Banner placeholder */}
+          {/* Banner */}
           <div
-            className={`hidden lg:flex shrink-0 w-full items-center justify-center rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm transition-all duration-700 delay-200 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`hidden lg:flex shrink-0 w-full items-center justify-center rounded-3xl overflow-hidden border border-white/10 transition-all duration-700 delay-200 ease-out ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           >
-            <p className="text-white/20 text-sm font-medium tracking-widest uppercase rotate-90">Banner</p>
+            <Image
+              src="/assets/hero/banner.jpeg"
+              alt="D-8 CCI Banner"
+              width={600}
+              height={800}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
 
 
