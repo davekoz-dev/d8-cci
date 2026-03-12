@@ -16,6 +16,7 @@ import {
     MapPin,
     Users,
     ChevronDown,
+    Clock,
 } from 'lucide-react';
 
 /* ─────────────────────────────────────────────────────────────────────
@@ -89,6 +90,93 @@ const supportingLeaders: Leader[] = [
 ];
 
 /* ─────────────────────────────────────────────────────────────────────
+   Data — Event Agenda
+   ───────────────────────────────────────────────────────────────────── */
+type AgendaItem = {
+    time: string;
+    title: string;
+    details?: string[];
+    type: 'session' | 'ceremony' | 'panel';
+};
+
+const agenda: AgendaItem[] = [
+    { time: '12.30 – 12.55 p.m.', title: 'Registration', type: 'ceremony' },
+    { time: '12.55 – 01.00 p.m.', title: 'Forum to Commence by Master of Ceremony', type: 'ceremony' },
+    {
+        time: '01.00 – 01.05 p.m.', title: 'Introduction',
+        details: ['Andi Anzhar Cakra Wijaya, Organizer, Vice Chairman for Multilateral Diplomacy, KADIN Indonesia'],
+        type: 'session',
+    },
+    {
+        time: '01.05 – 01.10 p.m.', title: 'Opening Remarks',
+        details: ['H.E Ambassador Sohail Mahmood*, Secretary General of D-8'],
+        type: 'session',
+    },
+    {
+        time: '01.10 – 01.15 p.m.', title: 'Welcoming Remarks',
+        details: ['Anindya N. Bakrie, President of D-8 Chamber of Commerce and Industry; Chairman of Kadin Indonesia; CEO of Bakrie and Brothers'],
+        type: 'session',
+    },
+    {
+        time: '01.15 – 01.30 p.m.', title: 'Keynote Remarks',
+        details: ['H.E Prabowo Subianto*, President of the Republic of Indonesia'],
+        type: 'session',
+    },
+    {
+        time: '01.30 – 02.00 p.m.', title: 'Country Leaders Speech',
+        details: [
+            'H.E Abdel Fattah el-Sisi*, President of the Arab Republic of Egypt',
+            'H.E Anwar Ibrahim*, Prime Minister of Malaysia',
+            'H.E Shehbaz Sharif*, Prime Minister of Pakistan',
+            'Other D-8 Country Leaders',
+        ],
+        type: 'session',
+    },
+    { time: '02.00 – 02.15 p.m.', title: 'Business MoU Signing', type: 'ceremony' },
+    {
+        time: '02.15 – 03.15 p.m.',
+        title: 'Panel Discussion: Strategic Downstreaming for Trade and Investment to Support Sustainable, Resilient Growth and the Blue Economy',
+        details: [
+            'Keynote Remarks: H.E Rosan Roeslani*, Minister of Investment and Downstreaming/Head of the Investment Coordinating Board',
+            'Mr. Rifat Hisarciklioglu*, Chairman, Union of Chambers and Commodity Exchanges of Türkiye',
+            'Dato Seri N Gobalakrishnan*, Chairman of National Chamber of Commerce and Industry of Malaysia',
+            'Mr. Jani Ibrahim*, Chairman of Nigerian Association of Chambers of Commerce Industry, Mines and Agriculture',
+            'Dr. James Riady, Coordinating Vice-Chairman for Foreign Affairs of Kadin Indonesia',
+            'Moderator: Sunita Rajan*, Managing Director of APAC Media Sales and Marketing at Bloomberg Media',
+        ],
+        type: 'panel',
+    },
+    {
+        time: '03.15 – 04.15 p.m.',
+        title: 'Panel Discussion: Promoting Innovation and Levelling Up SMEs in Halal Economy Across D-8 Members States',
+        details: [
+            'Keynote Remarks: Dyah Roro Esti Widya Putri*, Vice-Minister of Trade of The Republic of Indonesia',
+            'Mr. Ahmed El-Wakil*, Chairman of Federation of Egyptian Chambers of Commerce (FEDCOC)',
+            'Mr. Atif Ikram, President of Federation of Pakistan Chambers of Commerce and Industry (FPCCI)',
+            'Mr. Samad Hasanzadeh*, Chairman of Iran Chamber of Commerce, Industries, Mines and Agriculture (ICCIMA)',
+            'Mr. Niyaz Ali-Zada*, President of The Azerbaijan Republic Chamber of Commerce and Industry',
+            'Mr. Md. Abdur Rahim Khan*, Administrator of Federation of Bangladesh Chambers of Commerce and Industry (FBCCI)',
+            'Moderator: Mr. Mufti Hamka, Head of the Permanent Committee for International Treaties of Kadin Indonesia',
+        ],
+        type: 'panel',
+    },
+    {
+        time: '04.15 – 04.30 p.m.', title: 'Launching D-8 Women Business Alliance',
+        details: [
+            'Mrs Nita Yudi, Chairwoman of Indonesian Women Entrepreneurs',
+            'Mrs. Irawati Hermawan, CEO Hermawan Juniarto & Partners',
+        ],
+        type: 'ceremony',
+    },
+    {
+        time: '04.30 – 04.35 p.m.', title: 'Closing',
+        details: ['Mohamad Bawazeer, Vice Head Steering Committee'],
+        type: 'session',
+    },
+    { time: '05.00', title: 'Forum Close', type: 'ceremony' },
+];
+
+/* ─────────────────────────────────────────────────────────────────────
    Data — Organizing Committee
    ───────────────────────────────────────────────────────────────────── */
 const committee = [
@@ -146,6 +234,45 @@ function StatCard({ value, label }: { value: string; label: string }) {
         <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-4 md:p-6 text-center hover:bg-white/10 transition-all">
             <p className="text-white text-2xl md:text-3xl font-bold mb-1">{value}</p>
             <p className="text-white/80 text-xs md:text-sm">{label}</p>
+        </div>
+    );
+}
+
+function AgendaRow({ time, title, details, type }: AgendaItem) {
+    const icon =
+        type === 'panel' ? <Users className="h-4 w-4 text-[#055090]" /> :
+        type === 'ceremony' ? <Calendar className="h-4 w-4 text-[#00B3AA]" /> :
+        <Clock className="h-4 w-4 text-[#055090]" />;
+
+    const bgClass =
+        type === 'panel' ? 'bg-[#055090]/5 border-[#055090]/15' :
+        type === 'ceremony' ? 'bg-[#00B3AA]/5 border-[#00B3AA]/15' :
+        'bg-white border-gray-100';
+
+    return (
+        <div className={`flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-4 rounded-xl border ${bgClass} transition-all hover:shadow-sm`}>
+            <div className="flex items-center gap-2 min-w-[155px] md:min-w-[170px] shrink-0">
+                {icon}
+                <span className="text-sm font-semibold text-[#282561] whitespace-nowrap">{time}</span>
+            </div>
+            <div className="flex-1 min-w-0">
+                <p className="text-sm md:text-base font-bold text-[#055090]">{title}</p>
+                {details && details.length > 0 && (
+                    <ul className="mt-1.5 space-y-1">
+                        {details.map((detail, i) => {
+                            const isKeynoteOrModerator = detail.startsWith('Keynote') || detail.startsWith('Moderator');
+                            return (
+                                <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-[#414042]/80 leading-relaxed">
+                                    {!isKeynoteOrModerator && <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#00B3AA]/60 flex-shrink-0" />}
+                                    <span className={isKeynoteOrModerator ? 'font-semibold text-[#282561]/90' : ''}>
+                                        {detail}
+                                    </span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                )}
+            </div>
         </div>
     );
 }
@@ -297,6 +424,30 @@ export default function BusinessLeadersForumPage() {
                 </Container>
             </Section>
 
+
+            {/* ── Event Agenda ─────────────────────────────────────────── */}
+            <Section variant="muted" padding="lg" id="agenda">
+                <Container size="lg">
+                    <div className="max-w-3xl mx-auto">
+                        <div className="text-center mb-10 space-y-3">
+                            <Typography variant="h2" className="text-[#055090]">
+                                Event Agenda
+                            </Typography>
+                            <p className="text-[#282561] text-sm md:text-base font-semibold italic">
+                                &ldquo;Connecting D-8 Business for Sustainable and Resilient Growth&rdquo;
+                            </p>
+                            <p className="text-[#414042] text-sm">
+                                14 April 2026 · Fairmont Hotel, Jakarta
+                            </p>
+                        </div>
+                        <div className="space-y-3">
+                            {agenda.map((item) => (
+                                <AgendaRow key={item.time} {...item} />
+                            ))}
+                        </div>
+                    </div>
+                </Container>
+            </Section>
 
             {/* ── Organizing Committee ──────────────────────────────────── */}
             <Section variant="default" padding="lg">
