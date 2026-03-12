@@ -65,9 +65,10 @@ type Leader = {
 };
 
 const featuredLeaders: Leader[] = [
-    { name: 'H.E. Prabowo Subianto', role: 'President of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
-    { name: 'H.E. Recep Tayyip Erdoğan*', role: 'President of the Republic of Türkiye', photo: '/assets/d8/leader/erdogan.jpg', objectPosition: 'center 15%' },
     { name: 'H.E. Dato\' Seri Anwar Ibrahim*', role: 'Prime Minister of Malaysia', photo: '/assets/d8/leader/anwar-ibrahim.jpeg', objectPosition: 'center 10%' },
+    { name: 'H.E. Prabowo Subianto', role: 'President of the Republic of Indonesia', photo: '/assets/d8/leader/prabowo-subianto.png', objectPosition: 'center 10%' },
+    { name: 'H.E. Abdel Fattah Al-Sisi', role: 'President of the Arab Republic of Egypt', photo: '/assets/d8/leader/abdel-fattah-al-sisi.jpg', objectPosition: 'center 10%' },
+    { name: 'H.E. Shehbaz Sharif*', role: 'Prime Minister of the Islamic Republic of Pakistan', photo: '/assets/d8/leader/shehbaz-sharif.jpg', objectPosition: 'center 0%' },
 ];
 
 const supportingLeaders: Leader[] = [
